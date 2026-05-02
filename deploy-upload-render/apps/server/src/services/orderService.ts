@@ -192,7 +192,14 @@ export async function summarizeOrders(filters: { date?: string; brand?: Brand; s
   for (const order of orders) {
     for (const item of order.items) {
       const key = `${item.brand}|${item.category}|${item.menuName}|${item.size}`;
-      const group = groups.get(key) ?? {
+      const group: {
+        brand: Brand;
+        menuName: string;
+        category: string;
+        size: string;
+        quantity: number;
+        requests: Array<{ ordererName: string; customRequest: string }>;
+      } = groups.get(key) ?? {
         brand: item.brand,
         menuName: item.menuName,
         category: item.category,
