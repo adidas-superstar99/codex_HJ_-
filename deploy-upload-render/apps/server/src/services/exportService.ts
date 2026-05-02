@@ -1,6 +1,6 @@
 import type { Order } from "../types.js";
 
-const header = ["주문묶음", "주문일시", "주문자", "브랜드", "카테고리", "메뉴명", "사이즈", "수량", "개인요청사항"];
+const header = ["주문목록", "주문일시", "주문자", "브랜드", "카테고리", "메뉴명", "사이즈", "수량", "개인요청사항"];
 
 export function ordersToCsv(orders: Order[]) {
   const rows = orders.flatMap((order) =>

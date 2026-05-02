@@ -18,11 +18,21 @@ const candidateWebDistPaths = [
   join(__dirname, "../../web/dist")
 ];
 const webDistPath = candidateWebDistPaths.find((path) => existsSync(path));
+const publicAssetCandidates = [
+  join(process.cwd(), "apps/server/public"),
+  join(process.cwd(), "public"),
+  join(__dirname, "../public")
+];
+const publicAssetPath = publicAssetCandidates.find((path) => existsSync(path));
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+if (publicAssetPath) {
+  app.use("/assets", express.static(publicAssetPath));
+}
 
 app.get("/api/health", (_req, res) => {
   res.json({ ok: true, service: "coffee-order-api" });

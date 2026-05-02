@@ -47,7 +47,7 @@ publicOrdersRouter.delete("/:id", async (req: Request, res: Response, next: Next
   }
 
   if (result === "closed") {
-    res.status(400).json({ message: "마감된 주문묶음은 취소할 수 없습니다." });
+    res.status(400).json({ message: "마감된 주문목록은 취소할 수 없습니다." });
     return;
   }
 
@@ -120,10 +120,10 @@ function resolvePublicOrderStatus(error: unknown) {
 function resolvePublicOrderMessage(error: unknown) {
   const code = error instanceof Error ? error.message : "UNKNOWN_ERROR";
   const messages: Record<string, string> = {
-    BATCH_REQUIRED: "주문묶음을 선택해 주세요.",
-    BATCH_NOT_FOUND: "주문묶음을 찾을 수 없습니다.",
-    BATCH_CLOSED: "마감된 주문묶음입니다.",
-    BATCH_CLOSED_EDIT: "마감된 주문묶음은 수정할 수 없습니다.",
+    BATCH_REQUIRED: "주문목록을 선택해 주세요.",
+    BATCH_NOT_FOUND: "주문목록을 찾을 수 없습니다.",
+    BATCH_CLOSED: "마감된 주문목록입니다.",
+    BATCH_CLOSED_EDIT: "마감된 주문목록은 수정할 수 없습니다.",
     ORDER_INPUT_REQUIRED: "주문자 이름과 음료를 입력해 주세요.",
     INVALID_QUANTITY: "수량은 1개 이상이어야 합니다.",
     ORDER_NOT_FOUND: "주문을 찾을 수 없습니다.",

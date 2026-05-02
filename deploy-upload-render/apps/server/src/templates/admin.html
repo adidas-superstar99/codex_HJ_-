@@ -7,33 +7,34 @@
 </head>
 <body>
 <div class="login" id="login">
-  <div class="eyebrow">Admin</div><h1>관리자 주문 취합</h1>
+  <div class="brand-lockup"><img class="brand-logo" src="/assets/logo-samoo.png" alt="SAMOO AX 로고"><div class="eyebrow">ADMIN</div></div>
+  <h1>관리자 주문 취합</h1>
   <label><span>관리자 비밀번호</span><input id="password" type="password" value="change-me"></label>
   <p class="message" id="loginMsg" style="display:none"></p>
   <button class="primary" id="loginButton">입장</button>
-  <p><a href="/">주문묶음 목록으로</a></p>
+  <p><a href="/">주문목록으로</a></p>
 </div>
 <main id="app" style="display:none">
   <div class="top">
     <div>
-      <div class="eyebrow">SAMOO AX팀 BEVERAGE ORDER</div>
-      <h1>주문묶음 관리</h1>
-      <p class="muted">주문묶음을 만들고, 선택한 주문묶음의 주문과 메뉴별 집계를 확인합니다.</p>
+      <div class="brand-lockup"><img class="brand-logo" src="/assets/logo-samoo.png" alt="SAMOO AX 로고"><div class="eyebrow">SAMOO AX팀 BEVERAGE ORDER</div></div>
+      <h1>주문목록 관리</h1>
+      <p class="muted">주문목록을 만들고, 선택한 주문목록의 주문과 메뉴별 집계를 확인합니다.</p>
     </div>
-    <a href="/">주문묶음 목록</a>
+    <a href="/">주문목록</a>
   </div>
   <div class="admin-grid">
     <section class="panel">
-      <h2>새 주문묶음 생성</h2>
+      <h2>새 주문목록 생성</h2>
       <label><span>제목 *</span><input id="batchTitle" placeholder="예: 아침 회의 음료주문"></label>
       <label><span>메모</span><textarea id="batchMemo" rows="3" placeholder="예: 9시 50분까지 입력"></textarea></label>
-      <button class="primary" id="createBatchButton">주문묶음 생성</button>
+      <button class="primary" id="createBatchButton">주문목록 생성</button>
       <hr>
-      <h2>주문묶음 목록</h2>
+      <h2>주문목록</h2>
       <div id="batchList" class="grid"></div>
     </section>
     <section class="panel">
-      <h2 id="selectedTitle">주문묶음을 먼저 선택하세요</h2>
+      <h2 id="selectedTitle">주문목록을 먼저 선택해주세요.</h2>
       <p class="selected-note" id="selectedNote" style="display:none"></p>
       <div class="toolbar">
         <label><span>브랜드</span><select id="brand"><option value="ALL">전체</option><option value="STARBUCKS">스타벅스</option><option value="TWOSOME">투썸플레이스</option></select></label>
@@ -71,12 +72,12 @@ async function unlock(){
 }
 async function loadBatches(){
   const r=await fetch('/api/admin/order-batches',{headers:headers()});
-  if(!r.ok){msg('주문묶음 목록을 불러오지 못했습니다.');return}
+  if(!r.ok){msg('주문목록을 불러오지 못했습니다.');return}
   batches=asArray(await r.json()).filter(b=>b && b.id && b.title);
   renderBatches();
 }
 function renderBatches(){
-  if(!batches.length){$('batchList').innerHTML='<div class="empty">아직 주문묶음이 없습니다.</div>';return}
+  if(!batches.length){$('batchList').innerHTML='<div class="empty">아직 주문목록이 없습니다.</div>';return}
   $('batchList').innerHTML=batches.map(b=>{
     const nextStatus=b.status==='open'?'closed':'open';
     const statusText=b.status==='open'?'진행 중':'마감';
@@ -88,18 +89,18 @@ function renderBatches(){
       + '<p class="muted">'+new Date(b.createdAt).toLocaleString('ko-KR')+'</p>'
       + '<p><strong>주문 '+(b.orderCount||0)+'건</strong> · 음료 '+(b.cupCount||0)+'잔</p>'
       + (b.memo?'<p>'+escapeHtml(b.memo)+'</p>':'')
-      + '<button class="secondary" data-action="view" data-id="'+b.id+'">이 주문묶음 주문/집계 보기</button>'
+      + '<button class="secondary" data-action="view" data-id="'+b.id+'">이 주문목록 주문/집계 보기</button>'
       + '<button class="'+buttonClass+'" data-action="toggle" data-id="'+b.id+'" data-status="'+nextStatus+'">'+statusButton+'</button>'
-      + '<button class="danger" data-action="delete" data-id="'+b.id+'">주문묶음 삭제</button>'
+      + '<button class="danger" data-action="delete" data-id="'+b.id+'">주문목록 삭제</button>'
       + '<a href="/order/'+b.id+'" target="_blank">주문 링크 열기</a>'
       + '</article>';
   }).join('')
 }
 async function createBatch(){
   const title=$('batchTitle').value.trim();
-  if(!title){alert('제목을 입력해 주세요.');return}
+  if(!title){alert('제목을 입력해주세요.');return}
   const r=await fetch('/api/admin/order-batches',{method:'POST',headers:{...headers(),'Content-Type':'application/json'},body:JSON.stringify({title,memo:$('batchMemo').value})});
-  if(!r.ok){alert('주문묶음 생성에 실패했습니다.');return}
+  if(!r.ok){alert('주문목록 생성에 실패했습니다.');return}
   const batch=await r.json();
   $('batchTitle').value='';$('batchMemo').value='';
   selectedBatchId=batch.id;
@@ -108,35 +109,35 @@ async function createBatch(){
 }
 async function toggleBatch(id,status){
   const r=await fetch('/api/admin/order-batches/'+id,{method:'PATCH',headers:{...headers(),'Content-Type':'application/json'},body:JSON.stringify({status})});
-  if(!r.ok){msg('주문묶음 변경에 실패했습니다.');return}
+  if(!r.ok){msg('주문목록 변경에 실패했습니다.');return}
   await loadBatches();
   selectBatch(id);
 }
 async function deleteBatch(id){
   const batch=batches.find(x=>x.id===id);
-  const name=batch?batch.title:'이 주문묶음';
-  if(!confirm('"' + name + '" 주문묶음을 삭제할까요?\n안에 들어있는 주문도 함께 삭제됩니다.'))return;
+  const name=batch?batch.title:'이 주문목록';
+  if(!confirm('"'+name+'" 주문목록을 삭제할까요?\n안에 들어있는 주문도 함께 삭제됩니다.'))return;
   const r=await fetch('/api/admin/order-batches/'+id,{method:'DELETE',headers:headers()});
-  if(!r.ok){msg('주문묶음 삭제에 실패했습니다.');return}
+  if(!r.ok){msg('주문목록 삭제에 실패했습니다.');return}
   if(selectedBatchId===id){selectedBatchId=''}
   await loadBatches();
   if(selectedBatchId){selectBatch(selectedBatchId)} else if(batches.length){selectBatch(batches[0].id)} else {clearSelected()}
-  msg('주문묶음이 삭제되었습니다.');
+  msg('주문목록을 삭제했습니다.');
 }
 function clearSelected(){
   selectedBatchId='';
-  $('selectedTitle').textContent='주문묶음을 먼저 선택하세요';
+  $('selectedTitle').textContent='주문목록을 먼저 선택해주세요.';
   $('selectedNote').style.display='none';
   $('adminStats').innerHTML='';
-  $('summary').innerHTML='<div class="empty">주문묶음을 선택하면 집계가 표시됩니다.</div>';
-  $('orders').innerHTML='<div class="empty">주문묶음을 선택하면 주문 목록이 표시됩니다.</div>';
+  $('summary').innerHTML='<div class="empty">주문목록을 선택하면 집계가 표시됩니다.</div>';
+  $('orders').innerHTML='<div class="empty">주문목록을 선택하면 주문 목록이 표시됩니다.</div>';
 }
 function selectBatch(id){
   selectedBatchId=id;
   const b=batches.find(x=>x.id===id);
-  $('selectedTitle').textContent=b?b.title:'주문묶음을 먼저 선택하세요';
+  $('selectedTitle').textContent=b?b.title:'주문목록을 먼저 선택해주세요.';
   $('selectedNote').style.display=b?'block':'none';
-  $('selectedNote').textContent=b?'현재 "'+b.title+'" 주문묶음의 주문과 집계를 보고 있습니다.':'';
+  $('selectedNote').textContent=b?'현재 "'+b.title+'" 주문목록의 주문과 집계를 보고 있습니다.':'';
   renderBatches();
   loadOrders();
 }
@@ -158,7 +159,7 @@ function renderOrders(rows){
   renderAdminStats(rows);
   if(!rows.length){$('orders').innerHTML='<div class="empty">조회된 주문이 없습니다.</div>';return}
   $('orders').innerHTML=rows.map(o=>{
-    const items=o.items.map(i=>'<li>'+brandName(i.brand)+' · '+escapeHtml(i.menuName)+' · '+i.size+' · '+i.quantity+'잔 '+(i.customRequest?'<em>'+escapeHtml(i.customRequest)+'</em>':'')+'</li>').join('');
+    const items=o.items.map(i=>'<li>'+brandName(i.brand)+' · '+escapeHtml(i.menuName)+' · '+i.size+' · '+i.quantity+'잔'+(i.customRequest?'<em>'+escapeHtml(i.customRequest)+'</em>':'')+'</li>').join('');
     return '<article class="order"><header><div><strong>'+escapeHtml(o.ordererName)+'</strong><div>'+new Date(o.orderedAt).toLocaleString('ko-KR')+'</div></div><button class="danger" type="button" onclick="deleteOrder(\''+o.id+'\')">삭제</button></header><ul>'+items+'</ul></article>';
   }).join('');
 }
