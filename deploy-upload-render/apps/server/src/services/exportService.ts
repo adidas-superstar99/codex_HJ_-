@@ -1,10 +1,11 @@
 import type { Order } from "../types.js";
 
-const header = ["주문일시", "주문자", "브랜드", "카테고리", "메뉴명", "사이즈", "수량", "개인요청사항", "상태"];
+const header = ["주문묶음", "주문일시", "주문자", "브랜드", "카테고리", "메뉴명", "사이즈", "수량", "개인요청사항"];
 
 export function ordersToCsv(orders: Order[]) {
   const rows = orders.flatMap((order) =>
     order.items.map((item) => [
+      order.batchTitle,
       formatDateTime(order.orderedAt),
       order.ordererName,
       item.brand,
@@ -12,12 +13,11 @@ export function ordersToCsv(orders: Order[]) {
       item.menuName,
       item.size,
       String(item.quantity),
-      item.customRequest ?? "",
-      order.status
+      item.customRequest ?? ""
     ])
   );
 
-  return [header, ...rows].map((row) => row.map(escapeCsv).join(",")).join("\r\n");
+  return [header, ...rows].map((row) => row.map((value) => escapeCsv(String(value))).join(",")).join("\r\n");
 }
 
 function escapeCsv(value: string) {
