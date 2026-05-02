@@ -10,7 +10,8 @@ const candidateDataPaths = [
   join(__dirname, "../data/menu-data.json")
 ];
 const menuDataPath = candidateDataPaths.find((path) => existsSync(path)) ?? candidateDataPaths[0];
-const menus = JSON.parse(readFileSync(menuDataPath, "utf-8")) as Menu[];
+const menuFileText = readFileSync(menuDataPath, "utf-8").replace(/^\uFEFF/, "");
+const menus = JSON.parse(menuFileText) as Menu[];
 
 export function listMenus(filters: { brand?: Brand; category?: string; query?: string }) {
   const query = filters.query?.trim().toLowerCase();
