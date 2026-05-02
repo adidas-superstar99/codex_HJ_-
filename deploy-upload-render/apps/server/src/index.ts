@@ -5,9 +5,11 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { config } from "./config.js";
 import { migrate } from "./db.js";
-import { adminRouter, requireAdmin } from "./routes/admin.js";
+import { requireAdmin } from "./routes/admin.js";
 import { menusRouter } from "./routes/menus.js";
-import { ordersRouter, publicOrdersRouter } from "./routes/orders.js";
+import { adminOrderBatchesRouter, publicOrderBatchesRouter } from "./routes/orderBatches.js";
+import { adminOrdersRouter, publicOrdersRouter } from "./routes/orders.js";
+import { getAdminPage, getBatchListPage, getOrderPage } from "./serverPages.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const candidateWebDistPaths = [
@@ -27,9 +29,22 @@ app.get("/api/health", (_req, res) => {
 });
 
 app.use("/api/menus", menusRouter);
+app.use("/api/order-batches", publicOrderBatchesRouter);
 app.use("/api/orders", publicOrdersRouter);
-app.use("/api/orders", requireAdmin, ordersRouter);
-app.use("/api/admin", adminRouter);
+app.use("/api/orders", requireAdmin, adminOrdersRouter);
+app.use("/api/admin/order-batches", requireAdmin, adminOrderBatchesRouter);
+
+app.get("/", (_req, res) => {
+  res.type("html").send(getBatchListPage());
+});
+
+app.get("/order/:id", (_req, res) => {
+  res.type("html").send(getOrderPage());
+});
+
+app.get("/admin", (_req, res) => {
+  res.type("html").send(getAdminPage());
+});
 
 if (webDistPath) {
   app.use(express.static(webDistPath));
