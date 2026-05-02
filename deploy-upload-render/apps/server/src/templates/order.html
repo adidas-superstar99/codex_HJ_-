@@ -53,6 +53,50 @@
 <div id="modalRoot"></div>
 <script>
 const batchId = location.pathname.split('/').filter(Boolean)[1];
+const previewMode = new URLSearchParams(location.search).get('preview') === '1';
+const previewBatch = {
+  id: 'preview',
+  title: '모바일 프리뷰 주문',
+  memo: '미리보기 전용 화면입니다. 모바일 밀림, 카드 밀도, 카테고리 열림 상태를 확인할 수 있습니다.',
+  status: 'open'
+};
+const previewMenusByBrand = {
+  STARBUCKS: [
+    { id:'sb-1', brand:'STARBUCKS', category:'NEW', isNew:true, name:'서울 막걸리향 콜드브루', imageUrl:'https://images.unsplash.com/photo-1517701550927-30cf4ba1f4d6?auto=format&fit=crop&w=640&q=80', availableSizes:['Tall','Grande'] },
+    { id:'sb-2', brand:'STARBUCKS', category:'콜드 브루', isNew:false, name:'바닐라 아인슈페너 콜드브루', imageUrl:'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=640&q=80', availableSizes:['Tall','Grande','Venti'] },
+    { id:'sb-3', brand:'STARBUCKS', category:'에스프레소', isNew:false, name:'카페 라떼', imageUrl:'https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=640&q=80', availableSizes:['Short','Tall','Grande'] },
+    { id:'sb-4', brand:'STARBUCKS', category:'프라푸치노', isNew:false, name:'자바 칩 프라푸치노', imageUrl:'https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=640&q=80', availableSizes:['Tall','Grande'] },
+    { id:'sb-5', brand:'STARBUCKS', category:'리프레셔', isNew:false, name:'핑크 드링크 위드 딸기 아사이', imageUrl:'https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=640&q=80', availableSizes:['Tall','Grande'] },
+    { id:'sb-6', brand:'STARBUCKS', category:'티', isNew:false, name:'유자 민트 티', imageUrl:'https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=640&q=80', availableSizes:['Tall','Grande'] }
+  ],
+  TWOSOME: [
+    { id:'ts-1', brand:'TWOSOME', category:'NEW', isNew:true, name:'복숭아 얼그레이 티', imageUrl:'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=640&q=80', availableSizes:['Regular'] },
+    { id:'ts-2', brand:'TWOSOME', category:'커피', isNew:false, name:'카페 라떼', imageUrl:'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=640&q=80', availableSizes:['Regular','Large'] },
+    { id:'ts-3', brand:'TWOSOME', category:'논커피', isNew:false, name:'스트로베리 요거트 블렌디드', imageUrl:'https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?auto=format&fit=crop&w=640&q=80', availableSizes:['Regular'] },
+    { id:'ts-4', brand:'TWOSOME', category:'티', isNew:false, name:'애플 시나몬 티', imageUrl:'https://images.unsplash.com/photo-1464306076886-da185f6a9d05?auto=format&fit=crop&w=640&q=80', availableSizes:['Regular'] }
+  ]
+};
+const previewOrdersByBatch = {
+  preview: [
+    {
+      id: 'preview-order-1',
+      ordererName: '염희재',
+      orderedAt: new Date().toISOString(),
+      items: [
+        { brand:'STARBUCKS', menuId:'sb-2', menuName:'바닐라 아인슈페너 콜드브루', category:'콜드 브루', size:'Grande', quantity:1, customRequest:'얼음 적게' }
+      ]
+    },
+    {
+      id: 'preview-order-2',
+      ordererName: '김동현',
+      orderedAt: new Date(Date.now() - 1000 * 60 * 18).toISOString(),
+      items: [
+        { brand:'STARBUCKS', menuId:'sb-3', menuName:'카페 라떼', category:'에스프레소', size:'Tall', quantity:1, customRequest:'' },
+        { brand:'STARBUCKS', menuId:'sb-5', menuName:'핑크 드링크 위드 딸기 아사이', category:'리프레셔', size:'Grande', quantity:1, customRequest:'당도 기본' }
+      ]
+    }
+  ]
+};
 let batch = null, brand = 'STARBUCKS', menus = [], cart = [], selected = null, editingOrderId = '';
 const $ = id => document.getElementById(id);
 function escapeHtml(value){return String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
@@ -69,6 +113,17 @@ function updateOrderPanelButtons(){
 function openOrderPanel(){ if(isCompactLayout()) $('orderForm').classList.add('side-open') }
 function closeOrderPanel(){ $('orderForm').classList.remove('side-open') }
 async function loadBatch(){
+  if(previewMode){
+    batch = previewBatch;
+    $('pageTitle').textContent = batch.title;
+    $('pageMemo').textContent = batch.memo;
+    $('orderForm').style.display='grid';
+    $('publicOrdersPanel').style.display='block';
+    await loadMenus();
+    renderCart();
+    await loadPublicOrders();
+    return;
+  }
   const response = await fetch('/api/order-batches/' + batchId);
   if(!response.ok){ $('closed').style.display='block'; $('closed').textContent='주문묶음을 찾을 수 없습니다.'; return; }
   batch = await response.json();
@@ -85,7 +140,17 @@ async function loadBatch(){
   renderCart();
   await loadPublicOrders();
 }
-async function loadMenus(){menus = await (await fetch('/api/menus?brand=' + brand)).json(); renderCategories(); renderMenus();}
+async function loadMenus(){
+  if(previewMode){
+    menus = previewMenusByBrand[brand] || [];
+    renderCategories();
+    renderMenus();
+    return;
+  }
+  menus = await (await fetch('/api/menus?brand=' + brand)).json();
+  renderCategories();
+  renderMenus();
+}
 function selectedCategory(){return document.querySelector('#categoryStrip button.active')?.dataset.category || 'ALL'}
 function renderCategories(){
   const menuCategories = [...new Set(menus.map(m=>m.category))];
@@ -144,6 +209,10 @@ function bindMenuSections(){
 }
 function renderCart(){$('cart').innerHTML=cart.length?cart.map(i=>`<div class="cart-item"><strong>${escapeHtml(i.menuName)}</strong><div class="meta">${brandName(i.brand)} · ${i.size}</div>${i.customRequest?`<p>${escapeHtml(i.customRequest)}</p>`:''}<div class="cart-actions"><button type="button" onclick="qty('${i.localId}',-1)">-</button><span>${i.quantity}</span><button type="button" onclick="qty('${i.localId}',1)">+</button><button type="button" onclick="removeItem('${i.localId}')">x</button></div></div>`).join(''):'<div class="empty">선택한 음료가 아직 없습니다.</div>'; updateOrderPanelButtons()}
 async function loadPublicOrders(){
+  if(previewMode){
+    renderPublicOrders(previewOrdersByBatch[batchId] || previewOrdersByBatch.preview || []);
+    return;
+  }
   const response = await fetch('/api/order-batches/' + batchId + '/orders');
   const data = response.ok ? await response.json() : [];
   const orders = Array.isArray(data) ? data : (data ? [data] : []);
