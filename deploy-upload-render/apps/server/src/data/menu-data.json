@@ -1,0 +1,4554 @@
+﻿[
+    {
+        "id":  "sb-9200000006938",
+        "brand":  "STARBUCKS",
+        "category":  "콜드 브루",
+        "name":  "서울 막걸리향 콜드브루",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2026/03/[9200000006938]_20260304125135451.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  true,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000006920",
+        "brand":  "STARBUCKS",
+        "category":  "콜드 브루",
+        "name":  "우디 카우보이 쿠키 콜드 브루",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2026/04/[9200000006920]_20260408132904084.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  true,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000002487",
+        "brand":  "STARBUCKS",
+        "category":  "콜드 브루",
+        "name":  "나이트로 바닐라 크림",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[9200000002487]_20250626171201110.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000000479",
+        "brand":  "STARBUCKS",
+        "category":  "콜드 브루",
+        "name":  "나이트로 콜드 브루",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[9200000000479]_20250626095418324.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000002081",
+        "brand":  "STARBUCKS",
+        "category":  "콜드 브루",
+        "name":  "돌체 콜드 브루",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[9200000002081]_20250626100020135.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000002407",
+        "brand":  "STARBUCKS",
+        "category":  "콜드 브루",
+        "name":  "리저브 나이트로",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2021/02/[9200000002407]_20210225095106743.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000002093",
+        "brand":  "STARBUCKS",
+        "category":  "콜드 브루",
+        "name":  "리저브 콜드 브루",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2024/03/[9200000002093]_20240318144604476.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000005282",
+        "brand":  "STARBUCKS",
+        "category":  "콜드 브루",
+        "name":  "막걸리향 크림 콜드 브루",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2024/05/[9200000005282]_20240509131200017.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000004312",
+        "brand":  "STARBUCKS",
+        "category":  "콜드 브루",
+        "name":  "민트 콜드 브루",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2022/10/[9200000004312]_20221005145029134.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000006945",
+        "brand":  "STARBUCKS",
+        "category":  "콜드 브루",
+        "name":  "바닐라 아인슈페너 콜드브루",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2026/04/[9200000006945]_20260415131227200.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  true,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000000487",
+        "brand":  "STARBUCKS",
+        "category":  "콜드 브루",
+        "name":  "바닐라 크림 콜드 브루",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[9200000000487]_20250626095703208.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000005991",
+        "brand":  "STARBUCKS",
+        "category":  "콜드 브루",
+        "name":  "베르가못 콜드 브루",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/11/[9200000005991]_20251125104417629.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000006301",
+        "brand":  "STARBUCKS",
+        "category":  "콜드 브루",
+        "name":  "블랙\u0026화이트 콜드 브루",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/07/[9200000006301]_20250703090404091.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000006056",
+        "brand":  "STARBUCKS",
+        "category":  "콜드 브루",
+        "name":  "스모크드 콜드 패션드",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/04/[9200000006056]_20250424105540077.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000003661",
+        "brand":  "STARBUCKS",
+        "category":  "콜드 브루",
+        "name":  "시그니처 더 블랙 콜드 브루",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[9200000003661]_20250626093642415.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000004750",
+        "brand":  "STARBUCKS",
+        "category":  "콜드 브루",
+        "name":  "여수 윤슬 헤이즐넛 콜드브루",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[9200000004750]_20250626093847094.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000003285",
+        "brand":  "STARBUCKS",
+        "category":  "콜드 브루",
+        "name":  "오트 콜드 브루",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[9200000003285]_20250626095600441.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000005616",
+        "brand":  "STARBUCKS",
+        "category":  "콜드 브루",
+        "name":  "제주 비자림 리저브 콜드 브루",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2024/10/[9200000005616]_20241014134021881.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000004770",
+        "brand":  "STARBUCKS",
+        "category":  "콜드 브루",
+        "name":  "콜드 브루",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[9200000004770]_20250626175029778.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000000038",
+        "brand":  "STARBUCKS",
+        "category":  "콜드 브루",
+        "name":  "콜드 브루",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[9200000000038]_20250626095744182.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000001636",
+        "brand":  "STARBUCKS",
+        "category":  "콜드 브루",
+        "name":  "콜드 브루 몰트",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2021/02/[9200000001636]_20210225093600536.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000001635",
+        "brand":  "STARBUCKS",
+        "category":  "콜드 브루",
+        "name":  "콜드 브루 플로트",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2021/02/[9200000001635]_20210225092236748.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000006948",
+        "brand":  "STARBUCKS",
+        "category":  "콜드 브루",
+        "name":  "프렌치 바닐라 콜드 브루",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2026/04/[9200000006948]_20260415131310868.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  true,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-2",
+        "brand":  "STARBUCKS",
+        "category":  "브루드 커피",
+        "name":  "브루드 커피 ",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2021/04/[2]_20210430111934117.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000006852",
+        "brand":  "STARBUCKS",
+        "category":  "브루드 커피",
+        "name":  "스위트 밀크 커피",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2026/02/[9200000006852]_20260205135209835.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  true,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-106509",
+        "brand":  "STARBUCKS",
+        "category":  "브루드 커피",
+        "name":  "아이스 브루드 커피",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[106509]_20250626092521116.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000006840",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "스타벅스 에어로카노",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2026/02/[9200000006840]_20260205135245242.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  true,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000006784",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "슈 폼 라떼",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2026/04/[9200000006784]_20260414104500059.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  true,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000000415",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "슈크림 라떼",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2026/04/[9200000000415]_20260414102504471.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  true,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000006787",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "아이스 슈 폼 라떼",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2026/04/[9200000006787]_20260414104858080.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  true,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000000418",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "아이스 슈크림 라떼",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2026/04/[9200000000418]_20260414103100438.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  true,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-30",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "에스프레소 콘 파나",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2021/04/[30]_20210415144252244.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-25",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "에스프레소 마키아또",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2021/04/[25]_20210415144211211.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000005514",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "스타벅스 1호점 카페 아메리카노",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2024/09/[9200000005514]_20240919154516844.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000005516",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "아이스 스타벅스 1호점 카페 아메리카노",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2024/09/[9200000005516]_20240919154833807.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-110563",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "아이스 카페 아메리카노",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[110563]_20250626094353711.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-94",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "카페 아메리카노",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2021/04/[94]_20210430103337006.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-110582",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "아이스 카라멜 마키아또",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[110582]_20250626095111658.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-126197",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "카라멜 마키아또",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2021/04/[126197]_20210415154609863.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-110601",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "아이스 카푸치노",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[110601]_20250626095213930.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-38",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "카푸치노",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2021/04/[38]_20210415154821846.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000004119",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "라벤더 카페 브레베",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2022/04/[9200000004119]_20220412083025862.png",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000006235",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "밀크카라멜 라떼",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[9200000006235]_20250604124942828.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000006343",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "바닐라 라떼",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/10/[9200000006343]_20251029141705796.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000001939",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "바닐라 빈 라떼",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2021/02/[9200000001939]_20210225094313315.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000006054",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "번트 카라멜 라떼",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/05/[9200000006054]_20250514142846184.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000002095",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "사케라또 비안코 오버 아이스",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2024/03/[9200000002095]_20240318144701881.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000005518",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "스타벅스 1호점 카페 라떼",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2024/09/[9200000005518]_20240919154933695.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000005522",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "스타벅스 1호점 크림 라떼",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2024/09/[9200000005522]_20240919155344866.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000006164",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "스타벅스 꿀 호떡 라떼",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/05/[9200000006164]_20250513101130306.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-128692",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "스타벅스 돌체 라떼",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2021/04/[128692]_20210426091933665.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000004120",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "아이스 라벤더 카페 브레베",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2022/04/[9200000004120]_20220412082952150.png",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000006238",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "아이스 밀크카라멜 라떼",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[9200000006238]_20250613084659816.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000006346",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "아이스 바닐라 라떼",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/10/[9200000006346]_20251029141759604.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000001941",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "아이스 바닐라 빈 라떼",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2021/02/[9200000001941]_20210225094346653.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000005520",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "아이스 스타벅스 1호점 카페 라떼",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2024/09/[9200000005520]_20240919155241283.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000005523",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "아이스 스타벅스 1호점 크림 라떼",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2024/09/[9200000005523]_20240919155443058.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000006165",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "아이스 스타벅스 꿀 호떡 라떼",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/05/[9200000006165]_20250513101211857.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-128695",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "아이스 스타벅스 돌체 라떼",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[128695]_20250626095651684.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000005285",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "아이스 인절미 크림 라떼",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2024/05/[9200000005285]_20240509131125335.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-110569",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "아이스 카페 라떼",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[110569]_20250626094801903.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000005284",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "인절미 크림 라떼",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2024/05/[9200000005284]_20240509131037171.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000006575",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "제주 비자림 리저브 에스프레소 라떼",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/10/[9200000006575]_20251013103821201.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-41",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "카페 라떼",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2021/04/[41]_20210415133833725.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000006338",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "코르타도",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/10/[9200000006338]_20251029141124907.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-110566",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "아이스 카페 모카",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[110566]_20250626113005628.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-110572",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "아이스 화이트 초콜릿 모카",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[110572]_20250626113205748.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-46",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "카페 모카",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2021/04/[46]_20210415134438165.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000004313",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "클래식 민트 모카",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2022/10/[9200000004313]_20221005145156959.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-128192",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "화이트 초콜릿 모카",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2021/04/[128192]_20210415155639126.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000005181",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "아이스 플랫 화이트",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[9200000005181]_20250626095819133.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000005178",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "플랫 화이트",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2024/03/[9200000005178]_20240326103727795.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-110612",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "바닐라 스타벅스 더블 샷",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[110612]_20250626095701777.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000003505",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "사케라또 아포가토",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2021/03/[9200000003505]_20210322093241535.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000003506",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "스파클링 시트러스 에스프레소",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2021/03/[9200000003506]_20210322093317854.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-20",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "에스프레소",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2021/04/[20]_20210415144112678.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9900000001604",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "에스프레소 플라이트",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2024/09/[9900000001604]_20240909104819181.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9900000001721",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "에스프레소 플라이트 도산",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/04/[9900000001721]_20250424124232037.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-110611",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "커피 스타벅스 더블 샷",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[110611]_20250626095539402.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000001631",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "클래식 아포가토",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2021/02/[9200000001631]_20210225090916684.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-110614",
+        "brand":  "STARBUCKS",
+        "category":  "에스프레소",
+        "name":  "헤이즐넛 스타벅스 더블 샷",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[110614]_20250626174624137.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000006593",
+        "brand":  "STARBUCKS",
+        "category":  "프라푸치노",
+        "name":  "바나나 마카다미아 오트 프라푸치노",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/11/[9200000006593]_20251112142011730.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  true,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000006942",
+        "brand":  "STARBUCKS",
+        "category":  "프라푸치노",
+        "name":  "제시 슈트로베리 프라푸치노",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2026/04/[9200000006942]_20260408133113871.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  true,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000006594",
+        "brand":  "STARBUCKS",
+        "category":  "프라푸치노",
+        "name":  "초코 바나나 마카다미아 오트 프라푸치노",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/11/[9200000006594]_20251112142046388.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  true,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000002760",
+        "brand":  "STARBUCKS",
+        "category":  "프라푸치노",
+        "name":  "더블 에스프레소 칩 프라푸치노",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[9200000002760]_20250626095415811.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000006303",
+        "brand":  "STARBUCKS",
+        "category":  "프라푸치노",
+        "name":  "스타벅스 꿀 호떡 크림 프라푸치노",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[9200000006303]_20250619133012310.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-168007",
+        "brand":  "STARBUCKS",
+        "category":  "프라푸치노",
+        "name":  "에스프레소 프라푸치노",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[168007]_20250626095952087.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-168016",
+        "brand":  "STARBUCKS",
+        "category":  "프라푸치노",
+        "name":  "자바 칩 프라푸치노",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[168016]_20250626113600873.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-168010",
+        "brand":  "STARBUCKS",
+        "category":  "프라푸치노",
+        "name":  "카라멜 프라푸치노",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[168010]_20250626113443023.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000005369",
+        "brand":  "STARBUCKS",
+        "category":  "프라푸치노",
+        "name":  "딸기 글레이즈드 크림 프라푸치노",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2024/06/[9200000005369]_20240614143554454.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000006304",
+        "brand":  "STARBUCKS",
+        "category":  "프라푸치노",
+        "name":  "베르가못 딸기 크림 프라푸치노",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/07/[9200000006304]_20250708105445804.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000006305",
+        "brand":  "STARBUCKS",
+        "category":  "프라푸치노",
+        "name":  "베르가못 제주 말차 크림 프라푸치노",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[9200000006305]_20250619141412982.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000005782",
+        "brand":  "STARBUCKS",
+        "category":  "프라푸치노",
+        "name":  "인절미 제주 말차 크림 프라푸치노",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[9200000005782]_20250626114430130.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000002088",
+        "brand":  "STARBUCKS",
+        "category":  "프라푸치노",
+        "name":  "제주 까망 크림 프라푸치노",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[9200000002088]_20250626114629418.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000002502",
+        "brand":  "STARBUCKS",
+        "category":  "프라푸치노",
+        "name":  "제주 말차 크림 프라푸치노",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[9200000002502]_20250626100915378.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000002090",
+        "brand":  "STARBUCKS",
+        "category":  "프라푸치노",
+        "name":  "제주 쑥떡 크림 프라푸치노",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[9200000002090]_20250626114614395.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-168066",
+        "brand":  "STARBUCKS",
+        "category":  "프라푸치노",
+        "name":  "초콜릿 크림 칩 프라푸치노",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[168066]_20250626113822018.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000002403",
+        "brand":  "STARBUCKS",
+        "category":  "프라푸치노",
+        "name":  "화이트 타이거 프라푸치노",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[9200000002403]_20250626100106311.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000006939",
+        "brand":  "STARBUCKS",
+        "category":  "블렌디드",
+        "name":  "레드빈 빙수 블렌디드",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2026/04/[9200000006939]_20260410134521787.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  true,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000006941",
+        "brand":  "STARBUCKS",
+        "category":  "블렌디드",
+        "name":  "블랙 글레이즈드 셔벗 플레이트",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2026/03/[9200000006941]_20260324151120249.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  true,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000006940",
+        "brand":  "STARBUCKS",
+        "category":  "블렌디드",
+        "name":  "애플망고 빙수 블렌디드",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2026/04/[9200000006940]_20260410134735547.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  true,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-167004",
+        "brand":  "STARBUCKS",
+        "category":  "블렌디드",
+        "name":  "망고 패션 프루트 블렌디드",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[167004]_20250626095805229.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000004716",
+        "brand":  "STARBUCKS",
+        "category":  "블렌디드",
+        "name":  "북한산 레몬 얼 그레이 블렌디드",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2026/03/[9200000004716]_20260303083311982.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000004945",
+        "brand":  "STARBUCKS",
+        "category":  "블렌디드",
+        "name":  "스타벅스 클래식 밀크티 블렌디드",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/08/[9200000004945]_20250827131549415.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000004870",
+        "brand":  "STARBUCKS",
+        "category":  "블렌디드",
+        "name":  "여수 바다 유자 블렌디드",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2023/09/[9200000004870]_20230905110300360.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000005377",
+        "brand":  "STARBUCKS",
+        "category":  "블렌디드",
+        "name":  "제주 탄제린 블렌디드",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/10/[9200000005377]_20251013104535651.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000003276",
+        "brand":  "STARBUCKS",
+        "category":  "블렌디드",
+        "name":  "딸기 딜라이트 요거트 블렌디드",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/07/[9200000003276]_20250721084027663.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000006577",
+        "brand":  "STARBUCKS",
+        "category":  "블렌디드",
+        "name":  "말차 폭포 유자 블렌디드",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/10/[9200000006577]_20251013103946321.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-169001",
+        "brand":  "STARBUCKS",
+        "category":  "블렌디드",
+        "name":  "망고 바나나 블렌디드",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[169001]_20250626100121981.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000006466",
+        "brand":  "STARBUCKS",
+        "category":  "블렌디드",
+        "name":  "자몽 허니 레몬 블렌디드 ",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/09/[9200000006466]_20250904105105974.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000004780",
+        "brand":  "STARBUCKS",
+        "category":  "블렌디드",
+        "name":  "피치 망고 블렌디드",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[9200000004780]_20250626094123074.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000003763",
+        "brand":  "STARBUCKS",
+        "category":  "리프레셔",
+        "name":  "딸기 아사이 레모네이드 스타벅스 리프레셔",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[9200000003763]_20250626093913823.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000004753",
+        "brand":  "STARBUCKS",
+        "category":  "리프레셔",
+        "name":  "딸기 아사이 레모네이드 스타벅스 리프레셔",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[9200000004753]_20250626175350251.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000006923",
+        "brand":  "STARBUCKS",
+        "category":  "피지오",
+        "name":  "버즈 키위 팝 에너지 피지오",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2026/04/[9200000006923]_20260408132959805.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  true,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000006937",
+        "brand":  "STARBUCKS",
+        "category":  "피지오",
+        "name":  "서울 석양 오미자 피지오",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2026/03/[9200000006937]_20260304125026093.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  true,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000006172",
+        "brand":  "STARBUCKS",
+        "category":  "피지오",
+        "name":  "골든 만다린 홉 피지오",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/05/[9200000006172]_20250513101034691.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000005168",
+        "brand":  "STARBUCKS",
+        "category":  "피지오",
+        "name":  "라이트 핑크 자몽 피지오",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[9200000005168]_20250626095609681.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000005283",
+        "brand":  "STARBUCKS",
+        "category":  "피지오",
+        "name":  "리버 피치 피지오",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2024/05/[9200000005283]_20240509131233446.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000004751",
+        "brand":  "STARBUCKS",
+        "category":  "피지오",
+        "name":  "여수 바다 자몽 피지오",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2023/09/[9200000004751]_20230907153225204.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000005588",
+        "brand":  "STARBUCKS",
+        "category":  "피지오",
+        "name":  "의암호의 초록빛 자몽 피지오",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2024/10/[9200000005588]_20241017130009134.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000004946",
+        "brand":  "STARBUCKS",
+        "category":  "피지오",
+        "name":  "제주팔삭 셔벗 피지오",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2024/01/[9200000004946]_20240103144959834.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000004947",
+        "brand":  "STARBUCKS",
+        "category":  "피지오",
+        "name":  "제주팔삭 피지오",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/08/[9200000004947]_20250827131344272.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000005983",
+        "brand":  "STARBUCKS",
+        "category":  "피지오",
+        "name":  "체리\u0026자두 에너지 피지오",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/07/[9200000005983]_20250724154622363.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-107051",
+        "brand":  "STARBUCKS",
+        "category":  "피지오",
+        "name":  "쿨 라임 피지오",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[107051]_20250626093749068.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000004567",
+        "brand":  "STARBUCKS",
+        "category":  "피지오",
+        "name":  "피치 딸기 피지오",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/11/[9200000004567]_20251125104447608.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-4004000000056",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "민트 블렌드 티",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2021/04/[4004000000056]_20210415135215632.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-4004000000059",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "아이스 민트 블렌드 티",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[4004000000059]_20250626095245748.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-4004000000039",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "아이스 얼 그레이 티",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[4004000000039]_20250626095101523.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000000229",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "아이스 유스베리 티",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[9200000000229]_20250626094905408.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000002959",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "아이스 유자 민트 티",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[9200000002959]_20250626095858925.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-4004000000019",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "아이스 잉글리쉬 브렉퍼스트 티",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[4004000000019]_20250626094722001.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-400400000094",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "아이스 제주 유기농 녹차로 만든 티",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[400400000094]_20250626095637338.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000004944",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "아이스 제주팔삭 \u0026 자몽 허니 블랙 티",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/08/[9200000004944]_20250827132453999.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-4004000000079",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "아이스 캐모마일 블렌드 티",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[4004000000079]_20250626095526701.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-4004000000069",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "아이스 히비스커스 블렌드 티",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[4004000000069]_20250626095350549.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-4004000000036",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "얼 그레이 티",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2021/04/[4004000000036]_20210415143933425.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000000226",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "유스베리 티",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2021/04/[9200000000226]_20210415144434521.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000002956",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "유자 민트 티",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2022/04/[9200000002956]_20220411155551915.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-4004000000016",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "잉글리쉬 브렉퍼스트 티",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2021/04/[4004000000016]_20210415153648533.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000000187",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "자몽 허니 블랙 티",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2021/04/[9200000000187]_20210419131229539.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-400400000091",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "제주 유기농 녹차로 만든 티",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2021/04/[400400000091]_20210415132229904.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000004943",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "제주팔삭 \u0026 자몽 허니 블랙 티",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/08/[9200000004943]_20250827132403893.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-4004000000076",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "캐모마일 블렌드 티",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2021/04/[4004000000076]_20210415154920731.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-4004000000066",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "히비스커스 블렌드 티",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2021/04/[4004000000066]_20210415155836395.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000004566",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "레드 파워 패션 티",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[9200000004566]_20250626094216209.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000004990",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "레몬 캐모마일 블렌드 티",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2023/12/[9200000004990]_20231212110704134.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000005307",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "복숭아 아이스 티",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[9200000005307]_20250626101543177.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000005310",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "복숭아 아이스 티",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[9200000005310]_20250626175453436.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000005304",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "복숭아 핫 티",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2024/07/[9200000005304]_20240717132620949.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000006560",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "시트러스 가든 민트 티",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/10/[9200000006560]_20251010154155973.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000004991",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "아이스 레몬 캐모마일 블렌드 티",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2023/12/[9200000004991]_20231212110749533.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000000190",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "아이스 자몽 허니 블랙 티",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[9200000000190]_20250626093924488.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000004769",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "아이스 자몽 허니 블랙 티",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[9200000004769]_20250626175158256.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000004954",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "말차 티라미수 라떼",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2023/11/[9200000004954]_20231127093740735.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000006808",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "슈 폼 말차 라떼",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2026/04/[9200000006808]_20260414105235054.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  true,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000005909",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "슈크림 말차 라떼",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2026/04/[9200000005909]_20260414104318422.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  true,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000004933",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "스타벅스 클래식 밀크 티",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/01/[9200000004933]_20250102105625904.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000004942",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "스타벅스 클래식 밀크 티 보틀",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[9200000004942]_20250626095409672.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000004955",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "아이스 말차 티라미수 라떼",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2023/11/[9200000004955]_20231127093837610.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000006811",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "아이스 슈 폼 말차 라떼",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2026/04/[9200000006811]_20260414105320249.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  true,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000005912",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "아이스 슈크림 말차 라떼",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2026/04/[9200000005912]_20260414104409107.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  true,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000004936",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "아이스 스타벅스 클래식 밀크 티",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[9200000004936]_20250626095136814.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000004288",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "아이스 얼 그레이 바닐라 티 라떼",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2026/03/[9200000004288]_20260303093738869.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000005590",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "아이스 의암호의 보랏빛 라벤더 티 라떼",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2024/10/[9200000005590]_20241017130203194.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000005781",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "아이스 인절미 제주 말차 라떼",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[9200000005781]_20250626100335087.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000002499",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "아이스 제주 말차 라떼",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[9200000002499]_20250626100713501.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000006059",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "아이스 프렌치 바닐라 말차 라떼",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/04/[9200000006059]_20250424110002176.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000004285",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "얼 그레이 바닐라 티 라떼",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2026/03/[9200000004285]_20260303093653875.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000005589",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "의암호의 보랏빛 라벤더 티 라떼",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2024/10/[9200000005589]_20241017130107685.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000005780",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "인절미 제주 말차 라떼",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/01/[9200000005780]_20250110103213092.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000002496",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "제주 말차 라떼",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2021/04/[9200000002496]_20210419131039350.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000006548",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "클라우드 코코 말차",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/10/[9200000006548]_20251010111720776.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000006058",
+        "brand":  "STARBUCKS",
+        "category":  "티",
+        "name":  "프렌치 바닐라 말차 라떼",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/04/[9200000006058]_20250424105905420.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000004950",
+        "brand":  "STARBUCKS",
+        "category":  "기타 제조 음료",
+        "name":  "딸기 콜드폼 초콜릿",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2023/12/[9200000004950]_20231204090636952.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-72",
+        "brand":  "STARBUCKS",
+        "category":  "기타 제조 음료",
+        "name":  "시그니처 핫 초콜릿",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2021/04/[72]_20210415140949967.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-110621",
+        "brand":  "STARBUCKS",
+        "category":  "기타 제조 음료",
+        "name":  "아이스 시그니처 초콜릿",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[110621]_20250626113323062.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000004953",
+        "brand":  "STARBUCKS",
+        "category":  "기타 제조 음료",
+        "name":  "아이스 티라미수 초콜릿",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2023/11/[9200000004953]_20231127094019543.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000004952",
+        "brand":  "STARBUCKS",
+        "category":  "기타 제조 음료",
+        "name":  "티라미수 초콜릿",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2023/11/[9200000004952]_20231127093937845.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000003658",
+        "brand":  "STARBUCKS",
+        "category":  "기타 제조 음료",
+        "name":  "플러피 판다 아이스 초콜릿",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[9200000003658]_20250626095124588.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000002594",
+        "brand":  "STARBUCKS",
+        "category":  "기타 제조 음료",
+        "name":  "플러피 판다 핫 초콜릿",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2021/04/[9200000002594]_20210422080327783.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000004951",
+        "brand":  "STARBUCKS",
+        "category":  "기타 제조 음료",
+        "name":  "딸기 콜드폼 딸기 라떼",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2023/11/[9200000004951]_20231102101647442.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000003659",
+        "brand":  "STARBUCKS",
+        "category":  "기타 제조 음료",
+        "name":  "스타벅스 슬래머",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[9200000003659]_20250626093348421.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-17",
+        "brand":  "STARBUCKS",
+        "category":  "기타 제조 음료",
+        "name":  "스팀 우유",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2021/04/[17]_20210426095334934.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-18",
+        "brand":  "STARBUCKS",
+        "category":  "기타 제조 음료",
+        "name":  "우유",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/06/[18]_20250626093838261.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9200000004957",
+        "brand":  "STARBUCKS",
+        "category":  "기타 제조 음료",
+        "name":  "제주팔삭 셔벗",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/08/[9200000004957]_20250827131450142.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  [
+                               "Short",
+                               "Tall",
+                               "Grande",
+                               "Venti"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9300000004346",
+        "brand":  "STARBUCKS",
+        "category":  "주스/병음료",
+        "name":  "ABC 클렌즈 190ML",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2024/03/[9300000004346]_20240328133443928.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  "One Size",
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9300000005406",
+        "brand":  "STARBUCKS",
+        "category":  "주스/병음료",
+        "name":  "스퀴즈드 오렌지 주스 100ML",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2024/09/[9300000005406]_20240905084511440.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  "One Size",
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9300000004348",
+        "brand":  "STARBUCKS",
+        "category":  "주스/병음료",
+        "name":  "케일 클렌즈 190ML",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2024/03/[9300000004348]_20240328133830383.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  "One Size",
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-5210008070",
+        "brand":  "STARBUCKS",
+        "category":  "주스/병음료",
+        "name":  "딸기주스 190ML",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2025/05/[5210008070]_20250527081742210.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  "One Size",
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-5210008061",
+        "brand":  "STARBUCKS",
+        "category":  "주스/병음료",
+        "name":  "망고주스 190ML",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2024/10/[5210008061]_20241031123748556.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  "One Size",
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9300000005405",
+        "brand":  "STARBUCKS",
+        "category":  "주스/병음료",
+        "name":  "수박 주스 190ML",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2024/09/[9300000005405]_20240905084714529.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  "One Size",
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9300000003771",
+        "brand":  "STARBUCKS",
+        "category":  "주스/병음료",
+        "name":  "유기농 오렌지 100% 주스 190ML",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2024/09/[9300000003771]_20240923184306693.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  "One Size",
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-5210008072",
+        "brand":  "STARBUCKS",
+        "category":  "주스/병음료",
+        "name":  "케일\u0026사과주스 190ML",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2021/04/[5210008072]_20210426100712780.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  "One Size",
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-5210008055",
+        "brand":  "STARBUCKS",
+        "category":  "주스/병음료",
+        "name":  "한라봉주스 190ML",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2024/10/[5210008055]_20241031123524702.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  "One Size",
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9300000002565",
+        "brand":  "STARBUCKS",
+        "category":  "주스/병음료",
+        "name":  "햇사과 주스 190ML",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2024/09/[9300000002565]_20240923184651121.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  "One Size",
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-9300000003775",
+        "brand":  "STARBUCKS",
+        "category":  "주스/병음료",
+        "name":  "딸기 가득 요거트 190ML",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2021/10/[9300000003775]_20211020094208342.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  "One Size",
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "sb-5210008063",
+        "brand":  "STARBUCKS",
+        "category":  "주스/병음료",
+        "name":  "블루베리 요거트 190ML",
+        "imageUrl":  "https://www.starbucks.co.kr/upload/store/skuimg/2024/09/[5210008063]_20240923185114500.jpg",
+        "sourceUrl":  "https://www.starbucks.co.kr/menu/drink_list.do",
+        "availableSizes":  "One Size",
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10193482",
+        "brand":  "TWOSOME",
+        "category":  "커피",
+        "name":  "우베 카페 라떼",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10193482_01_01_20260319053328.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  true,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10193208",
+        "brand":  "TWOSOME",
+        "category":  "커피",
+        "name":  "생크림 말차 카페 라떼",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10193208_01_01_20260226062332.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10193207",
+        "brand":  "TWOSOME",
+        "category":  "커피",
+        "name":  "생크림 카페 라떼",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10193207_01_01_20260226092515.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10193206",
+        "brand":  "TWOSOME",
+        "category":  "커피",
+        "name":  "생크림 아메리카노",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10193206_01_01_20260226093042.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10193168",
+        "brand":  "TWOSOME",
+        "category":  "커피",
+        "name":  "피스타치오 초콜릿 모카",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10193168_01_01_20260209070207.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10192140",
+        "brand":  "TWOSOME",
+        "category":  "커피",
+        "name":  "디카페인 콜드브루 라떼",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10192140_01_01_20250711110253.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10192139",
+        "brand":  "TWOSOME",
+        "category":  "커피",
+        "name":  "바닐라빈 라떼",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10192139_01_01_20250711105917.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10100001",
+        "brand":  "TWOSOME",
+        "category":  "커피",
+        "name":  "아메리카노",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10100001_01_01_20210611.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10100002",
+        "brand":  "TWOSOME",
+        "category":  "커피",
+        "name":  "카페 라떼",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10100002_01_01_20210611.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10100003",
+        "brand":  "TWOSOME",
+        "category":  "커피",
+        "name":  "카푸치노",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/174.png?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10100004",
+        "brand":  "TWOSOME",
+        "category":  "커피",
+        "name":  "바닐라 라떼",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/105.png?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10100007",
+        "brand":  "TWOSOME",
+        "category":  "커피",
+        "name":  "카라멜 마키아또",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10100007_01_01_20210614.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10100005",
+        "brand":  "TWOSOME",
+        "category":  "커피",
+        "name":  "카페 모카",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10100005_01_01_20210611.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10192129",
+        "brand":  "TWOSOME",
+        "category":  "커피",
+        "name":  "바닐라빈 콜드브루 라떼",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10192129_01_01_20250527111922.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10191489",
+        "brand":  "TWOSOME",
+        "category":  "커피",
+        "name":  "디카페인 콜드브루",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10191489_01_01_20240717035654.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10100021",
+        "brand":  "TWOSOME",
+        "category":  "커피",
+        "name":  "콜드브루",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/123.png?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10100022",
+        "brand":  "TWOSOME",
+        "category":  "커피",
+        "name":  "콜드브루 라떼",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/124.png?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10192110",
+        "brand":  "TWOSOME",
+        "category":  "커피",
+        "name":  "애플 아샷추",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10192110_01_01_20250901102229.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10192109",
+        "brand":  "TWOSOME",
+        "category":  "커피",
+        "name":  "민트 아샷추",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10192109_01_01_20250901102221.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10191950",
+        "brand":  "TWOSOME",
+        "category":  "커피",
+        "name":  "피치 아샷추",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10191950_01_01_20250901102211.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10191981",
+        "brand":  "TWOSOME",
+        "category":  "커피",
+        "name":  "바나나 샷 라떼",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10191981_01_01_20240924093738.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10191980",
+        "brand":  "TWOSOME",
+        "category":  "커피",
+        "name":  "바나나 샷 아메리카노",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10191980_01_01_20240924093653.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10100008",
+        "brand":  "TWOSOME",
+        "category":  "커피",
+        "name":  "롱 블랙",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10100008_01_01_20210611.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10100009",
+        "brand":  "TWOSOME",
+        "category":  "커피",
+        "name":  "숏 라떼",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10100009_01_01_20210611.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10192027",
+        "brand":  "TWOSOME",
+        "category":  "커피",
+        "name":  "피넛 헤이즐넛 라떼",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10192027_01_01_20241230085911.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10100019",
+        "brand":  "TWOSOME",
+        "category":  "커피",
+        "name":  "달고나 라떼",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/120.png?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10100017",
+        "brand":  "TWOSOME",
+        "category":  "커피",
+        "name":  "스페니쉬 연유 라떼",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10100017_01_01_20250318030046.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10100010",
+        "brand":  "TWOSOME",
+        "category":  "커피",
+        "name":  "에스프레소",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/114.png?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10191108",
+        "brand":  "TWOSOME",
+        "category":  "커피",
+        "name":  "오트 화이트 라떼",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10191108_01_01_20210215.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10302927",
+        "brand":  "TWOSOME",
+        "category":  "음료",
+        "name":  "핑구 민초 바삭 쉐이크",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10302927_01_01_20260408110126.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  true,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10302894",
+        "brand":  "TWOSOME",
+        "category":  "음료",
+        "name":  "우베 쉐이크",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10302894_01_01_20260319053336.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  true,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10302893",
+        "brand":  "TWOSOME",
+        "category":  "음료",
+        "name":  "투썸 우베 라떼",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10302893_01_01_20260319053332.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  true,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10302871",
+        "brand":  "TWOSOME",
+        "category":  "음료",
+        "name":  "딸기초코 모나카 눈꽃컵",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10302871_01_01_20260317051502.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10302870",
+        "brand":  "TWOSOME",
+        "category":  "음료",
+        "name":  "우유 모나카 눈꽃컵",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10302870_01_01_20260317051436.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10302869",
+        "brand":  "TWOSOME",
+        "category":  "음료",
+        "name":  "애플망고 눈꽃컵",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10302869_01_01_20260317051354.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10302854",
+        "brand":  "TWOSOME",
+        "category":  "음료",
+        "name":  "로얄 밀크티 쉐이크",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10302854_01_01_20260116044139.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10302861",
+        "brand":  "TWOSOME",
+        "category":  "음료",
+        "name":  "피스타치오 초콜릿 젤라또 쉐이크",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10302861_01_01_20260209070509.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10302717",
+        "brand":  "TWOSOME",
+        "category":  "음료",
+        "name":  "구운 밤 라떼",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10302717_01_01_20251226103250.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10302716",
+        "brand":  "TWOSOME",
+        "category":  "음료",
+        "name":  "스트로베리 초콜릿 라떼",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10302716_01_01_20251226103246.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10302682",
+        "brand":  "TWOSOME",
+        "category":  "음료",
+        "name":  "현미 미숫가루",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10302682_01_01_20250926101545.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10302413",
+        "brand":  "TWOSOME",
+        "category":  "음료",
+        "name":  "꿀 고구마 라떼",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10302413_01_01_20260430091841.png?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10302220",
+        "brand":  "TWOSOME",
+        "category":  "음료",
+        "name":  "제주 한라봉 주스",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10302220_01_01_20250527111757.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10302165",
+        "brand":  "TWOSOME",
+        "category":  "음료",
+        "name":  "허니 레몬 에이드",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10302165_01_01_20231213104909.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10300056",
+        "brand":  "TWOSOME",
+        "category":  "음료",
+        "name":  "블루베리 요거트 드링크",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/169.png?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10300036",
+        "brand":  "TWOSOME",
+        "category":  "음료",
+        "name":  "초콜릿 라떼",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10300036_01_01_20210525.JPG?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10300054",
+        "brand":  "TWOSOME",
+        "category":  "음료",
+        "name":  "키위 바나나 주스",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/167.png?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10300053",
+        "brand":  "TWOSOME",
+        "category":  "음료",
+        "name":  "오렌지 자몽 주스",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/166.png?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10302336",
+        "brand":  "TWOSOME",
+        "category":  "음료",
+        "name":  "쿠키 쉐이크",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10302336_01_01_20250220080431.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10302240",
+        "brand":  "TWOSOME",
+        "category":  "음료",
+        "name":  "애플망고 주스",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10302240_01_01_20240520113557.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10301764",
+        "brand":  "TWOSOME",
+        "category":  "음료",
+        "name":  "샤인머스캣 청포도에이드",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10301764_01_01_20210618.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10301763",
+        "brand":  "TWOSOME",
+        "category":  "음료",
+        "name":  "복숭아에이드",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10301763_01_01_20210618.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10300042",
+        "brand":  "TWOSOME",
+        "category":  "음료",
+        "name":  "요거트프라페",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/155.png?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10300041",
+        "brand":  "TWOSOME",
+        "category":  "음료",
+        "name":  "스트로베리 피치프라페",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/154.png?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10300050",
+        "brand":  "TWOSOME",
+        "category":  "음료",
+        "name":  "오렌지에이드",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/163.png?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10300049",
+        "brand":  "TWOSOME",
+        "category":  "음료",
+        "name":  "자몽에이드",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/162.png?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10302335",
+        "brand":  "TWOSOME",
+        "category":  "음료",
+        "name":  "바닐라 밀크 쉐이크",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10302335_01_01_20250220080426.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10201905",
+        "brand":  "TWOSOME",
+        "category":  "음료",
+        "name":  "우리 대추 수정과",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10201905_01_01_20240813070852.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10201904",
+        "brand":  "TWOSOME",
+        "category":  "음료",
+        "name":  "우리 쌀 식혜(ICED ONLY)",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10201904_01_01_20240813071058.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10202268",
+        "brand":  "TWOSOME",
+        "category":  "티/티라떼",
+        "name":  "루이보스 시트러스 티",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10202268_01_01_20260127114924.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10202267",
+        "brand":  "TWOSOME",
+        "category":  "티/티라떼",
+        "name":  "바닐라빈 루이보스 밀크티",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10202267_01_01_20260127114918.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10201986",
+        "brand":  "TWOSOME",
+        "category":  "티/티라떼",
+        "name":  "말차 크림 라떼",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10201986_01_01_20250717034625.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10201977",
+        "brand":  "TWOSOME",
+        "category":  "티/티라떼",
+        "name":  "민트 아이스티",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10201977_01_01_20250415082725.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10201978",
+        "brand":  "TWOSOME",
+        "category":  "티/티라떼",
+        "name":  "애플 아이스티",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10201978_01_01_20250415082728.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10201896",
+        "brand":  "TWOSOME",
+        "category":  "티/티라떼",
+        "name":  "피치 아이스티",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10201896_01_01_20250531091118.png?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10201961",
+        "brand":  "TWOSOME",
+        "category":  "티/티라떼",
+        "name":  "유자 생강차",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10201961_01_01_20240904115839.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10200032",
+        "brand":  "TWOSOME",
+        "category":  "티/티라떼",
+        "name":  "오렌지 자몽티",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/141.png?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10200031",
+        "brand":  "TWOSOME",
+        "category":  "티/티라떼",
+        "name":  "유자 레몬티",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10200031_01_01_20231006045441.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10200030",
+        "brand":  "TWOSOME",
+        "category":  "티/티라떼",
+        "name":  "허니 레몬티",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10200030_01_01_20210610.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10200029",
+        "brand":  "TWOSOME",
+        "category":  "티/티라떼",
+        "name":  "애플 민트티",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10200029_01_01_20210610.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10200079",
+        "brand":  "TWOSOME",
+        "category":  "티/티라떼",
+        "name":  "ice버블 그린티 라떼",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10200079_01_01_20210118.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10200034",
+        "brand":  "TWOSOME",
+        "category":  "티/티라떼",
+        "name":  "그린티 라떼",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10200034_01_01_20210610.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10200033",
+        "brand":  "TWOSOME",
+        "category":  "티/티라떼",
+        "name":  "로얄 밀크티",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10200033_01_01_20210610.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10201605",
+        "brand":  "TWOSOME",
+        "category":  "티/티라떼",
+        "name":  "제주 유기농 녹차",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10201605_01_01_20210818.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10200028",
+        "brand":  "TWOSOME",
+        "category":  "티/티라떼",
+        "name":  "그나와 민트",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10200028_01_01_20210610.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10200027",
+        "brand":  "TWOSOME",
+        "category":  "티/티라떼",
+        "name":  "얼그레이",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/132.png?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10200026",
+        "brand":  "TWOSOME",
+        "category":  "티/티라떼",
+        "name":  "크림 카라멜",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10200026_01_01_20251215111039.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-10200025",
+        "brand":  "TWOSOME",
+        "category":  "티/티라떼",
+        "name":  "카모마일",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/10200025_01_01_20251215110720.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  [
+                               "Regular",
+                               "Large"
+                           ],
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-20600135",
+        "brand":  "TWOSOME",
+        "category":  "아이스크림/빙수",
+        "name":  "우리 팥 빙수",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/20600135_01_01_20260331110056.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  "One Size",
+        "isNew":  true,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-20501850",
+        "brand":  "TWOSOME",
+        "category":  "아이스크림/빙수",
+        "name":  "컵)핑구 망고 바삭 아이스크림",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/20501850_01_01_20260408110234.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  "One Size",
+        "isNew":  true,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-20600136",
+        "brand":  "TWOSOME",
+        "category":  "아이스크림/빙수",
+        "name":  "애플망고 빙수",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/20600136_01_01_20260331110432.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  "One Size",
+        "isNew":  true,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-20600155",
+        "brand":  "TWOSOME",
+        "category":  "아이스크림/빙수",
+        "name":  "흑임자 팥 빙수",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/20600155_01_01_20260331111747.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  "One Size",
+        "isNew":  true,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-20600133",
+        "brand":  "TWOSOME",
+        "category":  "아이스크림/빙수",
+        "name":  "컵)소프트 밀크 아이스크림",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/20600133_01_01_20260121105229.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  "One Size",
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-20501840",
+        "brand":  "TWOSOME",
+        "category":  "아이스크림/빙수",
+        "name":  "콘)초코탑 밀크 아이스크림",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/20501840_01_01_20260120064552.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  "One Size",
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-20501836",
+        "brand":  "TWOSOME",
+        "category":  "아이스크림/빙수",
+        "name":  "컵)초코탑 밀크 아이스크림",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/20501836_01_01_20260116045835.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  "One Size",
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-20501763",
+        "brand":  "TWOSOME",
+        "category":  "아이스크림/빙수",
+        "name":  "콘)소프트 밀크 아이스크림",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/20501763_01_01_20260120063855.jpg?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  "One Size",
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    },
+    {
+        "id":  "tw-20501805",
+        "brand":  "TWOSOME",
+        "category":  "아이스크림/빙수",
+        "name":  "모나카 딸기초코 맛",
+        "imageUrl":  "https://mcdn.twosome.co.kr/menu_image/P_MA_Z_TSPLC_MENU_REG/1000/1000/PITEM/20501805_01_01_20250725075731.png?width=600\u0026height=600\u0026q=100",
+        "sourceUrl":  "https://mo.twosome.co.kr/mn/menuInfoList.do",
+        "availableSizes":  "One Size",
+        "isNew":  false,
+        "createdAt":  "2026-05-02T09:31:24.0729755+09:00",
+        "updatedAt":  "2026-05-02T09:31:24.0729755+09:00"
+    }
+]
