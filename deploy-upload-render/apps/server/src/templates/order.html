@@ -10,7 +10,7 @@
 <main>
   <div class="top">
     <div>
-      <div class="eyebrow">Beverage order</div>
+      <div class="eyebrow">SAMOO AX팀 BEVERAGE ORDER</div>
       <h1 id="pageTitle">음료 주문</h1>
       <p class="muted" id="pageMemo">주문묶음을 불러오는 중입니다.</p>
     </div>
@@ -43,7 +43,7 @@
         <h2>현재 주문 목록</h2>
         <p class="muted">이 주문묶음에 들어온 주문입니다. 제출 후 여기에서 내 주문을 바로 확인할 수 있습니다.</p>
       </div>
-      <button class="secondary" type="button" onclick="loadPublicOrders()">새로고침</button>
+      <button class="soft-action" type="button" onclick="loadPublicOrders()">주문 목록 새로고침</button>
     </div>
     <div class="stats" id="publicStats"></div>
     <div id="publicOrders" class="public-order-grid"></div>
@@ -117,11 +117,13 @@ function renderMenus(){
       grouped.get(key).push(menu);
     });
   }
+  const shouldAutoOpen = c !== 'ALL' || Boolean(q);
   $('menuGrid').innerHTML = Array.from(grouped.entries()).map(([category, categoryMenus]) => `
-    <details class="menu-section" ${category === 'NEW' ? 'open' : ''}>
+    <details class="menu-section" ${(shouldAutoOpen || category === 'NEW') ? 'open' : ''}>
       <summary class="menu-section-header">
         <h3>${escapeHtml(categoryLabel(category))}</h3>
-        <span>${categoryMenus.length}개</span>
+        <span class="menu-section-count"><strong>${categoryMenus.length}</strong><em>개</em></span>
+        <span class="menu-section-toggle">${(shouldAutoOpen || category === 'NEW') ? '닫기' : '열기'}</span>
       </summary>
       <div class="menu-section-body">
         <div class="menu-grid">
@@ -130,6 +132,15 @@ function renderMenus(){
       </div>
     </details>
   `).join('');
+  bindMenuSections();
+}
+function bindMenuSections(){
+  document.querySelectorAll('.menu-section').forEach(section => {
+    const toggle = section.querySelector('.menu-section-toggle');
+    const sync = () => { if(toggle) toggle.textContent = section.open ? '닫기' : '열기'; };
+    sync();
+    section.addEventListener('toggle', sync);
+  });
 }
 function renderCart(){$('cart').innerHTML=cart.length?cart.map(i=>`<div class="cart-item"><strong>${escapeHtml(i.menuName)}</strong><div class="meta">${brandName(i.brand)} · ${i.size}</div>${i.customRequest?`<p>${escapeHtml(i.customRequest)}</p>`:''}<div class="cart-actions"><button type="button" onclick="qty('${i.localId}',-1)">-</button><span>${i.quantity}</span><button type="button" onclick="qty('${i.localId}',1)">+</button><button type="button" onclick="removeItem('${i.localId}')">x</button></div></div>`).join(''):'<div class="empty">선택한 음료가 아직 없습니다.</div>'; updateOrderPanelButtons()}
 async function loadPublicOrders(){
