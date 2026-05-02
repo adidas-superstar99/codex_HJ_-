@@ -10,8 +10,19 @@ const candidateDataPaths = [
   join(__dirname, "../data/menu-data.json")
 ];
 const menuDataPath = candidateDataPaths.find((path) => existsSync(path)) ?? candidateDataPaths[0];
-const menuFileText = readFileSync(menuDataPath, "utf-8").replace(/^\uFEFF/, "");
-const menus = JSON.parse(menuFileText) as Menu[];
+const fallbackMenuDataPath = join(__dirname, "../data/fallback-menu-data.json");
+const menus = loadMenus();
+
+function loadMenus(): Menu[] {
+  try {
+    const menuFileText = readFileSync(menuDataPath, "utf-8").replace(/^\uFEFF/, "");
+    return JSON.parse(menuFileText) as Menu[];
+  } catch (error) {
+    console.error("Failed to parse primary menu data, using fallback", error);
+    const fallbackText = readFileSync(fallbackMenuDataPath, "utf-8").replace(/^\uFEFF/, "");
+    return JSON.parse(fallbackText) as Menu[];
+  }
+}
 
 export function listMenus(filters: { brand?: Brand; category?: string; query?: string }) {
   const query = filters.query?.trim().toLowerCase();
