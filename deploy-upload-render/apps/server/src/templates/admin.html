@@ -149,11 +149,31 @@ function renderAdminStats(rows){
 }
 function renderSummary(rows){
   if(!rows.length){$('summary').innerHTML='<div class="empty">집계할 주문이 없습니다.</div>';return}
-  const body=rows.map(r=>{
-    const requests=r.requests.length?r.requests.map(x=>escapeHtml(x.ordererName)+': '+escapeHtml(x.customRequest)).join(' / '):'-';
-    return '<tr><td>'+brandName(r.brand)+'</td><td>'+r.category+'</td><td>'+escapeHtml(r.menuName)+'</td><td>'+r.size+'</td><td>'+r.quantity+'</td><td>'+requests+'</td></tr>';
-  }).join('');
-  $('summary').innerHTML='<table><thead><tr><th>브랜드</th><th>카테고리</th><th>메뉴</th><th>사이즈</th><th>수량</th><th>요청사항</th></tr></thead><tbody>'+body+'</tbody></table>';
+  const grouped = rows.reduce((acc, row) => {
+    const key = row.brand || 'ETC';
+    if(!acc[key]) acc[key] = [];
+    acc[key].push(row);
+    return acc;
+  }, {});
+  $('summary').innerHTML = '<div class="summary-groups">' + Object.entries(grouped).map(([brand, items]) => {
+    const total = items.reduce((sum, item) => sum + Number(item.quantity || 0), 0);
+    const body = items.map(item => {
+      const requests = item.requests.length
+        ? item.requests.map(x => escapeHtml(x.ordererName)+': '+escapeHtml(x.customRequest)).join(' / ')
+        : '-';
+      const requestClass = requests === '-' ? 'summary-request is-empty' : 'summary-request';
+      return '<div class="summary-row">'
+        + '<div class="summary-menu">' + escapeHtml(item.menuName) + '</div>'
+        + '<div class="summary-size">' + escapeHtml(item.size) + '</div>'
+        + '<div class="summary-qty">' + item.quantity + '잔</div>'
+        + '<div class="' + requestClass + '">' + requests + '</div>'
+        + '</div>';
+    }).join('');
+    return '<section class="summary-group">'
+      + '<div class="summary-group-header"><h4>' + brandName(brand) + '</h4><span class="summary-group-count">' + items.length + '개 메뉴 · ' + total + '잔</span></div>'
+      + '<div class="summary-list">' + body + '</div>'
+      + '</section>';
+  }).join('') + '</div>';
 }
 function renderOrders(rows){
   renderAdminStats(rows);
