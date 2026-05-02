@@ -40,10 +40,12 @@ publicOrdersRouter.delete("/:id", async (req: Request, res: Response, next: Next
     res.status(404).json({ message: "주문을 찾을 수 없습니다." });
     return;
   }
+
   if (result === "forbidden") {
     res.status(403).json({ message: "이름이 일치하는 내 주문만 취소할 수 있습니다." });
     return;
   }
+
   if (result === "closed") {
     res.status(400).json({ message: "마감된 주문묶음은 취소할 수 없습니다." });
     return;
@@ -107,6 +109,7 @@ function resolvePublicOrderStatus(error: unknown) {
   if (code === "BATCH_NOT_FOUND" || code === "ORDER_NOT_FOUND") {
     return 404;
   }
+
   if (code === "ORDER_FORBIDDEN") {
     return 403;
   }
@@ -122,7 +125,7 @@ function resolvePublicOrderMessage(error: unknown) {
     BATCH_CLOSED: "마감된 주문묶음입니다.",
     BATCH_CLOSED_EDIT: "마감된 주문묶음은 수정할 수 없습니다.",
     ORDER_INPUT_REQUIRED: "주문자 이름과 음료를 입력해 주세요.",
-    INVALID_QUANTITY: "수량은 1잔 이상이어야 합니다.",
+    INVALID_QUANTITY: "수량은 1개 이상이어야 합니다.",
     ORDER_NOT_FOUND: "주문을 찾을 수 없습니다.",
     ORDER_FORBIDDEN: "이름이 일치하는 내 주문만 수정할 수 있습니다."
   };
