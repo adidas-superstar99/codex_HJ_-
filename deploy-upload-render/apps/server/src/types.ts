@@ -14,7 +14,19 @@ export type Menu = {
   updatedAt: string;
 };
 
+export type OrderBatchStatus = "open" | "closed";
 export type OrderStatus = "submitted" | "confirmed" | "ordered" | "completed" | "cancelled";
+
+export type OrderBatch = {
+  id: string;
+  title: string;
+  memo?: string;
+  status: OrderBatchStatus;
+  createdAt: string;
+  closedAt?: string;
+  orderCount?: number;
+  cupCount?: number;
+};
 
 export type OrderItem = {
   id: string;
@@ -30,20 +42,28 @@ export type OrderItem = {
 
 export type Order = {
   id: string;
+  batchId: string;
+  batchTitle: string;
   orderedAt: string;
   ordererName: string;
-  team?: string;
-  contact?: string;
-  memo?: string;
   status: OrderStatus;
   items: OrderItem[];
 };
 
-export type CreateOrderInput = {
-  ordererName: string;
-  team?: string;
-  contact?: string;
+export type CreateOrderBatchInput = {
+  title: string;
   memo?: string;
+};
+
+export type UpdateOrderBatchInput = {
+  title?: string;
+  memo?: string;
+  status?: OrderBatchStatus;
+};
+
+export type CreateOrderInput = {
+  batchId: string;
+  ordererName: string;
   items: Array<{
     brand: Brand;
     menuId: string;
@@ -53,4 +73,15 @@ export type CreateOrderInput = {
     quantity: number;
     customRequest?: string;
   }>;
+};
+
+export type UpdateOrderInput = CreateOrderInput;
+
+export type SummaryRow = {
+  brand: Brand;
+  menuName: string;
+  category: string;
+  size: string;
+  quantity: number;
+  requests: Array<{ ordererName: string; customRequest: string }>;
 };
