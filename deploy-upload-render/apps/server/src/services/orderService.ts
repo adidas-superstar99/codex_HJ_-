@@ -198,7 +198,7 @@ export async function summarizeOrders(filters: { date?: string; brand?: Brand; s
         category: item.category,
         size: item.size,
         quantity: 0,
-        requests: []
+        requests: [] as Array<{ ordererName: string; customRequest: string }>
       };
 
       group.quantity += item.quantity;
