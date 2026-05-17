@@ -56,6 +56,44 @@ export function isOrderStatus(value: string): value is OrderStatus {
   return statuses.includes(value as OrderStatus);
 }
 
+export async function updateOrderStatus(orderId: string, status: OrderStatus): Promise<Order | undefined> {
+  if (isPostgres()) {
+    const updated = await pgOne<{ id: string }>("UPDATE orders SET status = $1 WHERE id = $2 RETURNING id", [status, orderId]);
+    return updated ? getOrderById(orderId) : undefined;
+  }
+
+  const result = sqliteDb!.prepare("UPDATE orders SET status = ? WHERE id = ?").run(status, orderId);
+  if (!result.changes) return undefined;
+  return getOrderById(orderId);
+}
+
+export async function bulkUpdateOrderStatus(
+  filters: { batchId?: string; brand?: Brand; status?: OrderStatus },
+  nextStatus: OrderStatus
+): Promise<{ updatedCount: number }> {
+  const orders = await listOrders(filters);
+  const targets = orders.filter((order) => order.status !== "cancelled" && order.status !== nextStatus);
+
+  if (!targets.length) {
+    return { updatedCount: 0 };
+  }
+
+  if (isPostgres()) {
+    for (const order of targets) {
+      await pgAll("UPDATE orders SET status = $1 WHERE id = $2", [nextStatus, order.id]);
+    }
+    return { updatedCount: targets.length };
+  }
+
+  const statement = sqliteDb!.prepare("UPDATE orders SET status = ? WHERE id = ?");
+  sqliteDb!.transaction(() => {
+    for (const order of targets) {
+      statement.run(nextStatus, order.id);
+    }
+  })();
+  return { updatedCount: targets.length };
+}
+
 export async function listPublicOrderBatches(): Promise<OrderBatch[]> {
   const batches = await listOrderBatches({ status: "open", includeCounts: false });
   return batches.sort((a, b) => b.createdAt.localeCompare(a.createdAt));
@@ -367,7 +405,7 @@ export async function getPublicOrdersByBatchId(batchId: string): Promise<Order[]
   return orders.sort((a, b) => a.orderedAt.localeCompare(b.orderedAt));
 }
 
-export async function listOrders(filters: { batchId?: string; brand?: Brand }) {
+export async function listOrders(filters: { batchId?: string; brand?: Brand; status?: OrderStatus }) {
   const clauses: string[] = [];
   const values: unknown[] = [];
 
@@ -377,6 +415,10 @@ export async function listOrders(filters: { batchId?: string; brand?: Brand }) {
 
   if (filters.brand) {
     clauses.push(`EXISTS (SELECT 1 FROM order_items oi WHERE oi.order_id = o.id AND oi.brand = $${values.push(filters.brand)})`);
+  }
+
+  if (filters.status) {
+    clauses.push(`o.status = $${values.push(filters.status)}`);
   }
 
   const where = clauses.length ? `WHERE ${clauses.join(" AND ")}` : "";
@@ -396,13 +438,17 @@ export async function listOrders(filters: { batchId?: string; brand?: Brand }) {
     sqliteParams.brand = filters.brand;
     sqliteClauses.push("EXISTS (SELECT 1 FROM order_items oi WHERE oi.order_id = o.id AND oi.brand = @brand)");
   }
+  if (filters.status) {
+    sqliteParams.status = filters.status;
+    sqliteClauses.push("o.status = @status");
+  }
 
   const sqliteWhere = sqliteClauses.length ? `WHERE ${sqliteClauses.join(" AND ")}` : "";
   const rows = sqliteDb!.prepare(`SELECT * FROM orders o ${sqliteWhere} ORDER BY o.ordered_at DESC`).all(sqliteParams) as OrderRow[];
   return rows.map(mapOrderRowSync);
 }
 
-export async function summarizeOrders(filters: { batchId?: string; brand?: Brand }): Promise<SummaryRow[]> {
+export async function summarizeOrders(filters: { batchId?: string; brand?: Brand; status?: OrderStatus }): Promise<SummaryRow[]> {
   const orders = await listOrders(filters);
   const groups = new Map<string, SummaryRow>();
 
@@ -429,6 +475,30 @@ export async function summarizeOrders(filters: { batchId?: string; brand?: Brand
   return [...groups.values()].sort((a, b) =>
     `${a.brand}${a.category}${a.menuName}${a.size}`.localeCompare(`${b.brand}${b.category}${b.menuName}${b.size}`)
   );
+}
+
+export async function listPopularMenus(filters: { batchId?: string; brand?: Brand; limit?: number }) {
+  const orders = await listOrders({ batchId: filters.batchId, brand: filters.brand });
+  const groups = new Map<string, { menuId: string; menuName: string; category: string; quantity: number }>();
+
+  for (const order of orders) {
+    if (order.status === "cancelled") continue;
+
+    for (const item of order.items) {
+      const current = groups.get(item.menuId) ?? {
+        menuId: item.menuId,
+        menuName: item.menuName,
+        category: item.category,
+        quantity: 0
+      };
+      current.quantity += item.quantity;
+      groups.set(item.menuId, current);
+    }
+  }
+
+  return [...groups.values()]
+    .sort((a, b) => b.quantity - a.quantity || a.menuName.localeCompare(b.menuName))
+    .slice(0, filters.limit ?? 3);
 }
 
 export async function getOrderById(orderId: string): Promise<Order | undefined> {

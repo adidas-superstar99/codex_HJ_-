@@ -25,14 +25,14 @@
     <div class="hero-content">
       <div class="hero-pills">
         <span>빠른 주문</span>
-        <span>신메뉴 우선</span>
-        <span>모바일 최적화</span>
+        <span>최근 주문 재사용</span>
+        <span>인기 메뉴 자동 반영</span>
       </div>
-      <h2 id="heroTitle">오늘 마실 음료를 빠르게 골라보세요</h2>
-      <p class="hero-copy" id="heroCopy">브랜드를 고르고, 원하는 카테고리를 열어 바로 담을 수 있습니다. 내 주문은 오른쪽 패널에서 바로 수정하고 취소할 수 있습니다.</p>
+      <h2 id="heroTitle">지금 많이 담기는 메뉴를 먼저 보여드릴게요.</h2>
+      <p class="hero-copy" id="heroCopy">최근 주문은 오른쪽 패널에서 다시 담을 수 있고, 이번 주문목록에서 많이 담긴 메뉴는 아래에 썸네일로 바로 노출됩니다.</p>
       <div class="hero-action">
-        <button class="primary" id="heroAction" type="button">주문 시작하기</button>
-        <span class="muted">장바구니와 내 주문은 항상 같은 화면에서 확인됩니다.</span>
+        <button class="primary" id="heroAction" type="button">메뉴 고르기</button>
+        <span class="muted">매장 주문 완료와 수령 완료는 관리자 화면에서 운영자가 직접 표시합니다.</span>
       </div>
     </div>
   </section>
@@ -49,6 +49,8 @@
         </div>
         <button class="secondary cart-toggle" id="cartToggle" type="button">내 주문</button>
       </div>
+
+      <section class="popular-strip" id="popularStrip" style="display:none"></section>
       <div class="category-strip" id="categoryStrip"></div>
       <div class="menu-sections" id="menuGrid"></div>
     </section>
@@ -64,6 +66,10 @@
         <input id="ordererName" placeholder="주문자 이름">
       </label>
       <div class="recent-order" id="recentOrder" style="display:none"></div>
+      <div class="flow-card">
+        <strong>주문 진행 흐름</strong>
+        <p class="muted">주문 접수 → 주문 확정 → 매장 주문 완료 → 수령 완료 순서로 관리자 화면에서 업데이트됩니다.</p>
+      </div>
       <h2>장바구니</h2>
       <div class="cart" id="cart"></div>
       <p class="message" id="message" style="display:none"></p>
@@ -77,8 +83,8 @@
   <section class="public-orders" id="publicOrdersPanel" style="display:none">
     <div class="top">
       <div>
-        <h2>주문 목록</h2>
-        <p class="muted">이 주문목록에 들어온 주문입니다. 제출 후 여기에서 내 주문을 바로 확인할 수 있습니다.</p>
+        <h2>현재 주문 목록</h2>
+        <p class="muted">제출한 뒤 여기에서 내 주문을 다시 수정하거나 취소할 수 있습니다.</p>
       </div>
       <button class="soft-action" type="button" onclick="loadPublicOrders()">주문 목록 새로고침</button>
     </div>
@@ -91,306 +97,62 @@
 <div id="modalRoot"></div>
 <script>
 const batchId = location.pathname.split("/").filter(Boolean)[1];
-const previewMode = new URLSearchParams(location.search).get("preview") === "1";
-const previewBatch = {
-  id: "preview",
-  title: "AX팀 모바일 프리뷰 주문",
-  department: "AX팀",
-  memo: "다크 테마, 네온 포인트, 모바일 카드 밀도를 확인하는 프리뷰 화면입니다.",
-  status: "open"
-};
-const previewMenusByBrand = {
-  STARBUCKS: [
-    { id:"sb-1", brand:"STARBUCKS", category:"신메뉴", isNew:true, name:"바닐라 크림 콜드브루", imageUrl:"https://images.unsplash.com/photo-1517701550927-30cf4ba1f4d6?auto=format&fit=crop&w=640&q=80", availableSizes:["Tall","Grande"] },
-    { id:"sb-2", brand:"STARBUCKS", category:"콜드 브루", isNew:false, name:"서울 클래식 콜드브루", imageUrl:"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=640&q=80", availableSizes:["Tall","Grande","Venti"] },
-    { id:"sb-3", brand:"STARBUCKS", category:"에스프레소", isNew:false, name:"아이스 아메리카노", imageUrl:"https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=640&q=80", availableSizes:["Short","Tall","Grande"] },
-    { id:"sb-4", brand:"STARBUCKS", category:"프라푸치노", isNew:false, name:"자바 칩 프라푸치노", imageUrl:"https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=640&q=80", availableSizes:["Tall","Grande"] },
-    { id:"sb-5", brand:"STARBUCKS", category:"리프레셔", isNew:false, name:"핑크 드링크 위드 딸기 아사이", imageUrl:"https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=640&q=80", availableSizes:["Tall","Grande"] },
-    { id:"sb-6", brand:"STARBUCKS", category:"티", isNew:false, name:"유자 민트 티", imageUrl:"https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=640&q=80", availableSizes:["Tall","Grande"] }
-  ],
-  TWOSOME: [
-    { id:"ts-1", brand:"TWOSOME", category:"신메뉴", isNew:true, name:"우베 카페 라떼", imageUrl:"https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=640&q=80", availableSizes:["Regular"] },
-    { id:"ts-2", brand:"TWOSOME", category:"커피", isNew:false, name:"카페 라떼", imageUrl:"https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=640&q=80", availableSizes:["Regular","Large"] },
-    { id:"ts-3", brand:"TWOSOME", category:"음료", isNew:false, name:"스트로베리 요거트 블렌디드", imageUrl:"https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?auto=format&fit=crop&w=640&q=80", availableSizes:["Regular"] },
-    { id:"ts-4", brand:"TWOSOME", category:"티", isNew:false, name:"애플 시나몬 티", imageUrl:"https://images.unsplash.com/photo-1464306076886-da185f6a9d05?auto=format&fit=crop&w=640&q=80", availableSizes:["Regular"] }
-  ]
-};
-const previewOrdersByBatch = {
-  preview: [
-    {
-      id: "preview-order-1",
-      ordererName: "엄희재",
-      orderedAt: new Date().toISOString(),
-      items: [
-        { brand:"STARBUCKS", menuId:"sb-1", menuName:"바닐라 크림 콜드브루", category:"신메뉴", size:"Grande", quantity:1, customRequest:"얼음 적게" }
-      ]
-    },
-    {
-      id: "preview-order-2",
-      ordererName: "김동현",
-      orderedAt: new Date(Date.now() - 1000 * 60 * 18).toISOString(),
-      items: [
-        { brand:"STARBUCKS", menuId:"sb-3", menuName:"아이스 아메리카노", category:"에스프레소", size:"Tall", quantity:1, customRequest:"" },
-        { brand:"STARBUCKS", menuId:"sb-5", menuName:"핑크 드링크 위드 딸기 아사이", category:"리프레셔", size:"Grande", quantity:1, customRequest:"당도 기본" }
-      ]
-    }
-  ]
-};
-
 let batch = null;
 let brand = "STARBUCKS";
 let menus = [];
+let popularRows = [];
 let cart = [];
 let selected = null;
 let editingOrderId = "";
-const recentOrderKey = "samoo-beverage-recent-order-v1";
-const popularMenuNames = [
-  "아이스카페아메리카노",
-  "카페아메리카노",
-  "아이스카페라테",
-  "카페라테",
-  "바닐라크림콜드브루",
-  "콜드브루",
-  "아이스유스베리티",
-  "유스베리티",
-  "딸기아사이레모네이드",
-  "아이스유자민트티",
-  "유자민트티",
-  "아이스자몽허니블랙티",
-  "자몽허니블랙티"
-];
-const popularMenuSet = new Set(popularMenuNames.map(normalizeMenuName));
-const popularMenuRank = new Map(popularMenuNames.map((name, index) => [normalizeMenuName(name), index]));
 
+const recentOrderKey = "samoo-beverage-recent-order-v1";
 const $ = (id) => document.getElementById(id);
 
-function escapeHtml(value){
+function escapeHtml(value) {
   return String(value ?? "").replace(/[&<>"']/g, (char) => ({
-    "&":"&amp;",
-    "<":"&lt;",
-    ">":"&gt;",
-    "\"":"&quot;",
-    "'":"&#39;"
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    "\"": "&quot;",
+    "'": "&#39;"
   }[char]));
 }
 
-function brandName(value){
+function brandName(value) {
   return value === "STARBUCKS" ? "스타벅스" : value === "TWOSOME" ? "투썸플레이스" : value;
 }
 
-function categoryLabel(value){
-  if(value === "NEW") return "신메뉴";
-  if(value === "POPULAR") return "인기 메뉴";
+function categoryLabel(value) {
+  if (value === "NEW") return "신메뉴";
+  if (value === "POPULAR") return "이번 주문 인기";
   return value;
 }
 
-function normalizeMenuName(value){
-  return String(value || "").replace(/\s+/g, "").replace(/스타벅스리프레셔/g, "").replace(/라테/g, "라떼").toLowerCase();
-}
-
-function isPopularMenu(menu){
-  return menu.brand === "STARBUCKS" && popularMenuSet.has(normalizeMenuName(menu.name));
-}
-
-function sortPopularMenus(items){
-  return [...items].sort((a, b) =>
-    (popularMenuRank.get(normalizeMenuName(a.name)) ?? 999) - (popularMenuRank.get(normalizeMenuName(b.name)) ?? 999)
-  );
-}
-
-function msg(text){
+function msg(text) {
   $("message").textContent = text;
   $("message").style.display = text ? "block" : "none";
 }
 
-function isCompactLayout(){
+function isCompactLayout() {
   return window.innerWidth <= 1200;
 }
 
-function updateOrderPanelButtons(){
+function updateOrderPanelButtons() {
   const count = cart.reduce((sum, item) => sum + Number(item.quantity || 0), 0);
-  const label = count ? `내 주문 ${count}개` : "내 주문";
-  if($("cartToggle")) $("cartToggle").textContent = label;
-  if($("cartFab")) $("cartFab").textContent = label;
+  const label = count ? `내 주문 ${count}잔` : "내 주문";
+  if ($("cartToggle")) $("cartToggle").textContent = label;
+  if ($("cartFab")) $("cartFab").textContent = label;
 }
 
-function updateHeroFromMenus(){
-  const target = menus.find((menu) => menu.isNew) || menus[0];
-  if(!target) return;
-  $("heroTitle").textContent = target.name;
-  $("heroCopy").textContent = `${brandName(target.brand)} · ${categoryLabel(target.category)} 메뉴입니다. 빠르게 담고, 아래 주문 목록에서 내 주문을 바로 확인할 수 있습니다.`;
+function openOrderPanel() {
+  if (isCompactLayout()) $("orderForm").classList.add("side-open");
 }
 
-function openOrderPanel(){
-  if(isCompactLayout()) $("orderForm").classList.add("side-open");
-}
-
-function closeOrderPanel(){
+function closeOrderPanel() {
   $("orderForm").classList.remove("side-open");
 }
 
-async function loadBatch(){
-  if(previewMode){
-    batch = previewBatch;
-    $("pageTitle").textContent = batch.title;
-    $("pageDepartment").textContent = batch.department || "AX팀";
-    $("pageMemo").textContent = batch.memo;
-    $("orderForm").style.display = "grid";
-    $("publicOrdersPanel").style.display = "block";
-    await loadMenus();
-    renderCart();
-    await loadPublicOrders();
-    return;
-  }
-
-  const response = await fetch("/api/order-batches/" + batchId);
-  if(!response.ok){
-    $("closed").style.display = "block";
-    $("closed").textContent = "주문목록을 찾을 수 없습니다.";
-    return;
-  }
-
-  batch = await response.json();
-  $("pageTitle").textContent = batch.title;
-  $("pageDepartment").textContent = batch.department || "AX팀";
-  $("pageMemo").textContent = batch.memo || "이 주문목록 안에서 음료를 선택해 주세요.";
-  if(batch.status !== "open"){
-    $("closed").style.display = "block";
-    $("closed").textContent = "마감된 주문목록입니다. 관리자에게 새 주문목록을 요청해 주세요.";
-    return;
-  }
-
-  $("orderForm").style.display = "grid";
-  $("publicOrdersPanel").style.display = "block";
-  await loadMenus();
-  renderCart();
-  await loadPublicOrders();
-}
-
-async function loadMenus(){
-  if(previewMode){
-    menus = previewMenusByBrand[brand] || [];
-    updateHeroFromMenus();
-    renderCategories();
-    renderMenus();
-    return;
-  }
-
-  menus = await (await fetch("/api/menus?brand=" + brand)).json();
-  updateHeroFromMenus();
-  renderCategories();
-  renderMenus();
-}
-
-function selectedCategory(){
-  return document.querySelector("#categoryStrip button.active")?.dataset.category || "ALL";
-}
-
-function renderCategories(){
-  const menuCategories = [...new Set(menus.map((menu) => menu.category))];
-  const categories = ["ALL", ...(menus.some(isPopularMenu) ? ["POPULAR"] : []), ...(menus.some((menu) => menu.isNew) ? ["NEW"] : []), ...menuCategories];
-  const active = categories.includes(selectedCategory()) ? selectedCategory() : "ALL";
-  $("categoryStrip").innerHTML = categories.map((category) =>
-    `<button type="button" data-category="${category}" class="${category === active ? "active" : ""}">${escapeHtml(category === "ALL" ? "전체 메뉴" : categoryLabel(category))}</button>`
-  ).join("");
-  document.querySelectorAll("#categoryStrip button").forEach((button) => {
-    button.onclick = () => {
-      document.querySelectorAll("#categoryStrip button").forEach((item) => item.classList.remove("active"));
-      button.classList.add("active");
-      renderMenus();
-    };
-  });
-}
-
-function renderMenus(){
-  const query = $("query").value.trim().toLowerCase();
-  const category = selectedCategory();
-  const list = menus.filter((menu) =>
-    (!query || menu.name.toLowerCase().includes(query)) &&
-    (category === "ALL" || (category === "NEW" ? menu.isNew === true : category === "POPULAR" ? isPopularMenu(menu) : menu.category === category))
-  );
-
-  if(!list.length){
-    $("menuGrid").innerHTML = '<div class="empty">조건에 맞는 메뉴가 없습니다.</div>';
-    return;
-  }
-
-  const grouped = new Map();
-  if(category === "ALL"){
-    const popularMenus = sortPopularMenus(list.filter(isPopularMenu));
-    if(popularMenus.length) grouped.set("POPULAR", popularMenus);
-    const newMenus = list.filter((menu) => menu.isNew === true);
-    if(newMenus.length) grouped.set("NEW", newMenus);
-    list.forEach((menu) => {
-      if(isPopularMenu(menu)) return;
-      if(!grouped.has(menu.category)) grouped.set(menu.category, []);
-      grouped.get(menu.category).push(menu);
-    });
-  } else {
-    const targetList = category === "POPULAR" ? sortPopularMenus(list) : list;
-    targetList.forEach((menu) => {
-      const key = category === "NEW" || category === "POPULAR" ? category : menu.category;
-      if(!grouped.has(key)) grouped.set(key, []);
-      grouped.get(key).push(menu);
-    });
-  }
-
-  const shouldAutoOpen = category !== "ALL" || Boolean(query);
-  $("menuGrid").innerHTML = Array.from(grouped.entries()).map(([groupName, categoryMenus]) => `
-    <details class="menu-section ${groupName === "POPULAR" ? "popular-section" : ""}" ${(shouldAutoOpen || groupName === "POPULAR" || groupName === "NEW") ? "open" : ""}>
-      <summary class="menu-section-header">
-        <h3>${escapeHtml(categoryLabel(groupName))}</h3>
-        <span class="menu-section-count"><strong>${categoryMenus.length}</strong></span>
-        <span class="menu-section-toggle">${(shouldAutoOpen || groupName === "POPULAR" || groupName === "NEW") ? "닫기" : "열기"}</span>
-      </summary>
-      <div class="menu-section-body">
-        <div class="menu-grid">
-          ${categoryMenus.map((menu) => `
-            <article class="card">
-              <img src="${menu.imageUrl}" alt="">
-              <div>
-                <span class="meta">${brandName(menu.brand)} · ${menu.isNew ? `신메뉴 · ${menu.category}` : menu.category}</span>
-                <h3>${escapeHtml(menu.name)}</h3>
-                <button class="secondary" type="button" onclick="openMenu('${menu.id}')">담기</button>
-              </div>
-            </article>
-          `).join("")}
-        </div>
-      </div>
-    </details>
-  `).join("");
-  bindMenuSections();
-}
-
-function bindMenuSections(){
-  document.querySelectorAll(".menu-section").forEach((section) => {
-    const toggle = section.querySelector(".menu-section-toggle");
-    const sync = () => {
-      if(toggle) toggle.textContent = section.open ? "닫기" : "열기";
-    };
-    sync();
-    section.addEventListener("toggle", sync);
-  });
-}
-
-function renderCart(){
-  $("cart").innerHTML = cart.length ? cart.map((item) => `
-    <div class="cart-item">
-      <strong>${escapeHtml(item.menuName)}</strong>
-      <div class="meta">${brandName(item.brand)} · ${item.size}</div>
-      ${item.customRequest ? `<p>${escapeHtml(item.customRequest)}</p>` : ""}
-      <div class="cart-actions">
-        <button type="button" onclick="qty('${item.localId}',-1)">-</button>
-        <span>${item.quantity}</span>
-        <button type="button" onclick="qty('${item.localId}',1)">+</button>
-        <button type="button" onclick="removeItem('${item.localId}')">×</button>
-      </div>
-    </div>
-  `).join("") : '<div class="empty">선택한 음료가 아직 없습니다.</div>';
-  updateOrderPanelButtons();
-}
-
-function getRecentOrder(){
+function getRecentOrder() {
   try {
     const saved = JSON.parse(localStorage.getItem(recentOrderKey) || "null");
     return saved && Array.isArray(saved.items) ? saved : null;
@@ -399,7 +161,7 @@ function getRecentOrder(){
   }
 }
 
-function saveRecentOrder(ordererName, items){
+function saveRecentOrder(ordererName, items) {
   const normalizedItems = items.map((item) => ({
     brand: item.brand,
     menuId: item.menuId,
@@ -417,9 +179,9 @@ function saveRecentOrder(ordererName, items){
   renderRecentOrder();
 }
 
-function renderRecentOrder(){
+function renderRecentOrder() {
   const saved = getRecentOrder();
-  if(!saved || !saved.items.length){
+  if (!saved || !saved.items.length) {
     $("recentOrder").style.display = "none";
     $("recentOrder").innerHTML = "";
     return;
@@ -429,36 +191,234 @@ function renderRecentOrder(){
   $("recentOrder").innerHTML = `
     <div>
       <strong>최근 주문</strong>
-      <p class="muted">${escapeHtml(preview)}${saved.items.length > 3 ? ` 외 ${saved.items.length - 3}개` : ""}</p>
+      <p class="muted">${preview}${saved.items.length > 3 ? ` 외 ${saved.items.length - 3}개` : ""}</p>
     </div>
     <button class="soft-action" type="button" onclick="applyRecentOrder()">다시 담기</button>
   `;
 }
 
-function applyRecentOrder(){
+function applyRecentOrder() {
   const saved = getRecentOrder();
-  if(!saved || !saved.items.length) return;
-  if(saved.ordererName && !$("ordererName").value.trim()){
+  if (!saved || !saved.items.length) return;
+  if (saved.ordererName && !$("ordererName").value.trim()) {
     $("ordererName").value = saved.ordererName;
   }
   cart = saved.items.map((item) => ({ ...item, localId: crypto.randomUUID() }));
   renderCart();
   openOrderPanel();
-  msg("최근 주문을 장바구니에 담았습니다.");
+  msg("최근 주문을 장바구니에 다시 담았습니다.");
 }
 
-async function loadPublicOrders(){
-  if(previewMode){
-    renderPublicOrders(previewOrdersByBatch[batchId] || previewOrdersByBatch.preview || []);
+async function loadBatch() {
+  const response = await fetch("/api/order-batches/" + batchId);
+  if (!response.ok) {
+    $("closed").style.display = "block";
+    $("closed").textContent = "주문목록을 찾을 수 없습니다.";
     return;
   }
+
+  batch = await response.json();
+  $("pageTitle").textContent = batch.title;
+  $("pageDepartment").textContent = batch.department || "AX팀";
+  $("pageMemo").textContent = batch.memo || "이 주문목록 안에서 원하는 음료를 골라 주세요.";
+
+  if (batch.status !== "open") {
+    $("closed").style.display = "block";
+    $("closed").textContent = "마감된 주문목록입니다. 관리자에게 새 주문목록을 요청해 주세요.";
+    return;
+  }
+
+  $("orderForm").style.display = "grid";
+  $("publicOrdersPanel").style.display = "block";
+  await loadMenus();
+  renderCart();
+  await loadPublicOrders();
+}
+
+async function loadMenus() {
+  const [menuResponse, popularResponse] = await Promise.all([
+    fetch("/api/menus?brand=" + brand),
+    fetch(`/api/orders/popular?batchId=${encodeURIComponent(batchId)}&brand=${encodeURIComponent(brand)}&limit=3`)
+  ]);
+  menus = await menuResponse.json();
+  popularRows = popularResponse.ok ? await popularResponse.json() : [];
+  renderPopularStrip();
+  renderCategories();
+  renderMenus();
+}
+
+function selectedCategory() {
+  return document.querySelector("#categoryStrip button.active")?.dataset.category || "ALL";
+}
+
+function popularMenuIds() {
+  return new Set(popularRows.map((item) => item.menuId));
+}
+
+function isPopularMenu(menu) {
+  return popularMenuIds().has(menu.id);
+}
+
+function renderPopularStrip() {
+  if (!popularRows.length) {
+    $("popularStrip").style.display = "none";
+    $("popularStrip").innerHTML = "";
+    $("heroTitle").textContent = "지금 많이 담기는 메뉴를 먼저 보여드릴게요.";
+    $("heroCopy").textContent = "최근 주문은 오른쪽 패널에서 다시 담을 수 있고, 이번 주문목록에서 많이 담긴 메뉴는 아래에 썸네일로 바로 노출됩니다.";
+    return;
+  }
+
+  const items = popularRows
+    .map((row) => {
+      const menu = menus.find((item) => item.id === row.menuId);
+      if (!menu) return "";
+      return `
+        <button class="popular-card" type="button" onclick="openMenu('${menu.id}')">
+          <img src="${menu.imageUrl}" alt="">
+          <div>
+            <strong>${escapeHtml(menu.name)}</strong>
+            <span>${escapeHtml(menu.category)} · ${row.quantity}잔</span>
+          </div>
+        </button>
+      `;
+    })
+    .filter(Boolean)
+    .join("");
+
+  if (!items) {
+    $("popularStrip").style.display = "none";
+    $("popularStrip").innerHTML = "";
+    return;
+  }
+
+  $("popularStrip").style.display = "grid";
+  $("popularStrip").innerHTML = `
+    <div class="popular-strip-head">
+      <div>
+        <p class="eyebrow">Quick Picks</p>
+        <h3>이번 주문 인기 메뉴</h3>
+      </div>
+      <span class="muted">주문 수량 기준 상위 메뉴</span>
+    </div>
+    <div class="popular-grid">${items}</div>
+  `;
+  $("heroTitle").textContent = "이번 주문에서 많이 담긴 메뉴부터 빠르게 고를 수 있어요.";
+  $("heroCopy").textContent = "실제 주문 데이터 기준 인기 메뉴를 먼저 보여주고, 운영 상태는 관리자 화면에서 주문 확정과 수령 완료로 직접 표시합니다.";
+}
+
+function renderCategories() {
+  const menuCategories = [...new Set(menus.map((menu) => menu.category))];
+  const categories = ["ALL", ...(popularRows.length ? ["POPULAR"] : []), ...(menus.some((menu) => menu.isNew) ? ["NEW"] : []), ...menuCategories];
+  const active = categories.includes(selectedCategory()) ? selectedCategory() : "ALL";
+  $("categoryStrip").innerHTML = categories.map((category) =>
+    `<button type="button" data-category="${category}" class="${category === active ? "active" : ""}">${escapeHtml(category === "ALL" ? "전체 메뉴" : categoryLabel(category))}</button>`
+  ).join("");
+  document.querySelectorAll("#categoryStrip button").forEach((button) => {
+    button.onclick = () => {
+      document.querySelectorAll("#categoryStrip button").forEach((item) => item.classList.remove("active"));
+      button.classList.add("active");
+      renderMenus();
+    };
+  });
+}
+
+function renderMenus() {
+  const query = $("query").value.trim().toLowerCase();
+  const category = selectedCategory();
+  const list = menus.filter((menu) =>
+    (!query || menu.name.toLowerCase().includes(query)) &&
+    (
+      category === "ALL" ||
+      (category === "NEW" ? menu.isNew === true : category === "POPULAR" ? isPopularMenu(menu) : menu.category === category)
+    )
+  );
+
+  if (!list.length) {
+    $("menuGrid").innerHTML = '<div class="empty">조건에 맞는 메뉴가 없습니다.</div>';
+    return;
+  }
+
+  const grouped = new Map();
+  if (category === "ALL") {
+    const popularMenus = list.filter(isPopularMenu);
+    if (popularMenus.length) grouped.set("POPULAR", popularMenus);
+    const newMenus = list.filter((menu) => menu.isNew === true);
+    if (newMenus.length) grouped.set("NEW", newMenus);
+    list.forEach((menu) => {
+      if (isPopularMenu(menu) || menu.isNew === true) return;
+      if (!grouped.has(menu.category)) grouped.set(menu.category, []);
+      grouped.get(menu.category).push(menu);
+    });
+  } else {
+    list.forEach((menu) => {
+      const key = category === "NEW" || category === "POPULAR" ? category : menu.category;
+      if (!grouped.has(key)) grouped.set(key, []);
+      grouped.get(key).push(menu);
+    });
+  }
+
+  $("menuGrid").innerHTML = Array.from(grouped.entries()).map(([groupName, categoryMenus]) => `
+    <details class="menu-section ${groupName === "POPULAR" ? "popular-section" : ""}" ${groupName === "POPULAR" || groupName === "NEW" ? "open" : ""}>
+      <summary class="menu-section-header">
+        <h3>${escapeHtml(categoryLabel(groupName))}</h3>
+        <span class="menu-section-count"><strong>${categoryMenus.length}</strong></span>
+        <span class="menu-section-toggle">${groupName === "POPULAR" || groupName === "NEW" ? "닫기" : "열기"}</span>
+      </summary>
+      <div class="menu-section-body">
+        <div class="menu-grid">
+          ${categoryMenus.map((menu) => `
+            <article class="card">
+              <img src="${menu.imageUrl}" alt="">
+              <div>
+                <span class="meta">${brandName(menu.brand)} · ${menu.category}</span>
+                <h3>${escapeHtml(menu.name)}</h3>
+                <button class="secondary" type="button" onclick="openMenu('${menu.id}')">담기</button>
+              </div>
+            </article>
+          `).join("")}
+        </div>
+      </div>
+    </details>
+  `).join("");
+  bindMenuSections();
+}
+
+function bindMenuSections() {
+  document.querySelectorAll(".menu-section").forEach((section) => {
+    const toggle = section.querySelector(".menu-section-toggle");
+    const sync = () => {
+      if (toggle) toggle.textContent = section.open ? "닫기" : "열기";
+    };
+    sync();
+    section.addEventListener("toggle", sync);
+  });
+}
+
+function renderCart() {
+  $("cart").innerHTML = cart.length ? cart.map((item) => `
+    <div class="cart-item">
+      <strong>${escapeHtml(item.menuName)}</strong>
+      <div class="meta">${brandName(item.brand)} · ${item.size}</div>
+      ${item.customRequest ? `<p>${escapeHtml(item.customRequest)}</p>` : ""}
+      <div class="cart-actions">
+        <button type="button" onclick="qty('${item.localId}',-1)">-</button>
+        <span>${item.quantity}</span>
+        <button type="button" onclick="qty('${item.localId}',1)">+</button>
+        <button type="button" onclick="removeItem('${item.localId}')">×</button>
+      </div>
+    </div>
+  `).join("") : '<div class="empty">선택한 음료가 아직 없습니다.</div>';
+  updateOrderPanelButtons();
+}
+
+async function loadPublicOrders() {
   const response = await fetch("/api/order-batches/" + batchId + "/orders");
   const data = response.ok ? await response.json() : [];
   const orders = Array.isArray(data) ? data : (data ? [data] : []);
   renderPublicOrders(orders);
 }
 
-function renderPublicOrders(orders){
+function renderPublicOrders(orders) {
   const currentName = $("ordererName").value.trim();
   const people = new Set(orders.map((order) => order.ordererName));
   const cups = orders.reduce((sum, order) => sum + order.items.reduce((itemSum, item) => itemSum + Number(item.quantity || 0), 0), 0);
@@ -471,16 +431,17 @@ function renderPublicOrders(orders){
     const actions = mine
       ? `<div class="filters"><button class="secondary" type="button" onclick="editOrder('${order.id}')">수정</button><button class="danger" type="button" onclick="cancelOrder('${order.id}')">취소</button></div>`
       : "";
+    const statusBadge = order.status ? `<span class="order-status-badge">${escapeHtml(order.status)}</span>` : "";
     return `<article class="public-order ${mine ? "mine" : ""}">
       <h3>${escapeHtml(order.ordererName)}${mine ? ' <span class="badge">내 주문</span>' : ""}</h3>
-      <p class="muted">${new Date(order.orderedAt).toLocaleString("ko-KR")}</p>
+      <p class="muted">${new Date(order.orderedAt).toLocaleString("ko-KR")} ${statusBadge}</p>
       <ul>${items}</ul>
       ${actions}
     </article>`;
   }).join("") : '<div class="empty">아직 제출된 주문이 없습니다.</div>';
 }
 
-async function findMyOrder(id){
+async function findMyOrder(id) {
   const response = await fetch("/api/order-batches/" + batchId + "/orders");
   const data = response.ok ? await response.json() : [];
   const orders = Array.isArray(data) ? data : (data ? [data] : []);
@@ -488,9 +449,9 @@ async function findMyOrder(id){
   return orders.find((order) => order.id === id && order.ordererName === currentName);
 }
 
-async function editOrder(id){
+async function editOrder(id) {
   const order = await findMyOrder(id);
-  if(!order){
+  if (!order) {
     msg("이름이 일치하는 내 주문만 수정할 수 있습니다.");
     return;
   }
@@ -503,20 +464,20 @@ async function editOrder(id){
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-async function cancelOrder(id){
+async function cancelOrder(id) {
   const ordererName = $("ordererName").value.trim();
-  if(!ordererName){
+  if (!ordererName) {
     msg("취소하려면 먼저 이름을 입력해 주세요.");
     return;
   }
-  if(!confirm("내 주문을 취소할까요?")) return;
+  if (!confirm("내 주문을 취소할까요?")) return;
   const response = await fetch("/api/orders/" + id, {
     method: "DELETE",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ ordererName })
   });
-  if(response.ok){
-    if(editingOrderId === id){
+  if (response.ok) {
+    if (editingOrderId === id) {
       editingOrderId = "";
       cart = [];
       $("submitButton").textContent = "주문 제출";
@@ -524,13 +485,14 @@ async function cancelOrder(id){
     }
     msg("주문을 취소했습니다.");
     await loadPublicOrders();
+    await loadMenus();
   } else {
     const error = await response.json().catch(() => ({ message: "주문 취소에 실패했습니다." }));
     msg(error.message || "주문 취소에 실패했습니다.");
   }
 }
 
-function openMenu(id){
+function openMenu(id) {
   selected = menus.find((menu) => menu.id === id);
   const sizes = selected.availableSizes.map((size, index) =>
     `<button type="button" class="${index === 0 ? "active" : ""}" data-size="${size}">${size}</button>`
@@ -549,7 +511,7 @@ function openMenu(id){
         </label>
         <label>
           <span>개인 요청사항</span>
-          <textarea id="customRequest" rows="3" placeholder="예: 얼음 적게, 샷 추가"></textarea>
+          <textarea id="customRequest" rows="3" placeholder="예: 얼음 적게, 시럽 추가"></textarea>
         </label>
         <button class="primary" type="button" onclick="addCart()">장바구니 담기</button>
       </div>
@@ -563,11 +525,11 @@ function openMenu(id){
   });
 }
 
-function closeModal(){
+function closeModal() {
   $("modalRoot").innerHTML = "";
 }
 
-function addCart(){
+function addCart() {
   const size = document.querySelector("#sizes .active").dataset.size;
   cart.push({
     localId: crypto.randomUUID(),
@@ -584,12 +546,12 @@ function addCart(){
   openOrderPanel();
 }
 
-function qty(id, delta){
+function qty(id, delta) {
   cart = cart.map((item) => item.localId === id ? { ...item, quantity: item.quantity + delta } : item).filter((item) => item.quantity > 0);
   renderCart();
 }
 
-function removeItem(id){
+function removeItem(id) {
   cart = cart.filter((item) => item.localId !== id);
   renderCart();
 }
@@ -614,20 +576,20 @@ $("cartBackdrop").onclick = closeOrderPanel;
 $("heroAction").onclick = () => document.getElementById("query").scrollIntoView({ behavior: "smooth", block: "center" });
 
 window.addEventListener("resize", () => {
-  if(!isCompactLayout()) closeOrderPanel();
+  if (!isCompactLayout()) closeOrderPanel();
   updateOrderPanelButtons();
 });
 
 const savedRecentOrder = getRecentOrder();
-if(savedRecentOrder?.ordererName) $("ordererName").value = savedRecentOrder.ordererName;
+if (savedRecentOrder?.ordererName) $("ordererName").value = savedRecentOrder.ordererName;
 renderRecentOrder();
 
 $("orderForm").onsubmit = async (event) => {
   event.preventDefault();
   msg("");
   const ordererName = $("ordererName").value.trim();
-  if(!ordererName) return msg("주문자 이름을 입력해 주세요.");
-  if(!cart.length) return msg("장바구니에 음료를 담아 주세요.");
+  if (!ordererName) return msg("주문자 이름을 입력해 주세요.");
+  if (!cart.length) return msg("장바구니에 음료를 담아 주세요.");
 
   const payload = { batchId, ordererName, items: cart };
   const url = editingOrderId ? "/api/orders/" + editingOrderId : "/api/orders";
@@ -638,18 +600,19 @@ $("orderForm").onsubmit = async (event) => {
     body: JSON.stringify(payload)
   });
 
-  if(response.ok){
+  if (response.ok) {
     saveRecentOrder(ordererName, cart);
     cart = [];
     editingOrderId = "";
     $("submitButton").textContent = "주문 제출";
     renderCart();
     closeOrderPanel();
-    msg(method === "PUT" ? "주문을 수정했습니다." : "주문을 제출했습니다. 아래 주문 목록에서 내 주문을 확인해 보세요.");
+    msg(method === "PUT" ? "주문을 수정했습니다." : "주문을 제출했습니다. 아래 목록에서 내 주문을 확인해 보세요.");
     await loadPublicOrders();
+    await loadMenus();
   } else {
-    const error = await response.json().catch(() => ({ message: "주문 저장에 실패했습니다." }));
-    msg(error.message || "주문 저장에 실패했습니다.");
+    const error = await response.json().catch(() => ({ message: "주문 처리에 실패했습니다." }));
+    msg(error.message || "주문 처리에 실패했습니다.");
   }
 };
 

@@ -1,8 +1,18 @@
 import { Router } from "express";
 import type { NextFunction, Request, Response } from "express";
 import { ordersToCsv } from "../services/exportService.js";
-import { createOrder, deleteOrder, listOrders, summarizeOrders, updateOrder } from "../services/orderService.js";
-import type { Brand, CreateOrderInput, UpdateOrderInput } from "../types.js";
+import {
+  bulkUpdateOrderStatus,
+  createOrder,
+  deleteOrder,
+  isOrderStatus,
+  listOrders,
+  listPopularMenus,
+  summarizeOrders,
+  updateOrder,
+  updateOrderStatus
+} from "../services/orderService.js";
+import type { Brand, CreateOrderInput, OrderStatus, UpdateOrderInput } from "../types.js";
 
 export const publicOrdersRouter = Router();
 export const adminOrdersRouter = Router();
@@ -22,6 +32,18 @@ publicOrdersRouter.put("/:id", async (req: Request, res: Response) => {
     res.json(order);
   } catch (error) {
     res.status(resolvePublicOrderStatus(error)).json({ message: resolvePublicOrderMessage(error) });
+  }
+});
+
+publicOrdersRouter.get("/popular", async (req: Request, res: Response) => {
+  try {
+    const batchId = typeof req.query.batchId === "string" ? req.query.batchId : undefined;
+    const brand = typeof req.query.brand === "string" ? (req.query.brand as Brand) : undefined;
+    const limit = typeof req.query.limit === "string" ? Number(req.query.limit) : undefined;
+    res.json(await listPopularMenus({ batchId, brand, limit: Number.isFinite(limit) ? limit : undefined }));
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "UNKNOWN_ERROR";
+    res.status(500).json({ message });
   }
 });
 
@@ -87,6 +109,43 @@ adminOrdersRouter.get("/export.csv", async (req: Request, res: Response) => {
   }
 });
 
+adminOrdersRouter.patch("/:id/status", async (req: Request, res: Response) => {
+  try {
+    const status = String(req.body.status ?? "");
+    if (!isOrderStatus(status)) {
+      res.status(400).json({ message: "INVALID_STATUS" });
+      return;
+    }
+
+    const order = await updateOrderStatus(req.params.id, status);
+    if (!order) {
+      res.status(404).json({ message: "ORDER_NOT_FOUND" });
+      return;
+    }
+
+    res.json(order);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "UNKNOWN_ERROR";
+    res.status(500).json({ message });
+  }
+});
+
+adminOrdersRouter.post("/bulk-status", async (req: Request, res: Response) => {
+  try {
+    const status = String(req.body.status ?? "");
+    if (!isOrderStatus(status)) {
+      res.status(400).json({ message: "INVALID_STATUS" });
+      return;
+    }
+
+    const filters = readFilters(req.body.filters ?? {});
+    res.json(await bulkUpdateOrderStatus(filters, status));
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "UNKNOWN_ERROR";
+    res.status(500).json({ message });
+  }
+});
+
 adminOrdersRouter.delete("/:id", async (req: Request, res: Response) => {
   const result = await deleteOrder(req.params.id, { isAdmin: true });
   if (result === "not_found") {
@@ -100,7 +159,8 @@ adminOrdersRouter.delete("/:id", async (req: Request, res: Response) => {
 function readFilters(query: Record<string, unknown>) {
   return {
     batchId: typeof query.batchId === "string" ? query.batchId : undefined,
-    brand: typeof query.brand === "string" ? (query.brand as Brand) : undefined
+    brand: typeof query.brand === "string" ? (query.brand as Brand) : undefined,
+    status: typeof query.status === "string" && isOrderStatus(query.status) ? (query.status as OrderStatus) : undefined
   };
 }
 
