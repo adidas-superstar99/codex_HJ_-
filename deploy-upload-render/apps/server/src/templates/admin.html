@@ -27,7 +27,7 @@
     <div>
       <div class="brand-lockup">
         <img class="brand-logo" src="/assets/logo-samoo.png" alt="SAMOO AX 로고">
-        <div class="eyebrow">SAMOO AX팀 BEVERAGE ORDER</div>
+        <div class="eyebrow">SAMOO AX 음료 주문</div>
       </div>
       <h1>주문목록 관리</h1>
       <p class="muted">주문목록을 만들고, 선택한 주문목록의 주문과 메뉴별 집계를 한 화면에서 확인합니다.</p>
@@ -56,6 +56,10 @@
       <label>
         <span>제목 *</span>
         <input id="batchTitle" placeholder="예: 아침 회의 음료주문">
+      </label>
+      <label>
+        <span>개설 부서</span>
+        <input id="batchDepartment" value="AX팀" placeholder="예: AX팀">
       </label>
       <label>
         <span>메모</span>
@@ -175,7 +179,10 @@ function renderBatches(){
     const statusButton = batch.status === "open" ? "마감" : "다시 열기";
     const buttonClass = batch.status === "open" ? "danger" : "primary";
     return `<article class="batch-card ${batch.id === selectedBatchId ? "selected-batch" : ""}">
-      <span class="badge">${statusText}</span>
+      <div class="batch-card-badges">
+        <span class="badge">${statusText}</span>
+        <span class="dept-badge">${escapeHtml(batch.department || "AX팀")}</span>
+      </div>
       <h2>${escapeHtml(batch.title)}</h2>
       <p class="muted">${new Date(batch.createdAt).toLocaleString("ko-KR")}</p>
       <p><strong>주문 ${batch.orderCount || 0}건</strong> · 음료 ${batch.cupCount || 0}잔</p>
@@ -197,7 +204,7 @@ async function createBatch(){
   const response = await fetch("/api/admin/order-batches", {
     method: "POST",
     headers: { ...headers(), "Content-Type": "application/json" },
-    body: JSON.stringify({ title, memo: $("batchMemo").value })
+    body: JSON.stringify({ title, department: $("batchDepartment").value.trim() || "AX팀", memo: $("batchMemo").value })
   });
   if(!response.ok){
     alert("주문목록 생성에 실패했습니다.");
@@ -205,6 +212,7 @@ async function createBatch(){
   }
   const batch = await response.json();
   $("batchTitle").value = "";
+  $("batchDepartment").value = "AX팀";
   $("batchMemo").value = "";
   selectedBatchId = batch.id;
   await loadBatches();
@@ -263,7 +271,7 @@ function selectBatch(id){
   const batch = batches.find((item) => item.id === id);
   $("selectedTitle").textContent = batch ? batch.title : "주문목록을 먼저 선택해주세요.";
   $("selectedNote").style.display = batch ? "block" : "none";
-  $("selectedNote").textContent = batch ? `현재 "${batch.title}" 주문목록의 주문과 집계를 보고 있습니다.` : "";
+  $("selectedNote").textContent = batch ? `${batch.department || "AX팀"}에서 개설한 "${batch.title}" 주문목록의 주문과 집계를 보고 있습니다.` : "";
   renderBatches();
   loadOrders();
 }

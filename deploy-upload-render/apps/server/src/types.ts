@@ -20,6 +20,7 @@ export type OrderStatus = "submitted" | "confirmed" | "ordered" | "completed" | 
 export type OrderBatch = {
   id: string;
   title: string;
+  department: string;
   memo?: string;
   status: OrderBatchStatus;
   createdAt: string;
@@ -52,11 +53,13 @@ export type Order = {
 
 export type CreateOrderBatchInput = {
   title: string;
+  department?: string;
   memo?: string;
 };
 
 export type UpdateOrderBatchInput = {
   title?: string;
+  department?: string;
   memo?: string;
   status?: OrderBatchStatus;
 };

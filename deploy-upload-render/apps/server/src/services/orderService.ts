@@ -19,6 +19,7 @@ const statuses: OrderStatus[] = ["submitted", "confirmed", "ordered", "completed
 type BatchRow = {
   id: string;
   title: string;
+  department: string | null;
   memo: string | null;
   status: OrderBatchStatus;
   created_at: string;
@@ -77,6 +78,7 @@ export async function getOrderBatchById(batchId: string): Promise<OrderBatch | u
 
 export async function createOrderBatch(input: CreateOrderBatchInput): Promise<OrderBatch> {
   const title = input.title.trim();
+  const department = input.department?.trim() || "AX팀";
   if (!title) {
     throw new Error("BATCH_TITLE_REQUIRED");
   }
@@ -84,6 +86,7 @@ export async function createOrderBatch(input: CreateOrderBatchInput): Promise<Or
   const batch: OrderBatch = {
     id: nanoid(),
     title,
+    department,
     memo: input.memo?.trim() || undefined,
     status: "open",
     createdAt: new Date().toISOString(),
@@ -92,21 +95,22 @@ export async function createOrderBatch(input: CreateOrderBatchInput): Promise<Or
 
   if (isPostgres()) {
     await pgAll(
-      `INSERT INTO order_batches (id, title, memo, status, created_at, closed_at)
-       VALUES ($1, $2, $3, $4, $5, $6)`,
-      [batch.id, batch.title, batch.memo ?? null, batch.status, batch.createdAt, null]
+      `INSERT INTO order_batches (id, title, department, memo, status, created_at, closed_at)
+       VALUES ($1, $2, $3, $4, $5, $6, $7)`,
+      [batch.id, batch.title, batch.department, batch.memo ?? null, batch.status, batch.createdAt, null]
     );
     return batch;
   }
 
   sqliteDb!
     .prepare(`
-      INSERT INTO order_batches (id, title, memo, status, created_at, closed_at)
-      VALUES (@id, @title, @memo, @status, @createdAt, @closedAt)
+      INSERT INTO order_batches (id, title, department, memo, status, created_at, closed_at)
+      VALUES (@id, @title, @department, @memo, @status, @createdAt, @closedAt)
     `)
     .run({
       id: batch.id,
       title: batch.title,
+      department: batch.department,
       memo: batch.memo ?? null,
       status: batch.status,
       createdAt: batch.createdAt,
@@ -126,6 +130,7 @@ export async function updateOrderBatch(batchId: string, input: UpdateOrderBatchI
   const updated: OrderBatch = {
     ...current,
     title: input.title?.trim() || current.title,
+    department: input.department?.trim() || current.department || "AX팀",
     memo: input.memo !== undefined ? input.memo.trim() || undefined : current.memo,
     status: nextStatus,
     closedAt: nextStatus === "closed" ? new Date().toISOString() : undefined
@@ -134,20 +139,21 @@ export async function updateOrderBatch(batchId: string, input: UpdateOrderBatchI
   if (isPostgres()) {
     await pgAll(
       `UPDATE order_batches
-       SET title = $1, memo = $2, status = $3, closed_at = $4
-       WHERE id = $5`,
-      [updated.title, updated.memo ?? null, updated.status, updated.closedAt ?? null, batchId]
+       SET title = $1, department = $2, memo = $3, status = $4, closed_at = $5
+       WHERE id = $6`,
+      [updated.title, updated.department, updated.memo ?? null, updated.status, updated.closedAt ?? null, batchId]
     );
   } else {
     sqliteDb!
       .prepare(`
         UPDATE order_batches
-        SET title = @title, memo = @memo, status = @status, closed_at = @closedAt
+        SET title = @title, department = @department, memo = @memo, status = @status, closed_at = @closedAt
         WHERE id = @id
       `)
       .run({
         id: batchId,
         title: updated.title,
+        department: updated.department,
         memo: updated.memo ?? null,
         status: updated.status,
         closedAt: updated.closedAt ?? null
@@ -511,6 +517,7 @@ function mapBatchRow(row: BatchWithCountsRow, includeCounts = false): OrderBatch
   return {
     id: row.id,
     title: row.title,
+    department: row.department || "AX팀",
     memo: row.memo ?? undefined,
     status: row.status,
     createdAt: row.created_at,

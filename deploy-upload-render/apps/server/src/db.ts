@@ -35,6 +35,7 @@ async function migratePostgres() {
     CREATE TABLE IF NOT EXISTS order_batches (
       id TEXT PRIMARY KEY,
       title TEXT NOT NULL,
+      department TEXT NOT NULL DEFAULT 'AX팀',
       memo TEXT,
       status TEXT NOT NULL DEFAULT 'open',
       created_at TEXT NOT NULL,
@@ -72,6 +73,7 @@ async function migratePostgres() {
 
   await pgPool!.query(`ALTER TABLE orders ADD COLUMN IF NOT EXISTS batch_id TEXT REFERENCES order_batches(id) ON DELETE CASCADE;`);
   await pgPool!.query(`ALTER TABLE orders ADD COLUMN IF NOT EXISTS batch_title TEXT NOT NULL DEFAULT '';`);
+  await pgPool!.query(`ALTER TABLE order_batches ADD COLUMN IF NOT EXISTS department TEXT NOT NULL DEFAULT 'AX팀';`);
   await pgPool!.query(`ALTER TABLE order_batches ADD COLUMN IF NOT EXISTS memo TEXT;`);
   await pgPool!.query(`ALTER TABLE order_batches ADD COLUMN IF NOT EXISTS status TEXT NOT NULL DEFAULT 'open';`);
   await pgPool!.query(`ALTER TABLE order_batches ADD COLUMN IF NOT EXISTS created_at TEXT NOT NULL DEFAULT NOW()::text;`);
@@ -89,6 +91,7 @@ function migrateSqlite() {
     CREATE TABLE IF NOT EXISTS order_batches (
       id TEXT PRIMARY KEY,
       title TEXT NOT NULL,
+      department TEXT NOT NULL DEFAULT 'AX팀',
       memo TEXT,
       status TEXT NOT NULL DEFAULT 'open',
       created_at TEXT NOT NULL,
@@ -130,6 +133,7 @@ function migrateSqlite() {
 
   ensureSqliteColumn("orders", "batch_id", "TEXT");
   ensureSqliteColumn("orders", "batch_title", "TEXT NOT NULL DEFAULT ''");
+  ensureSqliteColumn("order_batches", "department", "TEXT NOT NULL DEFAULT 'AX팀'");
   ensureSqliteColumn("order_batches", "memo", "TEXT");
   ensureSqliteColumn("order_batches", "status", "TEXT NOT NULL DEFAULT 'open'");
   ensureSqliteColumn("order_batches", "created_at", "TEXT NOT NULL DEFAULT ''");

@@ -12,12 +12,13 @@
     <div>
       <div class="brand-lockup">
         <img class="brand-logo" src="/assets/logo-samoo.png" alt="SAMOO AX 로고">
-        <div class="eyebrow">SAMOO AX팀 BEVERAGE ORDER</div>
+        <div class="eyebrow">SAMOO AX 음료 주문</div>
       </div>
       <h1 id="pageTitle">음료 주문</h1>
+      <div class="dept-badge page-dept-badge" id="pageDepartment">AX팀</div>
       <p class="muted" id="pageMemo">주문목록을 불러오는 중입니다.</p>
     </div>
-    <div><a href="/">주문목록</a> · <a href="/admin">관리자</a></div>
+    <div><a href="/">주문 목록</a> · <a href="/admin">관리자</a></div>
   </div>
 
   <section class="hero-card" id="heroCard">
@@ -65,6 +66,7 @@
         <span>이름 *</span>
         <input id="ordererName" placeholder="주문자 이름">
       </label>
+      <div class="recent-order" id="recentOrder" style="display:none"></div>
       <h2>장바구니</h2>
       <div class="cart" id="cart"></div>
       <p class="message" id="message" style="display:none"></p>
@@ -78,7 +80,7 @@
   <section class="public-orders" id="publicOrdersPanel" style="display:none">
     <div class="top">
       <div>
-        <h2>현재 주문 목록</h2>
+        <h2>주문 목록</h2>
         <p class="muted">이 주문목록에 들어온 주문입니다. 제출 후 여기에서 내 주문을 바로 확인할 수 있습니다.</p>
       </div>
       <button class="soft-action" type="button" onclick="loadPublicOrders()">주문 목록 새로고침</button>
@@ -96,6 +98,7 @@ const previewMode = new URLSearchParams(location.search).get("preview") === "1";
 const previewBatch = {
   id: "preview",
   title: "AX팀 모바일 프리뷰 주문",
+  department: "AX팀",
   memo: "다크 테마, 네온 포인트, 모바일 카드 밀도를 확인하는 프리뷰 화면입니다.",
   status: "open"
 };
@@ -143,6 +146,23 @@ let menus = [];
 let cart = [];
 let selected = null;
 let editingOrderId = "";
+const recentOrderKey = "samoo-beverage-recent-order-v1";
+const popularMenuNames = [
+  "아이스카페아메리카노",
+  "카페아메리카노",
+  "아이스카페라테",
+  "카페라테",
+  "바닐라크림콜드브루",
+  "콜드브루",
+  "아이스유스베리티",
+  "유스베리티",
+  "딸기아사이레모네이드",
+  "아이스유자민트티",
+  "유자민트티",
+  "아이스자몽허니블랙티",
+  "자몽허니블랙티"
+];
+const popularMenuSet = new Set(popularMenuNames.map(normalizeMenuName));
 
 const $ = (id) => document.getElementById(id);
 
@@ -161,7 +181,17 @@ function brandName(value){
 }
 
 function categoryLabel(value){
-  return value === "NEW" ? "신메뉴" : value;
+  if(value === "NEW") return "신메뉴";
+  if(value === "POPULAR") return "인기 메뉴";
+  return value;
+}
+
+function normalizeMenuName(value){
+  return String(value || "").replace(/\s+/g, "").replace(/스타벅스리프레셔/g, "").replace(/라테/g, "라떼").toLowerCase();
+}
+
+function isPopularMenu(menu){
+  return menu.brand === "STARBUCKS" && popularMenuSet.has(normalizeMenuName(menu.name));
 }
 
 function msg(text){
@@ -201,6 +231,7 @@ async function loadBatch(){
   if(previewMode){
     batch = previewBatch;
     $("pageTitle").textContent = batch.title;
+    $("pageDepartment").textContent = batch.department || "AX팀";
     $("pageMemo").textContent = batch.memo;
     $("orderForm").style.display = "grid";
     $("publicOrdersPanel").style.display = "block";
@@ -219,6 +250,7 @@ async function loadBatch(){
 
   batch = await response.json();
   $("pageTitle").textContent = batch.title;
+  $("pageDepartment").textContent = batch.department || "AX팀";
   $("pageMemo").textContent = batch.memo || "이 주문목록 안에서 음료를 선택해 주세요.";
   if(batch.status !== "open"){
     $("closed").style.display = "block";
@@ -254,7 +286,7 @@ function selectedCategory(){
 
 function renderCategories(){
   const menuCategories = [...new Set(menus.map((menu) => menu.category))];
-  const categories = ["ALL", ...(menus.some((menu) => menu.isNew) ? ["NEW"] : []), ...menuCategories];
+  const categories = ["ALL", ...(menus.some(isPopularMenu) ? ["POPULAR"] : []), ...(menus.some((menu) => menu.isNew) ? ["NEW"] : []), ...menuCategories];
   const active = categories.includes(selectedCategory()) ? selectedCategory() : "ALL";
   $("categoryStrip").innerHTML = categories.map((category) =>
     `<button type="button" data-category="${category}" class="${category === active ? "active" : ""}">${escapeHtml(category === "ALL" ? "전체 메뉴" : categoryLabel(category))}</button>`
@@ -273,7 +305,7 @@ function renderMenus(){
   const category = selectedCategory();
   const list = menus.filter((menu) =>
     (!query || menu.name.toLowerCase().includes(query)) &&
-    (category === "ALL" || (category === "NEW" ? menu.isNew === true : menu.category === category))
+    (category === "ALL" || (category === "NEW" ? menu.isNew === true : category === "POPULAR" ? isPopularMenu(menu) : menu.category === category))
   );
 
   if(!list.length){
@@ -283,15 +315,18 @@ function renderMenus(){
 
   const grouped = new Map();
   if(category === "ALL"){
+    const popularMenus = list.filter(isPopularMenu);
+    if(popularMenus.length) grouped.set("POPULAR", popularMenus);
     const newMenus = list.filter((menu) => menu.isNew === true);
     if(newMenus.length) grouped.set("NEW", newMenus);
     list.forEach((menu) => {
+      if(isPopularMenu(menu)) return;
       if(!grouped.has(menu.category)) grouped.set(menu.category, []);
       grouped.get(menu.category).push(menu);
     });
   } else {
     list.forEach((menu) => {
-      const key = category === "NEW" ? "NEW" : menu.category;
+      const key = category === "NEW" || category === "POPULAR" ? category : menu.category;
       if(!grouped.has(key)) grouped.set(key, []);
       grouped.get(key).push(menu);
     });
@@ -299,11 +334,11 @@ function renderMenus(){
 
   const shouldAutoOpen = category !== "ALL" || Boolean(query);
   $("menuGrid").innerHTML = Array.from(grouped.entries()).map(([groupName, categoryMenus]) => `
-    <details class="menu-section" ${(shouldAutoOpen || groupName === "NEW") ? "open" : ""}>
+    <details class="menu-section ${groupName === "POPULAR" ? "popular-section" : ""}" ${(shouldAutoOpen || groupName === "POPULAR" || groupName === "NEW") ? "open" : ""}>
       <summary class="menu-section-header">
         <h3>${escapeHtml(categoryLabel(groupName))}</h3>
         <span class="menu-section-count"><strong>${categoryMenus.length}</strong></span>
-        <span class="menu-section-toggle">${(shouldAutoOpen || groupName === "NEW") ? "닫기" : "열기"}</span>
+        <span class="menu-section-toggle">${(shouldAutoOpen || groupName === "POPULAR" || groupName === "NEW") ? "닫기" : "열기"}</span>
       </summary>
       <div class="menu-section-body">
         <div class="menu-grid">
@@ -350,6 +385,63 @@ function renderCart(){
     </div>
   `).join("") : '<div class="empty">선택한 음료가 아직 없습니다.</div>';
   updateOrderPanelButtons();
+}
+
+function getRecentOrder(){
+  try {
+    const saved = JSON.parse(localStorage.getItem(recentOrderKey) || "null");
+    return saved && Array.isArray(saved.items) ? saved : null;
+  } catch {
+    return null;
+  }
+}
+
+function saveRecentOrder(ordererName, items){
+  const normalizedItems = items.map((item) => ({
+    brand: item.brand,
+    menuId: item.menuId,
+    menuName: item.menuName,
+    category: item.category,
+    size: item.size,
+    quantity: item.quantity,
+    customRequest: item.customRequest || ""
+  }));
+  localStorage.setItem(recentOrderKey, JSON.stringify({
+    ordererName,
+    items: normalizedItems,
+    savedAt: new Date().toISOString()
+  }));
+  renderRecentOrder();
+}
+
+function renderRecentOrder(){
+  const saved = getRecentOrder();
+  if(!saved || !saved.items.length){
+    $("recentOrder").style.display = "none";
+    $("recentOrder").innerHTML = "";
+    return;
+  }
+  const preview = saved.items.slice(0, 3).map((item) => escapeHtml(item.menuName)).join(", ");
+  $("recentOrder").style.display = "grid";
+  $("recentOrder").innerHTML = `
+    <div>
+      <strong>최근 주문</strong>
+      <p class="muted">${escapeHtml(preview)}${saved.items.length > 3 ? ` 외 ${saved.items.length - 3}개` : ""}</p>
+    </div>
+    <button class="soft-action" type="button" onclick="applyRecentOrder()">다시 담기</button>
+  `;
+}
+
+function applyRecentOrder(){
+  const saved = getRecentOrder();
+  if(!saved || !saved.items.length) return;
+  if(saved.ordererName && !$("ordererName").value.trim()){
+    $("ordererName").value = saved.ordererName;
+  }
+  cart = saved.items.map((item) => ({ ...item, localId: crypto.randomUUID() }));
+  renderCart();
+  openOrderPanel();
+  msg("최근 주문을 장바구니에 담았습니다.");
 }
 
 async function loadPublicOrders(){
@@ -509,7 +601,9 @@ document.querySelectorAll("[data-brand]").forEach((button) => {
 });
 
 $("query").oninput = renderMenus;
-$("ordererName").oninput = loadPublicOrders;
+$("ordererName").oninput = () => {
+  loadPublicOrders();
+};
 $("cartToggle").onclick = openOrderPanel;
 $("cartFab").onclick = openOrderPanel;
 $("closeSide").onclick = closeOrderPanel;
@@ -520,6 +614,10 @@ window.addEventListener("resize", () => {
   if(!isCompactLayout()) closeOrderPanel();
   updateOrderPanelButtons();
 });
+
+const savedRecentOrder = getRecentOrder();
+if(savedRecentOrder?.ordererName) $("ordererName").value = savedRecentOrder.ordererName;
+renderRecentOrder();
 
 $("orderForm").onsubmit = async (event) => {
   event.preventDefault();
@@ -538,6 +636,7 @@ $("orderForm").onsubmit = async (event) => {
   });
 
   if(response.ok){
+    saveRecentOrder(ordererName, cart);
     cart = [];
     editingOrderId = "";
     $("submitButton").textContent = "주문 제출";
