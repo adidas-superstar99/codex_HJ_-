@@ -202,7 +202,7 @@ export function AdminPage() {
     return (
       <div className="login">
         <div className="brand-lockup">
-          <img className="brand-logo" src="/assets/logo-samoo.png" alt="SAMOO AX" />
+          <img className="brand-logo" src="/logo-samoo.png" alt="SAMOO AX" />
           <div className="eyebrow">ADMIN</div>
         </div>
         <h1>관리자 주문 취합</h1>
@@ -224,7 +224,7 @@ export function AdminPage() {
       <div className="top">
         <div>
           <div className="brand-lockup">
-            <img className="brand-logo" src="/assets/logo-samoo.png" alt="SAMOO AX" />
+            <img className="brand-logo" src="/logo-samoo.png" alt="SAMOO AX" />
             <div className="eyebrow">SAMOO AX Beverage Order</div>
           </div>
           <h1>주문 목록 관리</h1>

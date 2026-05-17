@@ -30,7 +30,7 @@ app.use(cors());
 app.use(express.json());
 
 if (publicAssetPath) {
-  app.use("/assets", express.static(publicAssetPath));
+  app.use(express.static(publicAssetPath));
 }
 
 app.get("/api/health", (_req, res) => {
@@ -45,11 +45,11 @@ app.use("/api/admin/order-batches", requireAdmin, adminOrderBatchesRouter);
 
 if (webDistPath) {
   app.use(express.static(webDistPath));
-  app.get(/^(?!\/api).*/, (_req, res) => {
+  app.get(/^(?!\/api)(?!.*\.[a-zA-Z0-9]+$).*/, (_req, res) => {
     res.sendFile(join(webDistPath, "index.html"));
   });
 } else {
-  app.get(/^(?!\/api).*/, (_req, res) => {
+  app.get(/^(?!\/api)(?!.*\.[a-zA-Z0-9]+$).*/, (_req, res) => {
     res
       .status(503)
       .type("text/plain")
