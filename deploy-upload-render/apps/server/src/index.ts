@@ -9,7 +9,6 @@ import { requireAdmin } from "./routes/admin.js";
 import { menusRouter } from "./routes/menus.js";
 import { adminOrderBatchesRouter, publicOrderBatchesRouter } from "./routes/orderBatches.js";
 import { adminOrdersRouter, publicOrdersRouter } from "./routes/orders.js";
-import { getAdminPage, getBatchListPage, getOrderPage } from "./serverPages.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const candidateWebDistPaths = [
@@ -44,22 +43,17 @@ app.use("/api/orders", publicOrdersRouter);
 app.use("/api/orders", requireAdmin, adminOrdersRouter);
 app.use("/api/admin/order-batches", requireAdmin, adminOrderBatchesRouter);
 
-app.get("/", (_req, res) => {
-  res.type("html").send(getBatchListPage());
-});
-
-app.get("/order/:id", (_req, res) => {
-  res.type("html").send(getOrderPage());
-});
-
-app.get("/admin", (_req, res) => {
-  res.type("html").send(getAdminPage());
-});
-
 if (webDistPath) {
   app.use(express.static(webDistPath));
   app.get(/^(?!\/api).*/, (_req, res) => {
     res.sendFile(join(webDistPath, "index.html"));
+  });
+} else {
+  app.get(/^(?!\/api).*/, (_req, res) => {
+    res
+      .status(503)
+      .type("text/plain")
+      .send("Web build not found. Run the web build before starting the server.");
   });
 }
 

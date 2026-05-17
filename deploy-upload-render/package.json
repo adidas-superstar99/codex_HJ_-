@@ -9,9 +9,9 @@
   ],
   "scripts": {
     "dev": "concurrently \"npm run dev --workspace apps/server\" \"npm run dev --workspace apps/web\"",
-    "build": "npm run build --workspace apps/server",
+    "build": "npm run build --workspace apps/web && npm run build --workspace apps/server",
     "start": "npm run start --workspace apps/server",
-    "typecheck": "npm run typecheck --workspace apps/server"
+    "typecheck": "npm run typecheck --workspace apps/web && npm run typecheck --workspace apps/server"
   },
   "devDependencies": {
     "concurrently": "^9.1.2"
