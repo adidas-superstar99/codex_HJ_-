@@ -7,96 +7,212 @@
   $styles
 </head>
 <body>
-<main>
-  <div class="top">
+<main class="app-shell premium-shell">
+  <div class="top order-header">
     <div>
       <div class="brand-lockup">
         <img class="brand-logo" src="/assets/logo-samoo.png" alt="SAMOO AX 로고">
-        <div class="eyebrow">SAMOO AX 음료 주문</div>
+        <div class="eyebrow">SAMOO AX Beverage Order</div>
       </div>
       <h1 id="pageTitle">음료 주문</h1>
       <div class="dept-badge page-dept-badge" id="pageDepartment">AX팀</div>
-      <p class="muted" id="pageMemo">주문목록을 불러오는 중입니다.</p>
+      <p class="muted" id="pageMemo">주문 목록 정보를 불러오는 중입니다.</p>
     </div>
-    <div><a href="/">주문 목록</a> · <a href="/admin">관리자</a></div>
+    <div><a href="/">주문 목록</a> · <a href="/admin">관리자 보기</a></div>
   </div>
 
-  <section class="hero-card" id="heroCard">
-    <div class="hero-content">
-      <div class="hero-pills">
-        <span>빠른 주문</span>
-        <span>최근 주문 재사용</span>
-        <span>인기 메뉴 자동 반영</span>
+  <section class="hero-panel">
+    <div class="hero-copy">
+      <p class="eyebrow" id="heroEyebrow">Starbucks selection</p>
+      <h1 id="heroHeadline">AX 전용 음료 주문을 더 빠르고 세련되게.</h1>
+      <p class="hero-description" id="heroDescription">오늘은 고른 메뉴를 빠르게 담고, 최근 주문과 이번 주문 인기 메뉴를 바로 확인할 수 있게 정리했습니다.</p>
+      <div class="hero-actions">
+        <button class="hero-cta" id="heroAction" type="button">메뉴 고르기</button>
+        <a class="admin-link subtle-link" href="/admin">관리자 보기</a>
       </div>
-      <h2 id="heroTitle">지금 많이 담기는 메뉴를 먼저 보여드릴게요.</h2>
-      <p class="hero-copy" id="heroCopy">최근 주문은 오른쪽 패널에서 다시 담을 수 있고, 이번 주문목록에서 많이 담긴 메뉴는 아래에 썸네일로 바로 노출됩니다.</p>
-      <div class="hero-action">
-        <button class="primary" id="heroAction" type="button">메뉴 고르기</button>
-        <span class="muted">매장 주문 완료와 수령 완료는 관리자 화면에서 운영자가 직접 표시합니다.</span>
+    </div>
+
+    <div class="hero-meta-card">
+      <div class="hero-meta-header">
+        <span class="brand-chip" id="heroBrandChip">스타벅스</span>
+        <span class="meta-hint">실시간 선택 상태</span>
+      </div>
+      <div class="hero-stats-grid" id="heroStats"></div>
+      <div class="hero-progress">
+        <div class="progress-step">
+          <span class="progress-dot active"></span>
+          <small>주문 작성</small>
+        </div>
+        <div class="progress-step">
+          <span class="progress-dot active"></span>
+          <small>주문 확정</small>
+        </div>
+        <div class="progress-step">
+          <span class="progress-dot"></span>
+          <small>매장 주문 완료</small>
+        </div>
+        <div class="progress-step">
+          <span class="progress-dot"></span>
+          <small>수령 완료</small>
+        </div>
       </div>
     </div>
   </section>
 
   <form class="layout" id="orderForm" style="display:none">
-    <section>
-      <div class="toolbar">
-        <div class="tabs">
-          <button type="button" data-brand="STARBUCKS" class="active">스타벅스</button>
-          <button type="button" data-brand="TWOSOME">투썸플레이스</button>
+    <section class="main-panel main-panel-premium" id="menuSection">
+      <div class="section-heading-row">
+        <div>
+          <p class="section-kicker">Menu directory</p>
+          <h2>브랜드별 메뉴를 한 번에 보고 바로 담기</h2>
         </div>
-        <div class="filters">
-          <input id="query" placeholder="메뉴명 검색">
-        </div>
-        <button class="secondary cart-toggle" id="cartToggle" type="button">내 주문</button>
+        <span class="section-count" id="menuCount">0 items</span>
       </div>
 
-      <section class="popular-strip" id="popularStrip" style="display:none"></section>
-      <div class="category-strip" id="categoryStrip"></div>
-      <div class="menu-sections" id="menuGrid"></div>
+      <div class="toolbar premium-toolbar">
+        <div class="segmented premium-segmented tabs">
+          <button type="button" data-brand="STARBUCKS" class="active">
+            <strong>스타벅스</strong>
+            <small>커피 · 프라푸치노</small>
+          </button>
+          <button type="button" data-brand="TWOSOME">
+            <strong>투썸플레이스</strong>
+            <small>커피 · 디저트 음료</small>
+          </button>
+        </div>
+        <label class="search-shell">
+          <span>검색</span>
+          <input id="query" placeholder="메뉴명으로 검색">
+        </label>
+      </div>
+
+      <div class="category-pills" id="categoryStrip"></div>
+      <section class="featured-strip" id="popularStrip" style="display:none"></section>
+      <div class="menu-grid" id="menuGrid"></div>
     </section>
 
-    <aside id="orderAside">
-      <div class="order-side-header">
-        <h2>내 주문</h2>
-        <button class="close-side" id="closeSide" type="button">닫기</button>
+    <aside class="side-panel side-panel-premium">
+      <div class="panel-section panel-glass">
+        <div class="panel-title-row">
+          <div>
+            <p class="section-kicker">Checkout</p>
+            <h2>주문자 정보</h2>
+          </div>
+        </div>
+        <label class="field">
+          <span>이름 *</span>
+          <input id="ordererName" placeholder="주문자 이름">
+        </label>
+        <div class="recent-order" id="recentOrder" style="display:none"></div>
       </div>
-      <h2 class="order-side-title">내 주문</h2>
-      <label>
-        <span>이름 *</span>
-        <input id="ordererName" placeholder="주문자 이름">
-      </label>
-      <div class="recent-order" id="recentOrder" style="display:none"></div>
-      <div class="flow-card">
-        <strong>주문 진행 흐름</strong>
-        <p class="muted">주문 접수 → 주문 확정 → 매장 주문 완료 → 수령 완료 순서로 관리자 화면에서 업데이트됩니다.</p>
+
+      <div class="panel-section panel-glass cart-panel">
+        <div class="panel-title-row">
+          <div>
+            <p class="section-kicker">Cart</p>
+            <h2>장바구니</h2>
+          </div>
+          <span class="pill-count" id="cartCount">0</span>
+        </div>
+        <div class="cart-list" id="cart"></div>
       </div>
-      <h2>장바구니</h2>
-      <div class="cart" id="cart"></div>
-      <p class="message" id="message" style="display:none"></p>
-      <button class="primary" id="submitButton" type="submit">주문 제출</button>
+
+      <div class="panel-section panel-glass status-panel">
+        <div class="panel-title-row">
+          <div>
+            <p class="section-kicker">Flow</p>
+            <h2>주문 진행 흐름</h2>
+          </div>
+        </div>
+        <div class="status-step-list">
+          <div class="status-step-item">
+            <span class="status-step-bullet active"></span>
+            <div>
+              <strong>주문 작성</strong>
+              <p>메뉴와 옵션을 담고 제출하면 주문이 접수됩니다.</p>
+            </div>
+          </div>
+          <div class="status-step-item">
+            <span class="status-step-bullet active"></span>
+            <div>
+              <strong>주문 확정</strong>
+              <p>관리자 화면에서 취합을 마치면 주문 확정으로 바뀝니다.</p>
+            </div>
+          </div>
+          <div class="status-step-item">
+            <span class="status-step-bullet"></span>
+            <div>
+              <strong>매장 주문 완료</strong>
+              <p>스타벅스와 투썸 API가 없어서 운영자가 수동으로 표시합니다.</p>
+            </div>
+          </div>
+          <div class="status-step-item">
+            <span class="status-step-bullet"></span>
+            <div>
+              <strong>수령 완료</strong>
+              <p>음료를 실제로 받은 뒤 관리자 모드에서 완료 처리합니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="status-message premium-status" id="message" style="display:none"></p>
+      <button class="primary-button premium-submit" id="submitButton" type="submit">주문 제출</button>
     </aside>
   </form>
 
-  <button class="primary cart-fab" id="cartFab" type="button">내 주문</button>
-  <div class="cart-backdrop" id="cartBackdrop"></div>
-
-  <section class="public-orders" id="publicOrdersPanel" style="display:none">
+  <section class="dashboard-section" id="publicOrdersPanel" style="display:none">
     <div class="top">
       <div>
-        <h2>현재 주문 목록</h2>
-        <p class="muted">제출한 뒤 여기에서 내 주문을 다시 수정하거나 취소할 수 있습니다.</p>
+        <p class="section-kicker">Live board</p>
+        <h2>현재 주문 현황</h2>
+        <p class="muted">내 이름과 일치하는 주문만 여기서 다시 수정하거나 취소할 수 있습니다.</p>
       </div>
-      <button class="soft-action" type="button" onclick="loadPublicOrders()">주문 목록 새로고침</button>
+      <button class="secondary-button" type="button" onclick="loadPublicOrders()">새로고침</button>
     </div>
-    <div class="stats" id="publicStats"></div>
-    <div id="publicOrders" class="public-order-grid"></div>
+    <div class="hero-stats-grid" id="publicStats"></div>
+    <div class="order-list" id="publicOrders"></div>
   </section>
 
-  <div id="closed" class="empty" style="display:none"></div>
+  <div class="empty-state" id="closed" style="display:none"></div>
 </main>
+
+<div class="floating-submit-bar" id="floatingSubmitBar">
+  <div>
+    <strong id="floatingCartCount">0잔 담김</strong>
+    <span id="floatingCartHint">메뉴를 담으면 여기서 바로 제출할 수 있어요.</span>
+  </div>
+  <button class="primary-button floating-submit-button" id="cartFab" type="button">주문 확인</button>
+</div>
+
 <div id="modalRoot"></div>
+
 <script>
 const batchId = location.pathname.split("/").filter(Boolean)[1];
+const brandHighlights = {
+  STARBUCKS: {
+    eyebrow: "Starbucks selection",
+    title: "AX 전용 음료 주문을 더 빠르고 세련되게.",
+    description: "오늘은 고른 메뉴를 빠르게 담고, 신메뉴와 자주 고르는 조합을 한 번에 볼 수 있게 다듬었습니다."
+  },
+  TWOSOME: {
+    eyebrow: "Twosome selection",
+    title: "디저트 음료까지 편하게 비교하고 바로 담아보세요.",
+    description: "커피와 라떼, 에이드까지 카테고리 흐름을 단정하게 정리해서 고르기 쉽게 만들었습니다."
+  }
+};
+const brandNames = {
+  STARBUCKS: "스타벅스",
+  TWOSOME: "투썸플레이스"
+};
+const statusLabels = {
+  submitted: "주문 접수",
+  confirmed: "주문 확정",
+  ordered: "매장 주문 완료",
+  completed: "수령 완료",
+  cancelled: "취소"
+};
+
 let batch = null;
 let brand = "STARBUCKS";
 let menus = [];
@@ -119,37 +235,23 @@ function escapeHtml(value) {
 }
 
 function brandName(value) {
-  return value === "STARBUCKS" ? "스타벅스" : value === "TWOSOME" ? "투썸플레이스" : value;
+  return brandNames[value] || value;
+}
+
+function statusName(value) {
+  return statusLabels[value] || value;
 }
 
 function categoryLabel(value) {
-  if (value === "NEW") return "신메뉴";
+  if (value === "ALL") return "전체";
   if (value === "POPULAR") return "이번 주문 인기";
+  if (value === "NEW") return "신메뉴 · 시즌 메뉴";
   return value;
 }
 
 function msg(text) {
   $("message").textContent = text;
   $("message").style.display = text ? "block" : "none";
-}
-
-function isCompactLayout() {
-  return window.innerWidth <= 1200;
-}
-
-function updateOrderPanelButtons() {
-  const count = cart.reduce((sum, item) => sum + Number(item.quantity || 0), 0);
-  const label = count ? `내 주문 ${count}잔` : "내 주문";
-  if ($("cartToggle")) $("cartToggle").textContent = label;
-  if ($("cartFab")) $("cartFab").textContent = label;
-}
-
-function openOrderPanel() {
-  if (isCompactLayout()) $("orderForm").classList.add("side-open");
-}
-
-function closeOrderPanel() {
-  $("orderForm").classList.remove("side-open");
 }
 
 function getRecentOrder() {
@@ -162,18 +264,17 @@ function getRecentOrder() {
 }
 
 function saveRecentOrder(ordererName, items) {
-  const normalizedItems = items.map((item) => ({
-    brand: item.brand,
-    menuId: item.menuId,
-    menuName: item.menuName,
-    category: item.category,
-    size: item.size,
-    quantity: item.quantity,
-    customRequest: item.customRequest || ""
-  }));
   localStorage.setItem(recentOrderKey, JSON.stringify({
     ordererName,
-    items: normalizedItems,
+    items: items.map((item) => ({
+      brand: item.brand,
+      menuId: item.menuId,
+      menuName: item.menuName,
+      category: item.category,
+      size: item.size,
+      quantity: item.quantity,
+      customRequest: item.customRequest || ""
+    })),
     savedAt: new Date().toISOString()
   }));
   renderRecentOrder();
@@ -186,6 +287,7 @@ function renderRecentOrder() {
     $("recentOrder").innerHTML = "";
     return;
   }
+
   const preview = saved.items.slice(0, 3).map((item) => escapeHtml(item.menuName)).join(", ");
   $("recentOrder").style.display = "grid";
   $("recentOrder").innerHTML = `
@@ -193,7 +295,7 @@ function renderRecentOrder() {
       <strong>최근 주문</strong>
       <p class="muted">${preview}${saved.items.length > 3 ? ` 외 ${saved.items.length - 3}개` : ""}</p>
     </div>
-    <button class="soft-action" type="button" onclick="applyRecentOrder()">다시 담기</button>
+    <button class="secondary-button" type="button" onclick="applyRecentOrder()">다시 담기</button>
   `;
 }
 
@@ -205,50 +307,7 @@ function applyRecentOrder() {
   }
   cart = saved.items.map((item) => ({ ...item, localId: crypto.randomUUID() }));
   renderCart();
-  openOrderPanel();
-  msg("최근 주문을 장바구니에 다시 담았습니다.");
-}
-
-async function loadBatch() {
-  const response = await fetch("/api/order-batches/" + batchId);
-  if (!response.ok) {
-    $("closed").style.display = "block";
-    $("closed").textContent = "주문목록을 찾을 수 없습니다.";
-    return;
-  }
-
-  batch = await response.json();
-  $("pageTitle").textContent = batch.title;
-  $("pageDepartment").textContent = batch.department || "AX팀";
-  $("pageMemo").textContent = batch.memo || "이 주문목록 안에서 원하는 음료를 골라 주세요.";
-
-  if (batch.status !== "open") {
-    $("closed").style.display = "block";
-    $("closed").textContent = "마감된 주문목록입니다. 관리자에게 새 주문목록을 요청해 주세요.";
-    return;
-  }
-
-  $("orderForm").style.display = "grid";
-  $("publicOrdersPanel").style.display = "block";
-  await loadMenus();
-  renderCart();
-  await loadPublicOrders();
-}
-
-async function loadMenus() {
-  const [menuResponse, popularResponse] = await Promise.all([
-    fetch("/api/menus?brand=" + brand),
-    fetch(`/api/orders/popular?batchId=${encodeURIComponent(batchId)}&brand=${encodeURIComponent(brand)}&limit=3`)
-  ]);
-  menus = await menuResponse.json();
-  popularRows = popularResponse.ok ? await popularResponse.json() : [];
-  renderPopularStrip();
-  renderCategories();
-  renderMenus();
-}
-
-function selectedCategory() {
-  return document.querySelector("#categoryStrip button.active")?.dataset.category || "ALL";
+  msg("최근 주문을 장바구니에 다시 불러왔습니다.");
 }
 
 function popularMenuIds() {
@@ -259,33 +318,106 @@ function isPopularMenu(menu) {
   return popularMenuIds().has(menu.id);
 }
 
-function renderPopularStrip() {
-  if (!popularRows.length) {
-    $("popularStrip").style.display = "none";
-    $("popularStrip").innerHTML = "";
-    $("heroTitle").textContent = "지금 많이 담기는 메뉴를 먼저 보여드릴게요.";
-    $("heroCopy").textContent = "최근 주문은 오른쪽 패널에서 다시 담을 수 있고, 이번 주문목록에서 많이 담긴 메뉴는 아래에 썸네일로 바로 노출됩니다.";
-    return;
-  }
+function fallbackMenus() {
+  return menus.filter((menu) => menu.isNew || menu.isSeasonal).slice(0, 3);
+}
 
-  const items = popularRows
-    .map((row) => {
+function spotlightMenus() {
+  if (popularRows.length) {
+    return popularRows.map((row) => {
       const menu = menus.find((item) => item.id === row.menuId);
-      if (!menu) return "";
-      return `
-        <button class="popular-card" type="button" onclick="openMenu('${menu.id}')">
-          <img src="${menu.imageUrl}" alt="">
-          <div>
-            <strong>${escapeHtml(menu.name)}</strong>
-            <span>${escapeHtml(menu.category)} · ${row.quantity}잔</span>
-          </div>
-        </button>
-      `;
-    })
-    .filter(Boolean)
-    .join("");
+      return menu ? { ...menu, orderedQuantity: row.quantity } : null;
+    }).filter(Boolean);
+  }
+  return fallbackMenus();
+}
 
-  if (!items) {
+function selectedCategory() {
+  return document.querySelector("#categoryStrip button.active")?.dataset.category || "ALL";
+}
+
+function updateOrderPanelButtons() {
+  const totalCartCount = cart.reduce((sum, item) => sum + Number(item.quantity || 0), 0);
+  $("cartCount").textContent = String(totalCartCount);
+  $("floatingCartCount").textContent = totalCartCount ? `${totalCartCount}잔 담김` : "0잔 담김";
+  $("floatingCartHint").textContent = totalCartCount
+    ? "장바구니를 확인하고 여기서 바로 제출할 수 있어요."
+    : "메뉴를 담으면 여기서 바로 제출할 수 있어요.";
+  $("cartFab").textContent = totalCartCount ? `주문 확인 ${totalCartCount}` : "주문 확인";
+}
+
+function renderHero() {
+  const hero = brandHighlights[brand];
+  const spotlight = spotlightMenus();
+  const visibleMenus = filteredMenus();
+  const topCategories = [...new Set(menus.map((menu) => menu.category))].slice(0, 4);
+
+  $("heroEyebrow").textContent = hero.eyebrow;
+  $("heroHeadline").textContent = hero.title;
+  $("heroDescription").textContent = popularRows.length
+    ? "이번 주문에서 많이 담은 메뉴를 먼저 보여주고, 주문 확정과 수령 완료는 관리자 모드에서 수동으로 반영합니다."
+    : hero.description;
+  $("heroBrandChip").textContent = brandName(brand);
+  $("menuCount").textContent = `${visibleMenus.length} items`;
+  $("heroStats").innerHTML = `
+    <div class="stat-card glow-card">
+      <strong>${spotlight.length}</strong>
+      <span>${popularRows.length ? "이번 주문 인기" : "신메뉴 · 시즌 메뉴"}</span>
+    </div>
+    <div class="stat-card">
+      <strong>${visibleMenus.length}</strong>
+      <span>현재 탐색 가능</span>
+    </div>
+    <div class="stat-card">
+      <strong>${cart.reduce((sum, item) => sum + Number(item.quantity || 0), 0)}</strong>
+      <span>담긴 수량</span>
+    </div>
+    <div class="stat-card">
+      <strong>${topCategories.length || 1}</strong>
+      <span>주요 카테고리</span>
+    </div>
+  `;
+}
+
+function filteredMenus() {
+  const query = $("query").value.trim().toLowerCase();
+  const category = selectedCategory();
+  return menus.filter((menu) => {
+    if (query && !menu.name.toLowerCase().includes(query)) return false;
+    if (category === "ALL") return true;
+    if (category === "POPULAR") return isPopularMenu(menu);
+    if (category === "NEW") return menu.isNew === true || menu.isSeasonal === true;
+    return menu.category === category;
+  });
+}
+
+function renderCategories() {
+  const categories = [
+    "ALL",
+    ...(popularRows.length ? ["POPULAR"] : []),
+    ...(menus.some((menu) => menu.isNew || menu.isSeasonal) ? ["NEW"] : []),
+    ...new Set(menus.map((menu) => menu.category))
+  ];
+  const active = categories.includes(selectedCategory()) ? selectedCategory() : "ALL";
+  $("categoryStrip").innerHTML = categories.map((category) => `
+    <button type="button" data-category="${category}" class="${category === active ? "active" : ""}">
+      ${escapeHtml(categoryLabel(category))}
+    </button>
+  `).join("");
+
+  document.querySelectorAll("#categoryStrip button").forEach((button) => {
+    button.onclick = () => {
+      document.querySelectorAll("#categoryStrip button").forEach((item) => item.classList.remove("active"));
+      button.classList.add("active");
+      renderHero();
+      renderMenus();
+    };
+  });
+}
+
+function renderPopularStrip() {
+  const items = spotlightMenus();
+  if (!items.length) {
     $("popularStrip").style.display = "none";
     $("popularStrip").innerHTML = "";
     return;
@@ -293,152 +425,130 @@ function renderPopularStrip() {
 
   $("popularStrip").style.display = "grid";
   $("popularStrip").innerHTML = `
-    <div class="popular-strip-head">
+    <div class="section-heading-row compact">
       <div>
-        <p class="eyebrow">Quick Picks</p>
-        <h3>이번 주문 인기 메뉴</h3>
+        <p class="section-kicker">Quick picks</p>
+        <h3>${popularRows.length ? "이번 주문 인기 메뉴" : "신메뉴 · 시즌 메뉴"}</h3>
+        <p class="featured-strip-hint">${popularRows.length ? "해당 주문에서 사람들이 가장 많이 담은 메뉴를 이미지로 먼저 보여줍니다." : "아직 주문 데이터가 적어서 신메뉴와 시즌 메뉴를 먼저 보여드립니다."}</p>
       </div>
-      <span class="muted">주문 수량 기준 상위 메뉴</span>
     </div>
-    <div class="popular-grid">${items}</div>
+    <div class="featured-grid">
+      ${items.map((menu) => `
+        <button class="featured-card" type="button" onclick="openMenu('${menu.id}')">
+          <img src="${menu.imageUrl}" alt="">
+          <div>
+            <strong>${escapeHtml(menu.name)}</strong>
+            <span>${escapeHtml(menu.category)}${menu.orderedQuantity ? ` · ${menu.orderedQuantity}잔` : ""}</span>
+          </div>
+        </button>
+      `).join("")}
+    </div>
   `;
-  $("heroTitle").textContent = "이번 주문에서 많이 담긴 메뉴부터 빠르게 고를 수 있어요.";
-  $("heroCopy").textContent = "실제 주문 데이터 기준 인기 메뉴를 먼저 보여주고, 운영 상태는 관리자 화면에서 주문 확정과 수령 완료로 직접 표시합니다.";
-}
-
-function renderCategories() {
-  const menuCategories = [...new Set(menus.map((menu) => menu.category))];
-  const categories = ["ALL", ...(popularRows.length ? ["POPULAR"] : []), ...(menus.some((menu) => menu.isNew) ? ["NEW"] : []), ...menuCategories];
-  const active = categories.includes(selectedCategory()) ? selectedCategory() : "ALL";
-  $("categoryStrip").innerHTML = categories.map((category) =>
-    `<button type="button" data-category="${category}" class="${category === active ? "active" : ""}">${escapeHtml(category === "ALL" ? "전체 메뉴" : categoryLabel(category))}</button>`
-  ).join("");
-  document.querySelectorAll("#categoryStrip button").forEach((button) => {
-    button.onclick = () => {
-      document.querySelectorAll("#categoryStrip button").forEach((item) => item.classList.remove("active"));
-      button.classList.add("active");
-      renderMenus();
-    };
-  });
 }
 
 function renderMenus() {
-  const query = $("query").value.trim().toLowerCase();
-  const category = selectedCategory();
-  const list = menus.filter((menu) =>
-    (!query || menu.name.toLowerCase().includes(query)) &&
-    (
-      category === "ALL" ||
-      (category === "NEW" ? menu.isNew === true : category === "POPULAR" ? isPopularMenu(menu) : menu.category === category)
-    )
-  );
+  const visibleMenus = filteredMenus();
+  $("menuCount").textContent = `${visibleMenus.length} items`;
 
-  if (!list.length) {
-    $("menuGrid").innerHTML = '<div class="empty">조건에 맞는 메뉴가 없습니다.</div>';
+  if (!visibleMenus.length) {
+    $("menuGrid").innerHTML = '<div class="empty-state">조건에 맞는 메뉴가 없습니다.</div>';
     return;
   }
 
-  const grouped = new Map();
-  if (category === "ALL") {
-    const popularMenus = list.filter(isPopularMenu);
-    if (popularMenus.length) grouped.set("POPULAR", popularMenus);
-    const newMenus = list.filter((menu) => menu.isNew === true);
-    if (newMenus.length) grouped.set("NEW", newMenus);
-    list.forEach((menu) => {
-      if (isPopularMenu(menu) || menu.isNew === true) return;
-      if (!grouped.has(menu.category)) grouped.set(menu.category, []);
-      grouped.get(menu.category).push(menu);
-    });
-  } else {
-    list.forEach((menu) => {
-      const key = category === "NEW" || category === "POPULAR" ? category : menu.category;
-      if (!grouped.has(key)) grouped.set(key, []);
-      grouped.get(key).push(menu);
-    });
-  }
-
-  $("menuGrid").innerHTML = Array.from(grouped.entries()).map(([groupName, categoryMenus]) => `
-    <details class="menu-section ${groupName === "POPULAR" ? "popular-section" : ""}" ${groupName === "POPULAR" || groupName === "NEW" ? "open" : ""}>
-      <summary class="menu-section-header">
-        <h3>${escapeHtml(categoryLabel(groupName))}</h3>
-        <span class="menu-section-count"><strong>${categoryMenus.length}</strong></span>
-        <span class="menu-section-toggle">${groupName === "POPULAR" || groupName === "NEW" ? "닫기" : "열기"}</span>
-      </summary>
-      <div class="menu-section-body">
-        <div class="menu-grid">
-          ${categoryMenus.map((menu) => `
-            <article class="card">
-              <img src="${menu.imageUrl}" alt="">
-              <div>
-                <span class="meta">${brandName(menu.brand)} · ${menu.category}</span>
-                <h3>${escapeHtml(menu.name)}</h3>
-                <button class="secondary" type="button" onclick="openMenu('${menu.id}')">담기</button>
-              </div>
-            </article>
-          `).join("")}
+  $("menuGrid").innerHTML = visibleMenus.map((menu) => `
+    <article class="menu-card premium-menu-card">
+      <div class="menu-image-wrap">
+        <img src="${menu.imageUrl}" alt="">
+        <div class="menu-image-overlay">
+          <span>${brandName(menu.brand)}</span>
+          <span>${escapeHtml(menu.category)}</span>
         </div>
       </div>
-    </details>
+      <div class="premium-menu-card-body">
+        <div class="badge-row">
+          ${isPopularMenu(menu) ? '<span class="badge">인기</span>' : ""}
+          ${menu.isNew ? '<span class="badge seasonal">신메뉴</span>' : ""}
+          ${menu.isSeasonal ? '<span class="badge seasonal">시즌</span>' : ""}
+        </div>
+        <h3>${escapeHtml(menu.name)}</h3>
+        <div class="menu-meta">
+          <span>${escapeHtml(menu.availableSizes.join(" · "))}</span>
+        </div>
+        <button class="icon-text-button" type="button" onclick="openMenu('${menu.id}')">담기</button>
+      </div>
+    </article>
   `).join("");
-  bindMenuSections();
-}
-
-function bindMenuSections() {
-  document.querySelectorAll(".menu-section").forEach((section) => {
-    const toggle = section.querySelector(".menu-section-toggle");
-    const sync = () => {
-      if (toggle) toggle.textContent = section.open ? "닫기" : "열기";
-    };
-    sync();
-    section.addEventListener("toggle", sync);
-  });
 }
 
 function renderCart() {
-  $("cart").innerHTML = cart.length ? cart.map((item) => `
+  if (!cart.length) {
+    $("cart").innerHTML = '<div class="cart-empty">아직 담은 음료가 없습니다.</div>';
+    updateOrderPanelButtons();
+    renderHero();
+    return;
+  }
+
+  $("cart").innerHTML = cart.map((item) => `
     <div class="cart-item">
       <strong>${escapeHtml(item.menuName)}</strong>
-      <div class="meta">${brandName(item.brand)} · ${item.size}</div>
+      <span>${brandName(item.brand)} · ${escapeHtml(item.size)}</span>
       ${item.customRequest ? `<p>${escapeHtml(item.customRequest)}</p>` : ""}
-      <div class="cart-actions">
-        <button type="button" onclick="qty('${item.localId}',-1)">-</button>
+      <div class="quantity-control">
+        <button type="button" onclick="qty('${item.localId}', -1)">-</button>
         <span>${item.quantity}</span>
-        <button type="button" onclick="qty('${item.localId}',1)">+</button>
-        <button type="button" onclick="removeItem('${item.localId}')">×</button>
+        <button type="button" onclick="qty('${item.localId}', 1)">+</button>
+        <button type="button" onclick="removeItem('${item.localId}')">x</button>
       </div>
     </div>
-  `).join("") : '<div class="empty">선택한 음료가 아직 없습니다.</div>';
+  `).join("");
   updateOrderPanelButtons();
-}
-
-async function loadPublicOrders() {
-  const response = await fetch("/api/order-batches/" + batchId + "/orders");
-  const data = response.ok ? await response.json() : [];
-  const orders = Array.isArray(data) ? data : (data ? [data] : []);
-  renderPublicOrders(orders);
+  renderHero();
 }
 
 function renderPublicOrders(orders) {
   const currentName = $("ordererName").value.trim();
   const people = new Set(orders.map((order) => order.ordererName));
   const cups = orders.reduce((sum, order) => sum + order.items.reduce((itemSum, item) => itemSum + Number(item.quantity || 0), 0), 0);
-  $("publicStats").innerHTML = `<span class="stat">주문자 ${people.size}명</span><span class="stat">음료 ${cups}잔</span>`;
-  $("publicOrders").innerHTML = orders.length ? orders.map((order) => {
+
+  $("publicStats").innerHTML = `
+    <div class="stat-card"><strong>${people.size}</strong><span>주문 인원</span></div>
+    <div class="stat-card"><strong>${cups}</strong><span>전체 수량</span></div>
+  `;
+
+  if (!orders.length) {
+    $("publicOrders").innerHTML = '<div class="empty-state">아직 제출된 주문이 없습니다.</div>';
+    return;
+  }
+
+  $("publicOrders").innerHTML = orders.map((order) => {
     const mine = currentName && order.ordererName === currentName;
-    const items = order.items.map((item) =>
-      `<li>${brandName(item.brand)} · ${escapeHtml(item.menuName)} · ${item.size} · ${item.quantity}잔${item.customRequest ? `<em>${escapeHtml(item.customRequest)}</em>` : ""}</li>`
-    ).join("");
+    const items = order.items.map((item) => `
+      <li>${brandName(item.brand)} · ${escapeHtml(item.menuName)} · ${item.size} · ${item.quantity}잔${item.customRequest ? `<em>${escapeHtml(item.customRequest)}</em>` : ""}</li>
+    `).join("");
     const actions = mine
-      ? `<div class="filters"><button class="secondary" type="button" onclick="editOrder('${order.id}')">수정</button><button class="danger" type="button" onclick="cancelOrder('${order.id}')">취소</button></div>`
+      ? `<div class="filters"><button class="secondary-button" type="button" onclick="editOrder('${order.id}')">수정</button><button class="secondary-button" type="button" onclick="cancelOrder('${order.id}')">취소</button></div>`
       : "";
-    const statusBadge = order.status ? `<span class="order-status-badge">${escapeHtml(order.status)}</span>` : "";
-    return `<article class="public-order ${mine ? "mine" : ""}">
-      <h3>${escapeHtml(order.ordererName)}${mine ? ' <span class="badge">내 주문</span>' : ""}</h3>
-      <p class="muted">${new Date(order.orderedAt).toLocaleString("ko-KR")} ${statusBadge}</p>
-      <ul>${items}</ul>
-      ${actions}
-    </article>`;
-  }).join("") : '<div class="empty">아직 제출된 주문이 없습니다.</div>';
+
+    return `
+      <article class="order-row">
+        <header>
+          <div>
+            <strong>${escapeHtml(order.ordererName)}</strong>
+            <span>${new Date(order.orderedAt).toLocaleString("ko-KR")}</span>
+          </div>
+          <span class="badge">${statusName(order.status)}</span>
+        </header>
+        <ul>${items}</ul>
+        ${actions}
+      </article>
+    `;
+  }).join("");
+}
+
+async function loadPublicOrders() {
+  const response = await fetch("/api/order-batches/" + batchId + "/orders");
+  const data = response.ok ? await response.json() : [];
+  renderPublicOrders(Array.isArray(data) ? data : (data ? [data] : []));
 }
 
 async function findMyOrder(id) {
@@ -457,66 +567,75 @@ async function editOrder(id) {
   }
   editingOrderId = id;
   cart = order.items.map((item) => ({ ...item, localId: crypto.randomUUID() }));
-  $("submitButton").textContent = "수정 저장";
+  $("submitButton").textContent = "수정 제출";
   renderCart();
-  openOrderPanel();
-  msg("장바구니에서 내용을 바꾼 뒤 수정 저장을 눌러 주세요.");
+  msg("장바구니 내용을 바꾼 뒤 수정 제출을 눌러주세요.");
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 async function cancelOrder(id) {
   const ordererName = $("ordererName").value.trim();
   if (!ordererName) {
-    msg("취소하려면 먼저 이름을 입력해 주세요.");
+    msg("취소하려면 먼저 이름을 입력해주세요.");
     return;
   }
   if (!confirm("내 주문을 취소할까요?")) return;
+
   const response = await fetch("/api/orders/" + id, {
     method: "DELETE",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ ordererName })
   });
-  if (response.ok) {
-    if (editingOrderId === id) {
-      editingOrderId = "";
-      cart = [];
-      $("submitButton").textContent = "주문 제출";
-      renderCart();
-    }
-    msg("주문을 취소했습니다.");
-    await loadPublicOrders();
-    await loadMenus();
-  } else {
+
+  if (!response.ok) {
     const error = await response.json().catch(() => ({ message: "주문 취소에 실패했습니다." }));
     msg(error.message || "주문 취소에 실패했습니다.");
+    return;
   }
+
+  if (editingOrderId === id) {
+    editingOrderId = "";
+    cart = [];
+    $("submitButton").textContent = "주문 제출";
+    renderCart();
+  }
+  msg("주문을 취소했습니다.");
+  await loadPublicOrders();
+  await loadMenus();
 }
 
 function openMenu(id) {
   selected = menus.find((menu) => menu.id === id);
-  const sizes = selected.availableSizes.map((size, index) =>
-    `<button type="button" class="${index === 0 ? "active" : ""}" data-size="${size}">${size}</button>`
-  ).join("");
+  if (!selected) return;
+
+  const sizes = selected.availableSizes.map((size, index) => `
+    <button type="button" class="${index === 0 ? "active" : ""}" data-size="${size}">${size}</button>
+  `).join("");
+
   $("modalRoot").innerHTML = `
-    <div class="backdrop">
-      <div class="modal">
-        <button class="close" type="button" onclick="closeModal()">×</button>
+    <div class="modal-backdrop" role="presentation">
+      <div class="modal premium-modal" role="dialog" aria-modal="true">
+        <button class="close-button" type="button" aria-label="닫기" onclick="closeModal()">x</button>
         <img src="${selected.imageUrl}" alt="">
-        <h2>${escapeHtml(selected.name)}</h2>
-        <p class="muted">${brandName(selected.brand)} · ${selected.category}</p>
-        <div class="sizes" id="sizes">${sizes}</div>
-        <label>
+        <div class="modal-copy">
+          <span class="brand-chip">${brandName(selected.brand)}</span>
+          <h2>${escapeHtml(selected.name)}</h2>
+          <p>${escapeHtml(selected.category)}</p>
+        </div>
+        <div class="size-selector" id="sizes">${sizes}</div>
+        <label class="field">
           <span>수량</span>
           <input id="modalQty" type="number" min="1" value="1">
         </label>
-        <label>
+        <label class="field">
           <span>개인 요청사항</span>
-          <textarea id="customRequest" rows="3" placeholder="예: 얼음 적게, 시럽 추가"></textarea>
+          <textarea id="customRequest" rows="3" placeholder="예: 얼음 적게, 샷 추가"></textarea>
         </label>
-        <button class="primary" type="button" onclick="addCart()">장바구니 담기</button>
+        <button class="primary-button premium-submit" type="button" onclick="addCart()">장바구니에 담기</button>
       </div>
     </div>
   `;
+
   document.querySelectorAll("#sizes button").forEach((button) => {
     button.onclick = () => {
       document.querySelectorAll("#sizes button").forEach((item) => item.classList.remove("active"));
@@ -530,7 +649,9 @@ function closeModal() {
 }
 
 function addCart() {
-  const size = document.querySelector("#sizes .active").dataset.size;
+  const size = document.querySelector("#sizes .active")?.dataset.size;
+  if (!selected || !size) return;
+
   cart.push({
     localId: crypto.randomUUID(),
     brand: selected.brand,
@@ -543,17 +664,58 @@ function addCart() {
   });
   closeModal();
   renderCart();
-  openOrderPanel();
 }
 
 function qty(id, delta) {
-  cart = cart.map((item) => item.localId === id ? { ...item, quantity: item.quantity + delta } : item).filter((item) => item.quantity > 0);
+  cart = cart
+    .map((item) => item.localId === id ? { ...item, quantity: item.quantity + delta } : item)
+    .filter((item) => item.quantity > 0);
   renderCart();
 }
 
 function removeItem(id) {
   cart = cart.filter((item) => item.localId !== id);
   renderCart();
+}
+
+async function loadBatch() {
+  const response = await fetch("/api/order-batches/" + batchId);
+  if (!response.ok) {
+    $("closed").style.display = "block";
+    $("closed").textContent = "주문 목록을 찾을 수 없습니다.";
+    return;
+  }
+
+  batch = await response.json();
+  $("pageTitle").textContent = batch.title;
+  $("pageDepartment").textContent = batch.department || "AX팀";
+  $("pageMemo").textContent = batch.memo || "이 주문 목록에서 원하는 음료를 골라 바로 제출할 수 있습니다.";
+
+  if (batch.status !== "open") {
+    $("closed").style.display = "block";
+    $("closed").textContent = "마감된 주문 목록입니다. 관리자에게 새 주문 목록을 요청해주세요.";
+    return;
+  }
+
+  $("orderForm").style.display = "grid";
+  $("publicOrdersPanel").style.display = "grid";
+  await loadMenus();
+  renderCart();
+  renderRecentOrder();
+  await loadPublicOrders();
+}
+
+async function loadMenus() {
+  const [menuResponse, popularResponse] = await Promise.all([
+    fetch("/api/menus?brand=" + brand),
+    fetch(`/api/orders/popular?batchId=${encodeURIComponent(batchId)}&brand=${encodeURIComponent(brand)}&limit=3`)
+  ]);
+  menus = await menuResponse.json();
+  popularRows = popularResponse.ok ? await popularResponse.json() : [];
+  renderCategories();
+  renderPopularStrip();
+  renderHero();
+  renderMenus();
 }
 
 document.querySelectorAll("[data-brand]").forEach((button) => {
@@ -565,55 +727,51 @@ document.querySelectorAll("[data-brand]").forEach((button) => {
   };
 });
 
-$("query").oninput = renderMenus;
-$("ordererName").oninput = () => {
-  loadPublicOrders();
+$("query").oninput = () => {
+  renderHero();
+  renderMenus();
 };
-$("cartToggle").onclick = openOrderPanel;
-$("cartFab").onclick = openOrderPanel;
-$("closeSide").onclick = closeOrderPanel;
-$("cartBackdrop").onclick = closeOrderPanel;
-$("heroAction").onclick = () => document.getElementById("query").scrollIntoView({ behavior: "smooth", block: "center" });
-
-window.addEventListener("resize", () => {
-  if (!isCompactLayout()) closeOrderPanel();
-  updateOrderPanelButtons();
-});
+$("ordererName").oninput = loadPublicOrders;
+$("heroAction").onclick = () => document.getElementById("menuSection").scrollIntoView({ behavior: "smooth", block: "start" });
+$("cartFab").onclick = () => document.querySelector(".side-panel")?.scrollIntoView({ behavior: "smooth", block: "start" });
 
 const savedRecentOrder = getRecentOrder();
-if (savedRecentOrder?.ordererName) $("ordererName").value = savedRecentOrder.ordererName;
-renderRecentOrder();
+if (savedRecentOrder?.ordererName) {
+  $("ordererName").value = savedRecentOrder.ordererName;
+}
 
 $("orderForm").onsubmit = async (event) => {
   event.preventDefault();
   msg("");
+
   const ordererName = $("ordererName").value.trim();
-  if (!ordererName) return msg("주문자 이름을 입력해 주세요.");
-  if (!cart.length) return msg("장바구니에 음료를 담아 주세요.");
+  if (!ordererName) return msg("주문자 이름을 입력해주세요.");
+  if (!cart.length) return msg("장바구니에 음료를 먼저 담아주세요.");
 
   const payload = { batchId, ordererName, items: cart };
   const url = editingOrderId ? "/api/orders/" + editingOrderId : "/api/orders";
   const method = editingOrderId ? "PUT" : "POST";
+
   const response = await fetch(url, {
     method,
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload)
   });
 
-  if (response.ok) {
-    saveRecentOrder(ordererName, cart);
-    cart = [];
-    editingOrderId = "";
-    $("submitButton").textContent = "주문 제출";
-    renderCart();
-    closeOrderPanel();
-    msg(method === "PUT" ? "주문을 수정했습니다." : "주문을 제출했습니다. 아래 목록에서 내 주문을 확인해 보세요.");
-    await loadPublicOrders();
-    await loadMenus();
-  } else {
+  if (!response.ok) {
     const error = await response.json().catch(() => ({ message: "주문 처리에 실패했습니다." }));
     msg(error.message || "주문 처리에 실패했습니다.");
+    return;
   }
+
+  saveRecentOrder(ordererName, cart);
+  cart = [];
+  editingOrderId = "";
+  $("submitButton").textContent = "주문 제출";
+  renderCart();
+  msg(method === "PUT" ? "주문을 수정했습니다." : "주문을 제출했습니다. 아래 목록에서 내 주문을 바로 확인할 수 있어요.");
+  await loadPublicOrders();
+  await loadMenus();
 };
 
 updateOrderPanelButtons();
