@@ -35,9 +35,6 @@
         <span class="muted">장바구니와 내 주문은 항상 같은 화면에서 확인됩니다.</span>
       </div>
     </div>
-    <div class="hero-media">
-      <img id="heroImage" src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=700&q=80" alt="대표 음료 이미지">
-    </div>
   </section>
 
   <form class="layout" id="orderForm" style="display:none">
@@ -163,6 +160,7 @@ const popularMenuNames = [
   "자몽허니블랙티"
 ];
 const popularMenuSet = new Set(popularMenuNames.map(normalizeMenuName));
+const popularMenuRank = new Map(popularMenuNames.map((name, index) => [normalizeMenuName(name), index]));
 
 const $ = (id) => document.getElementById(id);
 
@@ -194,6 +192,12 @@ function isPopularMenu(menu){
   return menu.brand === "STARBUCKS" && popularMenuSet.has(normalizeMenuName(menu.name));
 }
 
+function sortPopularMenus(items){
+  return [...items].sort((a, b) =>
+    (popularMenuRank.get(normalizeMenuName(a.name)) ?? 999) - (popularMenuRank.get(normalizeMenuName(b.name)) ?? 999)
+  );
+}
+
 function msg(text){
   $("message").textContent = text;
   $("message").style.display = text ? "block" : "none";
@@ -215,8 +219,6 @@ function updateHeroFromMenus(){
   if(!target) return;
   $("heroTitle").textContent = target.name;
   $("heroCopy").textContent = `${brandName(target.brand)} · ${categoryLabel(target.category)} 메뉴입니다. 빠르게 담고, 아래 주문 목록에서 내 주문을 바로 확인할 수 있습니다.`;
-  $("heroImage").src = target.imageUrl;
-  $("heroImage").alt = target.name;
 }
 
 function openOrderPanel(){
@@ -315,7 +317,7 @@ function renderMenus(){
 
   const grouped = new Map();
   if(category === "ALL"){
-    const popularMenus = list.filter(isPopularMenu);
+    const popularMenus = sortPopularMenus(list.filter(isPopularMenu));
     if(popularMenus.length) grouped.set("POPULAR", popularMenus);
     const newMenus = list.filter((menu) => menu.isNew === true);
     if(newMenus.length) grouped.set("NEW", newMenus);
@@ -325,7 +327,8 @@ function renderMenus(){
       grouped.get(menu.category).push(menu);
     });
   } else {
-    list.forEach((menu) => {
+    const targetList = category === "POPULAR" ? sortPopularMenus(list) : list;
+    targetList.forEach((menu) => {
       const key = category === "NEW" || category === "POPULAR" ? category : menu.category;
       if(!grouped.has(key)) grouped.set(key, []);
       grouped.get(key).push(menu);
