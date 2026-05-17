@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>음료 주문목록 선택</title>
+  $styles
+</head>
+<body>
+<main>
+  <div class="top">
+    <div>
+      <div class="brand-lockup"><img class="brand-logo" src="/assets/logo-samoo.png" alt="SAMOO AX 로고"><div class="eyebrow">SAMOO AX팀 BEVERAGE ORDER</div></div>
+      <h1>진행 중인 주문목록</h1>
+      <p class="muted">관리자가 만든 주문 제목을 선택하고, 해당 목록 안에서 음료를 주문해주세요.</p>
+    </div>
+    <a href="/admin">관리자</a>
+  </div>
+  <div id="batches" class="batch-grid"></div>
+</main>
+<script>
+const root = document.getElementById('batches');
+function escapeHtml(value){return String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+async function load(){
+  const batches = await (await fetch('/api/order-batches')).json();
+  root.innerHTML = batches.length ? batches.map(batch => `
+    <article class="batch-card">
+      <span class="badge">${batch.status === 'open' ? '주문 가능' : '마감'}</span>
+      <h2>${escapeHtml(batch.title)}</h2>
+      <p class="muted">생성: ${new Date(batch.createdAt).toLocaleString('ko-KR')}</p>
+      ${batch.memo ? `<p>${escapeHtml(batch.memo)}</p>` : ''}
+      <a class="primary" href="/order/${batch.id}">이 주문목록에서 주문하기</a>
+    </article>
+  `).join('') : '<div class="empty">현재 주문 가능한 주문목록이 없습니다. 관리자에게 주문목록 생성을 요청해주세요.</div>';
+}
+load();
+</script>
+</body>
+</html>

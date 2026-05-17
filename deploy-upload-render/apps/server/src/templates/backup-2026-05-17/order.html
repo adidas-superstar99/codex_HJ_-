@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>음료 주문</title>
+  $styles
+</head>
+<body>
+<main>
+  <div class="top">
+    <div>
+      <div class="brand-lockup"><img class="brand-logo" src="/assets/logo-samoo.png" alt="SAMOO AX 로고"><div class="eyebrow">SAMOO AX팀 BEVERAGE ORDER</div></div>
+      <h1 id="pageTitle">음료 주문</h1>
+      <p class="muted" id="pageMemo">주문목록을 불러오는 중입니다.</p>
+    </div>
+    <div><a href="/">주문목록</a> · <a href="/admin">관리자</a></div>
+  </div>
+  <form class="layout" id="orderForm" style="display:none">
+    <section>
+      <div class="toolbar">
+        <div class="tabs"><button type="button" data-brand="STARBUCKS" class="active">스타벅스</button><button type="button" data-brand="TWOSOME">투썸플레이스</button></div>
+        <div class="filters"><input id="query" placeholder="메뉴명 검색"></div><button class="secondary cart-toggle" id="cartToggle" type="button">내 주문</button>
+      </div>
+      <div class="category-strip" id="categoryStrip"></div>
+      <div class="menu-sections" id="menuGrid"></div>
+    </section>
+    <aside id="orderAside">
+      <div class="order-side-header"><h2>내 주문</h2><button class="close-side" id="closeSide" type="button">닫기</button></div>
+      <h2 class="order-side-title">내 주문</h2>
+      <label><span>이름 *</span><input id="ordererName" placeholder="주문자 이름"></label>
+      <h2>장바구니</h2>
+      <div class="cart" id="cart"></div>
+      <p class="message" id="message" style="display:none"></p>
+      <button class="primary" id="submitButton" type="submit">주문 제출</button>
+    </aside>
+  </form>
+  <button class="primary cart-fab" id="cartFab" type="button">내 주문</button>
+  <div class="cart-backdrop" id="cartBackdrop"></div>
+  <section class="public-orders" id="publicOrdersPanel" style="display:none">
+    <div class="top">
+      <div>
+        <h2>현재 주문 목록</h2>
+        <p class="muted">이 주문목록에 들어온 주문입니다. 제출 후 여기에서 내 주문을 바로 확인할 수 있습니다.</p>
+      </div>
+      <button class="soft-action" type="button" onclick="loadPublicOrders()">주문 목록 새로고침</button>
+    </div>
+    <div class="stats" id="publicStats"></div>
+    <div id="publicOrders" class="public-order-grid"></div>
+  </section>
+  <div id="closed" class="empty" style="display:none"></div>
+</main>
+<div id="modalRoot"></div>
+<script>
+const batchId = location.pathname.split('/').filter(Boolean)[1];
+const previewMode = new URLSearchParams(location.search).get('preview') === '1';
+const previewBatch = {
+  id: 'preview',
+  title: '모바일 프리뷰 주문',
+  memo: '미리보기 전용 화면입니다. 모바일 밀림, 카드 밀도, 카테고리 열림 상태를 확인할 수 있습니다.',
+  status: 'open'
+};
+const previewMenusByBrand = {
+  STARBUCKS: [
+    { id:'sb-1', brand:'STARBUCKS', category:'NEW', isNew:true, name:'서울 막걸리향 콜드브루', imageUrl:'https://images.unsplash.com/photo-1517701550927-30cf4ba1f4d6?auto=format&fit=crop&w=640&q=80', availableSizes:['Tall','Grande'] },
+    { id:'sb-2', brand:'STARBUCKS', category:'콜드 브루', isNew:false, name:'바닐라 아인슈페너 콜드브루', imageUrl:'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=640&q=80', availableSizes:['Tall','Grande','Venti'] },
+    { id:'sb-3', brand:'STARBUCKS', category:'에스프레소', isNew:false, name:'카페 라떼', imageUrl:'https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=640&q=80', availableSizes:['Short','Tall','Grande'] },
+    { id:'sb-4', brand:'STARBUCKS', category:'프라푸치노', isNew:false, name:'자바 칩 프라푸치노', imageUrl:'https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=640&q=80', availableSizes:['Tall','Grande'] },
+    { id:'sb-5', brand:'STARBUCKS', category:'리프레셔', isNew:false, name:'핑크 드링크 위드 딸기 아사이', imageUrl:'https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=640&q=80', availableSizes:['Tall','Grande'] },
+    { id:'sb-6', brand:'STARBUCKS', category:'티', isNew:false, name:'유자 민트 티', imageUrl:'https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=640&q=80', availableSizes:['Tall','Grande'] }
+  ],
+  TWOSOME: [
+    { id:'ts-1', brand:'TWOSOME', category:'NEW', isNew:true, name:'복숭아 얼그레이 티', imageUrl:'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=640&q=80', availableSizes:['Regular'] },
+    { id:'ts-2', brand:'TWOSOME', category:'커피', isNew:false, name:'카페 라떼', imageUrl:'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=640&q=80', availableSizes:['Regular','Large'] },
+    { id:'ts-3', brand:'TWOSOME', category:'논커피', isNew:false, name:'스트로베리 요거트 블렌디드', imageUrl:'https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?auto=format&fit=crop&w=640&q=80', availableSizes:['Regular'] },
+    { id:'ts-4', brand:'TWOSOME', category:'티', isNew:false, name:'애플 시나몬 티', imageUrl:'https://images.unsplash.com/photo-1464306076886-da185f6a9d05?auto=format&fit=crop&w=640&q=80', availableSizes:['Regular'] }
+  ]
+};
+const previewOrdersByBatch = {
+  preview: [
+    {
+      id: 'preview-order-1',
+      ordererName: '염희재',
+      orderedAt: new Date().toISOString(),
+      items: [
+        { brand:'STARBUCKS', menuId:'sb-2', menuName:'바닐라 아인슈페너 콜드브루', category:'콜드 브루', size:'Grande', quantity:1, customRequest:'얼음 적게' }
+      ]
+    },
+    {
+      id: 'preview-order-2',
+      ordererName: '김동현',
+      orderedAt: new Date(Date.now() - 1000 * 60 * 18).toISOString(),
+      items: [
+        { brand:'STARBUCKS', menuId:'sb-3', menuName:'카페 라떼', category:'에스프레소', size:'Tall', quantity:1, customRequest:'' },
+        { brand:'STARBUCKS', menuId:'sb-5', menuName:'핑크 드링크 위드 딸기 아사이', category:'리프레셔', size:'Grande', quantity:1, customRequest:'당도 기본' }
+      ]
+    }
+  ]
+};
+let batch = null, brand = 'STARBUCKS', menus = [], cart = [], selected = null, editingOrderId = '';
+const $ = id => document.getElementById(id);
+function escapeHtml(value){return String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function brandName(value){return value==='STARBUCKS'?'스타벅스':value==='TWOSOME'?'투썸플레이스':value}
+function categoryLabel(value){return value==='NEW'?'신메뉴':value}
+function msg(text){$('message').textContent = text; $('message').style.display = text ? 'block' : 'none'}
+function isCompactLayout(){return window.innerWidth <= 1200}
+function updateOrderPanelButtons(){
+  const count = cart.reduce((sum, item) => sum + Number(item.quantity || 0), 0);
+  const label = count ? `내 주문 ${count}잔` : '내 주문';
+  if($('cartToggle')) $('cartToggle').textContent = label;
+  if($('cartFab')) $('cartFab').textContent = label;
+}
+function openOrderPanel(){ if(isCompactLayout()) $('orderForm').classList.add('side-open') }
+function closeOrderPanel(){ $('orderForm').classList.remove('side-open') }
+async function loadBatch(){
+  if(previewMode){
+    batch = previewBatch;
+    $('pageTitle').textContent = batch.title;
+    $('pageMemo').textContent = batch.memo;
+    $('orderForm').style.display='grid';
+    $('publicOrdersPanel').style.display='block';
+    await loadMenus();
+    renderCart();
+    await loadPublicOrders();
+    return;
+  }
+  const response = await fetch('/api/order-batches/' + batchId);
+  if(!response.ok){ $('closed').style.display='block'; $('closed').textContent='주문목록을 찾을 수 없습니다.'; return; }
+  batch = await response.json();
+  $('pageTitle').textContent = batch.title;
+  $('pageMemo').textContent = batch.memo || '이 주문목록 안에서 음료를 선택해 주세요.';
+  if(batch.status !== 'open'){
+    $('closed').style.display='block';
+    $('closed').textContent='마감된 주문목록입니다. 관리자에게 새 주문목록을 요청해주세요.';
+    return;
+  }
+  $('orderForm').style.display='grid';
+  $('publicOrdersPanel').style.display='block';
+  await loadMenus();
+  renderCart();
+  await loadPublicOrders();
+}
+async function loadMenus(){
+  if(previewMode){
+    menus = previewMenusByBrand[brand] || [];
+    renderCategories();
+    renderMenus();
+    return;
+  }
+  menus = await (await fetch('/api/menus?brand=' + brand)).json();
+  renderCategories();
+  renderMenus();
+}
+function selectedCategory(){return document.querySelector('#categoryStrip button.active')?.dataset.category || 'ALL'}
+function renderCategories(){
+  const menuCategories = [...new Set(menus.map(m=>m.category))];
+  const cats = ['ALL', ...(menus.some(m => m.isNew) ? ['NEW'] : []), ...menuCategories];
+  const active = cats.includes(selectedCategory()) ? selectedCategory() : 'ALL';
+  $('categoryStrip').innerHTML = cats.map(c => `<button type="button" data-category="${c}" class="${c===active?'active':''}">${escapeHtml(c==='ALL'?'전체 메뉴':categoryLabel(c))}</button>`).join('');
+  document.querySelectorAll('#categoryStrip button').forEach(button => button.onclick = () => {
+    document.querySelectorAll('#categoryStrip button').forEach(x => x.classList.remove('active'));
+    button.classList.add('active');
+    renderMenus();
+  });
+}
+function renderMenus(){
+  const q=$('query').value.trim().toLowerCase(), c=selectedCategory();
+  const list=menus.filter(m=>(!q||m.name.toLowerCase().includes(q))&&(c==='ALL'||(c==='NEW'?m.isNew===true:m.category===c)));
+  if(!list.length){ $('menuGrid').innerHTML='<div class="empty">조건에 맞는 메뉴가 없습니다.</div>'; return; }
+  const grouped = new Map();
+  if(c === 'ALL'){
+    const newMenus = list.filter(menu => menu.isNew === true);
+    if(newMenus.length){ grouped.set('NEW', newMenus); }
+    list.forEach(menu => {
+      if(!grouped.has(menu.category)){ grouped.set(menu.category, []); }
+      grouped.get(menu.category).push(menu);
+    });
+  } else {
+    list.forEach(menu => {
+      const key = c === 'NEW' ? 'NEW' : menu.category;
+      if(!grouped.has(key)){ grouped.set(key, []); }
+      grouped.get(key).push(menu);
+    });
+  }
+  const shouldAutoOpen = c !== 'ALL' || Boolean(q);
+  $('menuGrid').innerHTML = Array.from(grouped.entries()).map(([category, categoryMenus]) => `
+    <details class="menu-section" ${(shouldAutoOpen || category === 'NEW') ? 'open' : ''}>
+      <summary class="menu-section-header">
+        <h3>${escapeHtml(categoryLabel(category))}</h3>
+        <span class="menu-section-count"><strong>${categoryMenus.length}</strong><em>개</em></span>
+        <span class="menu-section-toggle">${(shouldAutoOpen || category === 'NEW') ? '닫기' : '열기'}</span>
+      </summary>
+      <div class="menu-section-body">
+        <div class="menu-grid">
+          ${categoryMenus.map(m=>`<article class="card"><img src="${m.imageUrl}" alt=""><div><span class="meta">${brandName(m.brand)} · ${m.isNew?`신메뉴 · ${m.category}`:m.category}</span><h3>${escapeHtml(m.name)}</h3><button class="secondary" type="button" onclick="openMenu('${m.id}')">담기</button></div></article>`).join('')}
+        </div>
+      </div>
+    </details>
+  `).join('');
+  bindMenuSections();
+}
+function bindMenuSections(){
+  document.querySelectorAll('.menu-section').forEach(section => {
+    const toggle = section.querySelector('.menu-section-toggle');
+    const sync = () => { if(toggle) toggle.textContent = section.open ? '닫기' : '열기'; };
+    sync();
+    section.addEventListener('toggle', sync);
+  });
+}
+function renderCart(){$('cart').innerHTML=cart.length?cart.map(i=>`<div class="cart-item"><strong>${escapeHtml(i.menuName)}</strong><div class="meta">${brandName(i.brand)} · ${i.size}</div>${i.customRequest?`<p>${escapeHtml(i.customRequest)}</p>`:''}<div class="cart-actions"><button type="button" onclick="qty('${i.localId}',-1)">-</button><span>${i.quantity}</span><button type="button" onclick="qty('${i.localId}',1)">+</button><button type="button" onclick="removeItem('${i.localId}')">x</button></div></div>`).join(''):'<div class="empty">선택한 음료가 아직 없습니다.</div>'; updateOrderPanelButtons()}
+async function loadPublicOrders(){
+  if(previewMode){
+    renderPublicOrders(previewOrdersByBatch[batchId] || previewOrdersByBatch.preview || []);
+    return;
+  }
+  const response = await fetch('/api/order-batches/' + batchId + '/orders');
+  const data = response.ok ? await response.json() : [];
+  const orders = Array.isArray(data) ? data : (data ? [data] : []);
+  renderPublicOrders(orders);
+}
+function renderPublicOrders(orders){
+  const currentName = $('ordererName').value.trim();
+  const people = new Set(orders.map(o => o.ordererName));
+  const cups = orders.reduce((sum, order) => sum + order.items.reduce((itemSum, item) => itemSum + Number(item.quantity || 0), 0), 0);
+  $('publicStats').innerHTML = '<span class="stat">주문자 ' + people.size + '명</span><span class="stat">음료 ' + cups + '잔</span>';
+  $('publicOrders').innerHTML = orders.length ? orders.map(order => {
+    const mine = currentName && order.ordererName === currentName;
+    const items = order.items.map(item => '<li>' + brandName(item.brand) + ' · ' + escapeHtml(item.menuName) + ' · ' + item.size + ' · ' + item.quantity + '잔' + (item.customRequest ? '<em>' + escapeHtml(item.customRequest) + '</em>' : '') + '</li>').join('');
+    const actions = mine ? '<div class="filters"><button class="secondary" type="button" onclick="editOrder(\'' + order.id + '\')">수정</button><button class="danger" type="button" onclick="cancelOrder(\'' + order.id + '\')">취소</button></div>' : '';
+    return '<article class="public-order ' + (mine ? 'mine' : '') + '"><h3>' + escapeHtml(order.ordererName) + (mine ? ' <span class="badge">내 주문</span>' : '') + '</h3><p class="muted">' + new Date(order.orderedAt).toLocaleString('ko-KR') + '</p><ul>' + items + '</ul>' + actions + '</article>';
+  }).join('') : '<div class="empty">아직 제출된 주문이 없습니다.</div>';
+}
+async function findMyOrder(id){
+  const response = await fetch('/api/order-batches/' + batchId + '/orders');
+  const data = response.ok ? await response.json() : [];
+  const orders = Array.isArray(data) ? data : (data ? [data] : []);
+  const currentName = $('ordererName').value.trim();
+  return orders.find(order => order.id === id && order.ordererName === currentName);
+}
+async function editOrder(id){
+  const order = await findMyOrder(id);
+  if(!order){ msg('이름이 일치하는 내 주문만 수정할 수 있습니다.'); return; }
+  editingOrderId = id;
+  cart = order.items.map(item => ({...item, localId: crypto.randomUUID()}));
+  $('submitButton').textContent = '수정 저장';
+  renderCart();
+  openOrderPanel();
+  msg('장바구니에서 내용을 바꾼 뒤 수정 저장을 눌러 주세요.');
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+async function cancelOrder(id){
+  const ordererName = $('ordererName').value.trim();
+  if(!ordererName){ msg('취소하려면 먼저 이름을 입력해 주세요.'); return; }
+  if(!confirm('이 주문을 취소할까요?')) return;
+  const response = await fetch('/api/orders/' + id, {method:'DELETE', headers:{'Content-Type':'application/json'}, body:JSON.stringify({ordererName})});
+  if(response.ok){
+    if(editingOrderId === id){ editingOrderId=''; cart=[]; $('submitButton').textContent='주문 제출'; renderCart(); }
+    msg('주문이 취소되었습니다.');
+    await loadPublicOrders();
+  } else {
+    const err = await response.json().catch(()=>({message:'주문 취소에 실패했습니다.'}));
+    msg(err.message || '주문 취소에 실패했습니다.');
+  }
+}
+function openMenu(id){selected=menus.find(m=>m.id===id); const sizes=selected.availableSizes.map((s,i)=>`<button type="button" class="${i===0?'active':''}" data-size="${s}">${s}</button>`).join(''); $('modalRoot').innerHTML=`<div class="backdrop"><div class="modal"><button class="close" type="button" onclick="closeModal()">x</button><img src="${selected.imageUrl}" alt=""><h2>${escapeHtml(selected.name)}</h2><p>${selected.category}</p><div class="sizes" id="sizes">${sizes}</div><label><span>수량</span><input id="modalQty" type="number" min="1" value="1"></label><label><span>개인 요청사항</span><textarea id="customRequest" rows="3" placeholder="예: 얼음 적게, 샷 추가"></textarea></label><button class="primary" type="button" onclick="addCart()">장바구니 담기</button></div></div>`; document.querySelectorAll('#sizes button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#sizes button').forEach(x=>x.classList.remove('active'));b.classList.add('active')})}
+function closeModal(){$('modalRoot').innerHTML=''}
+function addCart(){const size=document.querySelector('#sizes .active').dataset.size; cart.push({localId:crypto.randomUUID(),brand:selected.brand,menuId:selected.id,menuName:selected.name,category:selected.category,size,quantity:Number($('modalQty').value||1),customRequest:$('customRequest').value.trim()}); closeModal(); renderCart(); openOrderPanel();}
+function qty(id,delta){cart=cart.map(i=>i.localId===id?{...i,quantity:i.quantity+delta}:i).filter(i=>i.quantity>0);renderCart()}
+function removeItem(id){cart=cart.filter(i=>i.localId!==id);renderCart()}
+document.querySelectorAll('[data-brand]').forEach(b=>b.onclick=()=>{brand=b.dataset.brand;document.querySelectorAll('[data-brand]').forEach(x=>x.classList.remove('active'));b.classList.add('active');loadMenus()});
+$('query').oninput=renderMenus;
+$('ordererName').oninput=loadPublicOrders;
+$('cartToggle').onclick=openOrderPanel;
+$('cartFab').onclick=openOrderPanel;
+$('closeSide').onclick=closeOrderPanel;
+$('cartBackdrop').onclick=closeOrderPanel;
+window.addEventListener('resize', ()=>{ if(!isCompactLayout()) closeOrderPanel(); updateOrderPanelButtons(); });
+$('orderForm').onsubmit=async e=>{e.preventDefault(); msg(''); const ordererName=$('ordererName').value.trim(); if(!ordererName) return msg('주문자 이름을 입력해 주세요.'); if(!cart.length) return msg('장바구니에 음료를 담아 주세요.'); const payload={batchId,ordererName,items:cart}; const url=editingOrderId?'/api/orders/'+editingOrderId:'/api/orders'; const method=editingOrderId?'PUT':'POST'; const r=await fetch(url,{method,headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}); if(r.ok){cart=[];editingOrderId='';$('submitButton').textContent='주문 제출';renderCart();closeOrderPanel();msg(method==='PUT'?'주문이 수정되었습니다.':'주문이 제출되었습니다. 아래 주문 목록에서 내 주문을 확인하세요.'); await loadPublicOrders();}else{const err=await r.json().catch(()=>({message:'주문 저장에 실패했습니다.'}));msg(err.message||'주문 저장에 실패했습니다.')}};
+updateOrderPanelButtons();
+loadBatch();
+</script>
+</body>
+</html>

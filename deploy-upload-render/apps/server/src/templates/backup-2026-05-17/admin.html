@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>관리자 주문 취합</title>
+  $styles
+</head>
+<body>
+<div class="login" id="login">
+  <div class="brand-lockup"><img class="brand-logo" src="/assets/logo-samoo.png" alt="SAMOO AX 로고"><div class="eyebrow">ADMIN</div></div>
+  <h1>관리자 주문 취합</h1>
+  <label><span>관리자 비밀번호</span><input id="password" type="password" value="change-me"></label>
+  <p class="message" id="loginMsg" style="display:none"></p>
+  <button class="primary" id="loginButton">입장</button>
+  <p><a href="/">주문목록으로</a></p>
+</div>
+<main id="app" style="display:none">
+  <div class="top">
+    <div>
+      <div class="brand-lockup"><img class="brand-logo" src="/assets/logo-samoo.png" alt="SAMOO AX 로고"><div class="eyebrow">SAMOO AX팀 BEVERAGE ORDER</div></div>
+      <h1>주문목록 관리</h1>
+      <p class="muted">주문목록을 만들고, 선택한 주문목록의 주문과 메뉴별 집계를 확인합니다.</p>
+    </div>
+    <a href="/">주문목록</a>
+  </div>
+  <div class="admin-grid">
+    <section class="panel">
+      <h2>새 주문목록 생성</h2>
+      <label><span>제목 *</span><input id="batchTitle" placeholder="예: 아침 회의 음료주문"></label>
+      <label><span>메모</span><textarea id="batchMemo" rows="3" placeholder="예: 9시 50분까지 입력"></textarea></label>
+      <button class="primary" id="createBatchButton">주문목록 생성</button>
+      <hr>
+      <h2>주문목록</h2>
+      <div id="batchList" class="grid"></div>
+    </section>
+    <section class="panel">
+      <h2 id="selectedTitle">주문목록을 먼저 선택해주세요.</h2>
+      <p class="selected-note" id="selectedNote" style="display:none"></p>
+      <div class="toolbar">
+        <label><span>브랜드</span><select id="brand"><option value="ALL">전체</option><option value="STARBUCKS">스타벅스</option><option value="TWOSOME">투썸플레이스</option></select></label>
+        <div class="toolbar-actions">
+          <button class="soft-action" id="refreshButton">새로고침</button>
+          <button class="soft-action csv-action" id="csvButton">CSV 내려받기</button>
+        </div>
+      </div>
+      <p class="message" id="message" style="display:none"></p>
+      <div class="stats" id="adminStats"></div>
+      <h3>메뉴별 집계</h3>
+      <div class="table-wrap" id="summary"></div>
+      <h3>주문 목록</h3>
+      <div id="orders"></div>
+    </section>
+  </div>
+</main>
+<script>
+let password='', batches=[], selectedBatchId='';
+const $=id=>document.getElementById(id);
+function headers(){return {'x-admin-password':password}}
+function escapeHtml(value){return String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function brandName(value){return value==='STARBUCKS'?'스타벅스':value==='TWOSOME'?'투썸플레이스':value}
+function msg(t){$('message').textContent=t;$('message').style.display=t?'block':'none'}
+function params(){const p=new URLSearchParams(); if(selectedBatchId)p.set('batchId',selectedBatchId); if($('brand').value!=='ALL')p.set('brand',$('brand').value); return p}
+function asArray(value){return Array.isArray(value)?value:(value?[value]:[])}
+async function unlock(){
+  password=$('password').value;
+  const r=await fetch('/api/admin/order-batches',{headers:headers()});
+  if(!r.ok){$('loginMsg').textContent='비밀번호가 맞지 않습니다.';$('loginMsg').style.display='block';return}
+  $('login').style.display='none';$('app').style.display='block';
+  batches=asArray(await r.json());
+  renderBatches();
+  if(batches.length){selectBatch(batches[0].id)} else {clearSelected()}
+}
+async function loadBatches(){
+  const r=await fetch('/api/admin/order-batches',{headers:headers()});
+  if(!r.ok){msg('주문목록을 불러오지 못했습니다.');return}
+  batches=asArray(await r.json()).filter(b=>b && b.id && b.title);
+  renderBatches();
+}
+function renderBatches(){
+  if(!batches.length){$('batchList').innerHTML='<div class="empty">아직 주문목록이 없습니다.</div>';return}
+  $('batchList').innerHTML=batches.map(b=>{
+    const nextStatus=b.status==='open'?'closed':'open';
+    const statusText=b.status==='open'?'진행 중':'마감';
+    const statusButton=b.status==='open'?'마감':'다시 열기';
+    const buttonClass=b.status==='open'?'danger':'primary';
+    return '<article class="batch-card '+(b.id===selectedBatchId?'selected-batch':'')+'">'
+      + '<span class="badge">'+statusText+'</span>'
+      + '<h2>'+escapeHtml(b.title)+'</h2>'
+      + '<p class="muted">'+new Date(b.createdAt).toLocaleString('ko-KR')+'</p>'
+      + '<p><strong>주문 '+(b.orderCount||0)+'건</strong> · 음료 '+(b.cupCount||0)+'잔</p>'
+      + (b.memo?'<p>'+escapeHtml(b.memo)+'</p>':'')
+      + '<button class="secondary" data-action="view" data-id="'+b.id+'">이 주문목록 주문/집계 보기</button>'
+      + '<button class="'+buttonClass+'" data-action="toggle" data-id="'+b.id+'" data-status="'+nextStatus+'">'+statusButton+'</button>'
+      + '<button class="danger" data-action="delete" data-id="'+b.id+'">주문목록 삭제</button>'
+      + '<a href="/order/'+b.id+'" target="_blank">주문 링크 열기</a>'
+      + '</article>';
+  }).join('')
+}
+async function createBatch(){
+  const title=$('batchTitle').value.trim();
+  if(!title){alert('제목을 입력해주세요.');return}
+  const r=await fetch('/api/admin/order-batches',{method:'POST',headers:{...headers(),'Content-Type':'application/json'},body:JSON.stringify({title,memo:$('batchMemo').value})});
+  if(!r.ok){alert('주문목록 생성에 실패했습니다.');return}
+  const batch=await r.json();
+  $('batchTitle').value='';$('batchMemo').value='';
+  selectedBatchId=batch.id;
+  await loadBatches();
+  selectBatch(batch.id);
+}
+async function toggleBatch(id,status){
+  const r=await fetch('/api/admin/order-batches/'+id,{method:'PATCH',headers:{...headers(),'Content-Type':'application/json'},body:JSON.stringify({status})});
+  if(!r.ok){msg('주문목록 변경에 실패했습니다.');return}
+  await loadBatches();
+  selectBatch(id);
+}
+async function deleteBatch(id){
+  const batch=batches.find(x=>x.id===id);
+  const name=batch?batch.title:'이 주문목록';
+  if(!confirm('"'+name+'" 주문목록을 삭제할까요?\n안에 들어있는 주문도 함께 삭제됩니다.'))return;
+  const r=await fetch('/api/admin/order-batches/'+id,{method:'DELETE',headers:headers()});
+  if(!r.ok){msg('주문목록 삭제에 실패했습니다.');return}
+  if(selectedBatchId===id){selectedBatchId=''}
+  await loadBatches();
+  if(selectedBatchId){selectBatch(selectedBatchId)} else if(batches.length){selectBatch(batches[0].id)} else {clearSelected()}
+  msg('주문목록을 삭제했습니다.');
+}
+function clearSelected(){
+  selectedBatchId='';
+  $('selectedTitle').textContent='주문목록을 먼저 선택해주세요.';
+  $('selectedNote').style.display='none';
+  $('adminStats').innerHTML='';
+  $('summary').innerHTML='<div class="empty">주문목록을 선택하면 집계가 표시됩니다.</div>';
+  $('orders').innerHTML='<div class="empty">주문목록을 선택하면 주문 목록이 표시됩니다.</div>';
+}
+function selectBatch(id){
+  selectedBatchId=id;
+  const b=batches.find(x=>x.id===id);
+  $('selectedTitle').textContent=b?b.title:'주문목록을 먼저 선택해주세요.';
+  $('selectedNote').style.display=b?'block':'none';
+  $('selectedNote').textContent=b?'현재 "'+b.title+'" 주문목록의 주문과 집계를 보고 있습니다.':'';
+  renderBatches();
+  loadOrders();
+}
+async function loadOrders(){if(!selectedBatchId){return} msg(''); const p=params(); const [o,s]=await Promise.all([fetch('/api/orders?'+p,{headers:headers()}),fetch('/api/orders/summary?'+p,{headers:headers()})]); if(!o.ok||!s.ok){msg('관리자 데이터를 불러오지 못했습니다.');return} renderOrders(asArray(await o.json())); renderSummary(asArray(await s.json()))}
+function renderAdminStats(rows){
+  const people=new Set(rows.map(o=>o.ordererName));
+  const cups=rows.reduce((sum,o)=>sum+o.items.reduce((itemSum,i)=>itemSum+Number(i.quantity||0),0),0);
+  $('adminStats').innerHTML='<span class="stat">주문자 '+people.size+'명</span><span class="stat">음료 '+cups+'잔</span>';
+}
+function renderSummary(rows){
+  if(!rows.length){$('summary').innerHTML='<div class="empty">집계할 주문이 없습니다.</div>';return}
+  const grouped = rows.reduce((acc, row) => {
+    const key = row.brand || 'ETC';
+    if(!acc[key]) acc[key] = [];
+    acc[key].push(row);
+    return acc;
+  }, {});
+  $('summary').innerHTML = '<div class="summary-groups">' + Object.entries(grouped).map(([brand, items]) => {
+    const total = items.reduce((sum, item) => sum + Number(item.quantity || 0), 0);
+    const body = items.map(item => {
+      const requests = item.requests.length
+        ? item.requests.map(x => escapeHtml(x.ordererName)+': '+escapeHtml(x.customRequest)).join(' / ')
+        : '-';
+      const requestClass = requests === '-' ? 'summary-request is-empty' : 'summary-request';
+      return '<div class="summary-row">'
+        + '<div class="summary-menu">' + escapeHtml(item.menuName) + '</div>'
+        + '<div class="summary-size">' + escapeHtml(item.size) + '</div>'
+        + '<div class="summary-qty">' + item.quantity + '잔</div>'
+        + '<div class="' + requestClass + '">' + requests + '</div>'
+        + '</div>';
+    }).join('');
+    return '<section class="summary-group">'
+      + '<div class="summary-group-header"><h4>' + brandName(brand) + '</h4><span class="summary-group-count">' + items.length + '개 메뉴 · ' + total + '잔</span></div>'
+      + '<div class="summary-list">' + body + '</div>'
+      + '</section>';
+  }).join('') + '</div>';
+}
+function renderOrders(rows){
+  renderAdminStats(rows);
+  if(!rows.length){$('orders').innerHTML='<div class="empty">조회된 주문이 없습니다.</div>';return}
+  $('orders').innerHTML=rows.map(o=>{
+    const items=o.items.map(i=>'<li>'+brandName(i.brand)+' · '+escapeHtml(i.menuName)+' · '+i.size+' · '+i.quantity+'잔'+(i.customRequest?'<em>'+escapeHtml(i.customRequest)+'</em>':'')+'</li>').join('');
+    return '<article class="order"><header><div><strong>'+escapeHtml(o.ordererName)+'</strong><div>'+new Date(o.orderedAt).toLocaleString('ko-KR')+'</div></div><button class="danger" type="button" onclick="deleteOrder(\''+o.id+'\')">삭제</button></header><ul>'+items+'</ul></article>';
+  }).join('');
+}
+async function deleteOrder(id){if(!confirm('이 주문을 삭제할까요?'))return; const r=await fetch('/api/orders/'+id,{method:'DELETE',headers:headers()}); if(!r.ok){msg('주문 삭제에 실패했습니다.');return} await loadBatches(); if(selectedBatchId) await loadOrders();}
+async function csv(){if(!selectedBatchId){return} const r=await fetch('/api/orders/export.csv?'+params(),{headers:headers()}); if(!r.ok){msg('CSV 다운로드에 실패했습니다.');return} const blob=await r.blob(); const url=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download='orders.csv'; a.click(); URL.revokeObjectURL(url)}
+$('brand').onchange=loadOrders;
+$('loginButton').onclick=unlock;
+$('createBatchButton').onclick=createBatch;
+$('refreshButton').onclick=loadOrders;
+$('csvButton').onclick=csv;
+$('batchList').addEventListener('click', event=>{
+  const button=event.target.closest('button[data-action]');
+  if(!button)return;
+  const id=button.dataset.id;
+  if(button.dataset.action==='view')selectBatch(id);
+  if(button.dataset.action==='toggle')toggleBatch(id,button.dataset.status);
+  if(button.dataset.action==='delete')deleteBatch(id);
+});
+</script>
+</body>
+</html>
